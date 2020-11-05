@@ -31,7 +31,7 @@ public class TestBase {
     public void tearDownMethod(ITestResult result) throws IOException {
 
         if (result.getStatus() == ITestResult.FAILURE) {//When test case fails, then take the screenshot and attached the report
-            String screenshotLocation = ReUsableMethods.getScreenshot(result.getName());//getScreenshot is coming from ReusableMethods
+            String screenshotLocation = BrowserUtils.getScreenshot(result.getName());//getScreenshot is coming from ReusableMethods
             extentTest.fail(result.getName());
             extentTest.addScreenCaptureFromPath(screenshotLocation);//adding the screenshot to the report
             extentTest.fail(result.getThrowable());
