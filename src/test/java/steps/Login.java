@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 import pages.LoginPage;
-import utilities.BrowserUtils;
+
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -42,7 +42,7 @@ public class Login {
     public void verify_username_on_the_login_page() {
         WebElement element = loginPage.accountMenu;
         System.out.println(element.getText());
-        BrowserUtils.verifyElementDisplayed(element);
+        Driver.verifyElementDisplayed(element);
 
 
 
