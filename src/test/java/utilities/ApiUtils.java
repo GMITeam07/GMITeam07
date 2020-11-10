@@ -21,6 +21,17 @@ public class ApiUtils {
         return response;
     }
 
+    public static Response getRequest(String username,String password, String endpoint){
+        Response response=given().
+                auth().
+                preemptive().
+                basic(username,password).
+                spec(Specs.specMainUrl()).accept(ContentType.JSON).
+                when().get(endpoint);
+        return response;
+    }
+
+
 
 
 }
