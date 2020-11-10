@@ -11,6 +11,6 @@ public class SampleStep {
         Response response=ApiUtils.getRequest("admin","/api/account");  // endpoint e ne yazarsanız cevap gelip cıktı alıcak
 //         AccountInfo accountInfo=response.as(AccountInfo.class);
 //         System.out.println(accountInfo);
-        response.prettyprint();
+        response.prettyPrint();
     }
 }
