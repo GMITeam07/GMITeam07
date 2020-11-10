@@ -188,9 +188,9 @@ public class AccountInfo {
     public String authoritiesToString(){
         String result="";
         if(getAuthorities().size()!=0){
-            result= getAuthorities().stream().map(t->"\""+t+"\",\n").collect(Collectors.joining());
+            result= getAuthorities().stream().map(t->"      \""+t+"\",\n").collect(Collectors.joining());
             //to remove the last comma
-            result=result.substring(0,result.length()-1)+"\n]";
+            result=result.substring(0,result.length()-1);
         }
         return result;
     }
@@ -210,8 +210,8 @@ public class AccountInfo {
                 "\"createdDate\": \"" + createdDate +  "\",\n" +
                 "\"lastModifiedBy\": \"" + lastModifiedBy +  "\",\n" +
                 "\"lastModifiedDate\": \"" + lastModifiedDate +  "\",\n" +
-                "\"authorities\": " + authoritiesToString() +
-                "\n}";
+                "\"authorities\": [\n" + authoritiesToString() +"\n"+
+                "   ]\n}";
     }
 
     /*
