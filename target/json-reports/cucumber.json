@@ -3,8 +3,53 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2020-11-10T03:52:53.114Z",
-        "line": 4,
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 18650000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User on the GMIBank Homepage",
+            "match": {
+              "location": "steps.Login.user_on_the_gmi_bank_homepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 636000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user clicks loginDrpDwn",
+            "match": {
+              "location": "steps.Login.user_clicks_login_drp_dwn()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 651000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user clicks signinBtn",
+            "match": {
+              "location": "steps.Login.user_clicks_signin_btn()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-10T22:07:03.221Z",
+        "line": 10,
         "name": "US_004 - TC_001 User is on the login page",
         "description": "",
         "id": "login-page;us-004---tc-001-user-is-on-the-login-page",
@@ -13,50 +58,50 @@
         "steps": [
           {
             "result": {
-              "duration": 13923000000,
+              "duration": 1101000000,
               "status": "passed"
             },
-            "line": 5,
-            "name": "user is on the GMI bank login page",
-            "match": {
-              "location": "steps.Login.user_is_on_the_gmi_bank_login_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 6,
+            "line": 11,
             "name": "user enters valid username",
-            "match": {},
+            "match": {
+              "location": "steps.Login.user_enters_valid_username()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 382000000,
+              "status": "passed"
             },
-            "line": 7,
+            "line": 12,
             "name": "user enters valid password",
-            "match": {},
+            "match": {
+              "location": "steps.Login.user_enters_valid_password()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 389000000,
+              "status": "passed"
             },
-            "line": 8,
+            "line": 13,
             "name": "user click sign in button",
-            "match": {},
+            "match": {
+              "location": "steps.Login.user_click_sign_in_button()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 920000000,
+              "status": "passed"
             },
-            "line": 9,
-            "name": "There should be an option to cancel login",
-            "match": {},
+            "line": 14,
+            "name": "verify username on the login page",
+            "match": {
+              "location": "steps.Login.verify_username_on_the_login_page()"
+            },
             "keyword": "Then "
           }
         ],

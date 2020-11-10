@@ -14,9 +14,9 @@ public class LoginPage {
 
 
     @FindBy(xpath = "//a[@aria-haspopup='true']")
-    public WebElement sigin1;
+    public WebElement loginDrpDwn;
     @FindBy(id = "login-item")
-    public WebElement singin2;
+    public WebElement signinBtn;
     @FindBy(id = "username")
     public WebElement userName;
     @FindBy(id = "password")
@@ -35,8 +35,10 @@ public class LoginPage {
     public WebElement invalidFeedbackPasswor;
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement failedSigninMessage;
-
-
+//    @FindBy (xpath = "(//a[@aria-haspopup='true'])[3]")
+//    public WebElement isDisplayedUsername;
+    @FindBy (id = "account-menu")
+    public WebElement accountMenu;
 
 
 
