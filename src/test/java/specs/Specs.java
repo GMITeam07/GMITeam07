@@ -10,6 +10,10 @@ public class Specs {
         return requestSpecBuilder.setBaseUri(
                 "https://gmibank.com").build();
     }
-
+    public static RequestSpecification specMainUrl(){
+        RequestSpecBuilder requestSpecBuilder=new RequestSpecBuilder();
+        return requestSpecBuilder.setBaseUri(
+                "https://www.gmibank.com").build();
+    }
 
 }
