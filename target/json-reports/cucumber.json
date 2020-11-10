@@ -1,0 +1,89 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2020-11-10T03:52:53.114Z",
+        "line": 4,
+        "name": "US_004 - TC_001 User is on the login page",
+        "description": "",
+        "id": "login-page;us-004---tc-001-user-is-on-the-login-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 13923000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is on the GMI bank login page",
+            "match": {
+              "location": "steps.Login.user_is_on_the_gmi_bank_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 6,
+            "name": "user enters valid username",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "user enters valid password",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "user click sign in button",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "There should be an option to cancel login",
+            "match": {},
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@loginpage"
+          },
+          {
+            "name": "@signin"
+          }
+        ]
+      }
+    ],
+    "name": "Login Page",
+    "description": "",
+    "id": "login-page",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/loginPage.feature",
+    "tags": [
+      {
+        "name": "@loginpage",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
