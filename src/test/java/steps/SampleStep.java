@@ -8,8 +8,9 @@ import utilities.ApiUtils;
 public class SampleStep {
     @Test
     public void test01(){
-        Response response=ApiUtils.getRequest("admin","/api/account");
-        AccountInfo accountInfo=response.as(AccountInfo.class);
-        System.out.println(accountInfo);
+        Response response=ApiUtils.getRequest("admin","/api/account");  // endpoint e ne yazarsanız cevap gelip cıktı alıcak
+//         AccountInfo accountInfo=response.as(AccountInfo.class);
+//         System.out.println(accountInfo);
+        response.prettyprint();
     }
 }
