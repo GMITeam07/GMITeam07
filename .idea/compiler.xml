@@ -6,7 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="GMI" />
+=======
+        <module name="GMITeam07" />
+        <module name="GMIbankCucumber" />
+>>>>>>> main
         <module name="GMIBank" />
       </profile>
     </annotationProcessing>
