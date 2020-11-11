@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class AccountInfo {
+public class UserInfo {
     @SerializedName("id")
     @Expose
     private int id ;
@@ -59,13 +59,13 @@ public class AccountInfo {
     @Expose
     private List<String> authorities ;
 
-    public AccountInfo() {    }
+    public UserInfo() {    }
 
-    public AccountInfo(int id, String login, String firstname,
-                       String lastname, String email, String imageUrl,
-                       boolean isActivated, String longKey, String createdBy,
-                       String createdDate, String lastModifiedBy, String lastModifiedDate,
-                       List<String> authorities) {
+    public UserInfo(int id, String login, String firstname,
+                    String lastname, String email, String imageUrl,
+                    boolean isActivated, String longKey, String createdBy,
+                    String createdDate, String lastModifiedBy, String lastModifiedDate,
+                    List<String> authorities) {
         this.id = id;
         this.login = login;
         this.firstname = firstname;
