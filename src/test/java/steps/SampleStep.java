@@ -9,9 +9,6 @@ import utilities.DBUtils;
 import java.util.List;
 
 public class SampleStep {
-    
-    //trial from git remote main
-    
     @Test
     public void test01(){
         Response response=ApiUtils.
