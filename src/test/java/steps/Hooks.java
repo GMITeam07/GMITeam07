@@ -10,14 +10,14 @@ import utilities.Driver;
 import utilities.TestBase;
 
 public class Hooks {
-    @Before(order = 1)
+   // @Before(order = 1)
     public void setUp(){
         TestBase.setExtentReports();
 
     }
 
 
-    @After
+   // @After
     public void tearDown(Scenario scenario){
 
         final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
