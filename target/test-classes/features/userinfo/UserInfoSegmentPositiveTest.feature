@@ -2,13 +2,16 @@
 Feature: User tests the user info segment
 
   Background: User is on the GMIBank Home Page
-    Given User on the GMIBank Homepage
+    Given user is on the GMIBank HomePage
+    Then user clicks on login Drop down menu
+    Then user clicks on Sign in option
 
   Scenario Outline:TC_0008_0001_User tests the user info settings page WebElements
   user verifies the firstname, lastname, email and language options available
+
     And user enters a valid username "<username>"
     And user enters a valid password "<password>"
-    And user click sign in button
+    And user clicks on sign in button
     And user clicks on User Account Menu
     When user selects the User Info option
     Then user verifies the page displays text "User settings for [" text is displayed"
@@ -27,7 +30,7 @@ Feature: User tests the user info segment
 
     And user enters a valid username "<username>"
     And user enters a valid password "<password>"
-    And user click sign in button
+    And user clicks on sign in button
     And user clicks on User Account Menu
     When user selects the User Info option
     Then user verifies the page displays text "User settings for [" text is displayed"
@@ -47,17 +50,17 @@ Feature: User tests the user info segment
     Then user verifies the user language "<language>"is same as api
     Then user verifies the user language "<language>"is same as database
 
-
     Examples:
       | username            | password            |language|
       | validadmin_username | validadmin_password |English|
       | validadmin_username | validadmin_password |Turkish|
 
+  @usersettings
   Scenario Outline:TC_0008_0003_User Info settings firstname textbox must be editable
-
+  user edits the firstname and verifies changes over api and database
     And user enters a valid username "<username>"
     And user enters a valid password "<password>"
-    And user click sign in button
+    And user clicks on sign in button
     And user clicks on User Account Menu
     When user selects the User Info option
     Then user verifies the page displays text "User settings for [" text is displayed"
@@ -84,11 +87,12 @@ Feature: User tests the user info segment
       | validadmin_username | validadmin_password | jackson      | Settings saved! |
 
 
+  @usersettings
   Scenario Outline:TC_0008_0004_User Info settings lastname textbox must be editable
-
+  user edits the lastname and verifies changes over api and database
     And user enters a valid username "<username>"
     And user enters a valid password "<password>"
-    And user click sign in button
+    And user clicks on sign in button
     And user clicks on User Account Menu
     When user selects the User Info option
     Then user verifies the page displays text "User settings for [" text is displayed"
@@ -114,12 +118,13 @@ Feature: User tests the user info segment
       | username            | password            | newlastname | successmessage  |
       | validadmin_username | validadmin_password | jackson      | Settings saved! |
 
-
+  @usersettings
   Scenario Outline:TC_0008_0005_User Info settings email textbox must be editable
+    user edits the email and verifies changes over api and database
 
     And user enters a valid username "<username>"
     And user enters a valid password "<password>"
-    And user click sign in button
+    And user clicks on sign in button
     And user clicks on User Account Menu
     When user selects the User Info option
     Then user verifies the page displays text "User settings for [" text is displayed"

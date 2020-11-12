@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="7.282">
-<testcase classname="Login Page" name="US_004 - TC_001 User is on the login page" time="7.11">
-=======
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="7.272">
-<testcase classname="Login Page" name="US_004 - TC_001 User is on the login page" time="7.092">
->>>>>>> main
-<system-out><![CDATA[Given User on the GMIBank Homepage..........................................passed
-When user clicks loginDrpDwn................................................passed
-Then user clicks signinBtn..................................................passed
-And user enters valid username..............................................passed
-And user enters valid password..............................................passed
-And user click sign in button...............................................passed
-Then verify username on the login page......................................passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="8.053">
+<testcase classname="Login Page" name="user logs into GMI Home Page" time="7.793">
+<system-out><![CDATA[Given user is on the GMIBank HomePage.......................................passed
+When user clicks on login Drop down menu....................................passed
+Then user clicks on Sign in option..........................................passed
+And user enters a valid username "validadmin_username"......................passed
+When user enters a valid password "validadmin_password".....................passed
+And user clicks on sign in button...........................................passed
+Then user verifies successful login.........................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
