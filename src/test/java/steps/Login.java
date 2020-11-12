@@ -4,7 +4,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
-import org.testng.asserts.SoftAssert;
 import pages.LoginPage;
 
 import utilities.ConfigReader;
@@ -14,38 +13,92 @@ public class Login {
 
    LoginPage loginPage = new LoginPage();
 
-    @Given("User on the GMIBank Homepage")
-    public void user_on_the_gmi_bank_homepage() {
+    @Given("User is on the GMIBank HomePage")
+    public void user_is_on_the_gmi_bank_home_page() {
         Driver.getDriver().get(ConfigReader.getProperty("gmibank_url"));
     }
-    @When("user clicks loginDrpDwn")
-    public void user_clicks_login_drp_dwn() {
+
+    @When("user clicks on login Drop down menu")
+    public void user_clicks_on_login_drop_down_menu() {
         loginPage.loginDrpDwn.click();
     }
-    @When("user clicks signinBtn")
-    public void user_clicks_signin_btn() {
-        loginPage.signinBtn.click();
+
+    @Then("user clicks on Sign in option")
+    public void user_clicks_on_sign_in_option() {
+        loginPage.signinOptionDrpDwn.click();
     }
-    @Then("user enters valid username")
-    public void user_enters_valid_username() {
-        loginPage.userName.sendKeys(ConfigReader.getProperty("validuser_username"));
+
+    @Then("user enters a valid username {string}")
+    public void user_enters_a_valid_username(String username) {
+        String user_username="";
+
+        switch (username) {
+            case "validuser_username":
+                user_username= ConfigReader.getProperty("validuser_username");
+                break;
+            case "validadmin_username":
+                user_username= ConfigReader.getProperty("validadmin_username");
+                break;
+            case "validmanager_username":
+                user_username= ConfigReader.getProperty("validmanager_username");
+                break;
+            case "validemployee_username":
+                user_username= ConfigReader.getProperty("validemployee_username");
+                break;
+            case "validcustomer_username":
+                user_username= ConfigReader.getProperty("validcustomer_username");
+                break;
+            case "validjoker_username":
+                user_username= ConfigReader.getProperty("validjoker_username");
+                break;
+        }
+        System.out.println(user_username);
+                loginPage.userName.sendKeys(user_username);
     }
-    @Then("user enters valid password")
-    public void user_enters_valid_password() {
-        loginPage.password.sendKeys(ConfigReader.getProperty("validuser_password"));
+
+    @When("user enters a valid password {string}")
+    public void user_enters_a_valid_password(String password) {
+
+        String userpassword="";
+        switch (password) {
+            case "validuser_password":userpassword= ConfigReader.getProperty("validuser_password");
+                break;
+            case "validadmin_password":userpassword= ConfigReader.getProperty("validadmin_password");
+                break;
+            case "validmanager_password":userpassword= ConfigReader.getProperty("validmanager_password");
+                break;
+            case "validemployee_password":userpassword= ConfigReader.getProperty("validemployee_password");
+                break;
+            case "validcustomer_password":userpassword= ConfigReader.getProperty("validcustomer_password");
+                break;
+            case "validjoker_password":userpassword= ConfigReader.getProperty("validjoker_password");
+                break;
+        }
+        System.out.println(userpassword);
+        loginPage.password.sendKeys(userpassword);
     }
-    @Then("user click sign in button")
-    public void user_click_sign_in_button() {
-        loginPage.signInButton.click();
+
+    @When("user clicks on sign in button")
+    public void user_clicks_on_sign_in_button() {
+        loginPage.signinSubmitButton.click();
     }
-    @Then("verify username on the login page")
-    public void verify_username_on_the_login_page() {
+
+    @Then("user verifies successful login")
+    public void user_verifies_successful_login() {
         WebElement element = loginPage.accountMenu;
         System.out.println(element.getText());
         Driver.verifyElementDisplayed(element);
+    }
 
-
-
+    @Then("user is logs in with valid credentials {string} {string}")
+    public void userIsLogsInWithValidCredentials(String username, String password) {
+        user_is_on_the_gmi_bank_home_page();
+        user_clicks_on_login_drop_down_menu();
+        user_clicks_on_sign_in_option();
+        user_enters_a_valid_username(username);
+        user_enters_a_valid_password(password);
+        user_clicks_on_sign_in_button();
+        user_verifies_successful_login();
     }
 
 

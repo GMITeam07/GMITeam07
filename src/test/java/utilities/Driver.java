@@ -203,6 +203,7 @@ public class Driver {
     public static void verifyElementDisplayed(WebElement element) {
         try {
             assertTrue("Element not visible: " + element, element.isDisplayed());
+
         } catch (NoSuchElementException e) {
             Assert.fail("Element not found: " + element);
         }
