@@ -13,7 +13,7 @@ public class LoginSteps {
 
    LoginPage loginPage = new LoginPage();
 
-    @Given("User is on the GMIBank HomePage")
+    @Given("user is on the GMIBank HomePage")
     public void user_is_on_the_gmi_bank_home_page() {
         Driver.getDriver().get(ConfigReader.getProperty("gmibank_url"));
     }

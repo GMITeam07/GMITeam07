@@ -73,6 +73,7 @@ public class Driver {
             driver = null;
         }
     }
+
     public static void wait(int secs) {
         try {
             Thread.sleep(1000 * secs);
@@ -94,6 +95,7 @@ public class Driver {
         }
         Driver.getDriver().switchTo().window(origin);
     }
+
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
@@ -112,6 +114,7 @@ public class Driver {
         }
         return elemTexts;
     }
+
     public static List<String> getElementsText(By locator) {
         List<WebElement> elems = Driver.getDriver().findElements(locator);
         List<String> elemTexts = new ArrayList<>();
@@ -120,14 +123,17 @@ public class Driver {
         }
         return elemTexts;
     }
+
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
     public static WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
     public static Boolean waitForInVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
