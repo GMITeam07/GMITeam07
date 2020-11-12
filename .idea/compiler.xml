@@ -6,9 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="GMIBank" />
         <module name="GMITeam07" />
         <module name="GMIbankCucumber" />
+=======
+<<<<<<< HEAD
+        <module name="GMIBank" />
+        <module name="GMITeam07" />
+        <module name="GMIbankCucumber" />
+=======
+        <module name="GMIbankCucumber" />
+        <module name="GMITeam07" />
+        <module name="GMIBank" />
+>>>>>>> main
+>>>>>>> cde313596875ec144189d7dd806e12db46ced9d3
       </profile>
     </annotationProcessing>
   </component>

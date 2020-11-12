@@ -1,10 +1,9 @@
 @loginpage
 Feature: Login Page
-  Background:
+  Background:User is on the GMI login page
     Given User on the GMIBank Homepage
     When user clicks loginDrpDwn
     Then user clicks signinBtn
-
 
   @signin
   Scenario:US_004 - TC_001 User is on the login page
@@ -20,7 +19,6 @@ Feature: Login Page
     And There should be an option to cancel login
     And user clicks on the cancel button
     Then user verifies user is on the homepage
-
 
   @invalid_username
   Scenario:US_005 - TC_001 User is on the login page
