@@ -1,45 +1,17 @@
 @loginpage
 Feature: Login Page
-  Background:User is on the GMI login page
-    Given User on the GMIBank Homepage
-    When user clicks loginDrpDwn
-    Then user clicks signinBtn
 
-  @signin
-  Scenario:US_004 - TC_001 User is on the login page
-    And user enters valid username
-    And user enters valid password
-    And user click sign in button
-    Then verify username on the login page
+  Scenario Outline: user logs into GMI Home Page
+    Given user is on the GMIBank HomePage
+    When user clicks on login Drop down menu
+    Then user clicks on Sign in option
+    And user enters a valid username "<username>"
+    When user enters a valid password "<password>"
+    And user clicks on sign in button
+    Then user verifies successful login
+    Then user logs in with valid credentials "<username>" "<password>"
 
-  @cancel
-  Scenario:US_004 - TC_002 User is on the login page
-    And user enters valid username
-    And user enters valid password
-    And There should be an option to cancel login
-    And user clicks on the cancel button
-    Then user verifies user is on the homepage
+    Examples:
+      | username            |password|
+      |validadmin_username|validadmin_password|
 
-  @invalid_username
-  Scenario:US_005 - TC_001 User is on the login page
-    And user enters invalid username
-    And user enters valid password
-    And user clicks sign in button
-    And user should get Failed to sign in message
-    Then user verifies failed to signin message is displayed
-
-   @invalid_password
-  Scenario:US_005 - TC_002 User is on the login page
-    And user enters valid username
-    And user enters invalid password
-    And user clicks sign in button
-    And user should get Failed to sign in message
-    Then user verifies failed to signin message is displayed
-
-     @invalid_userandpassword
-  Scenario:US_005 - TC_003 User is on the login page
-    And user enters invalid username
-    And user enters invalid password
-    And user clicks sign in button
-    And user should get Failed to sign in message
-    Then user verifies failed to signin message is displayed

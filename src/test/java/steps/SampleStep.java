@@ -5,15 +5,12 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.Account;
-import pojos.Accounts;
+import pojos.User;
 import pojos.UserInfo;
-import specs.Specs;
 import utilities.ApiUtils;
-import utilities.ConfigReader;
-import utilities.DBUtils;
 
+import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
@@ -61,28 +58,16 @@ public class SampleStep {
 
     @Test
     public void test06(){
-//        DBUtils.createConnection();
-//
-//        List list=(DBUtils.getQueryResultList("SELECT * FROM public.tp-customers"));
-//        list.stream().map(t->t.toString()).forEach(System.out::println);
-
-        System.out.println("-------lets see the difference of DataBase and API---------------");
-
-//        Response response=ApiUtils.getRequest("admin","/api/tp-customers");
-        Response response=given().
-                auth().
-                preemptive().
-                basic("team07admin","S123456s?"  ).
-                accept(ContentType.JSON).
-                when().get("https://www.gmibank.com/api/tp-accounts/3964");
-//        response.prettyPrint();
-        List<Account> accountList=response.as(List.class);
-        JsonPath jsonPath=response.jsonPath();
-
-
-
+        // get a single user as a user and print the "user" and the "firstname"
+        User user=ApiUtils.getUserByLoginName("betteam08");
+        System.out.println(user);
+        System.out.println(user.getFirstName());
 
     }
 
+    @Test
+    public void test07() throws IOException {
+        System.out.println(ApiUtils.getCustomerById(2554));
+    }
 
 }
