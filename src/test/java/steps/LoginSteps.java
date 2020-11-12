@@ -9,7 +9,7 @@ import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class Login {
+public class LoginSteps {
 
    LoginPage loginPage = new LoginPage();
 
