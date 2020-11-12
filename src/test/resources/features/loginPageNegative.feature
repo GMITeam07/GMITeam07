@@ -5,8 +5,8 @@ Feature: Login page should not be accessible with invalid credentials
     Given User is on the GMIBank HomePage
     When user clicks on login Drop down menu
     Then user clicks on Sign in option
-    And user enters a valid username "<username>"
-    When user enters a valid password "<password>"
+    And user enters a username "<username>"
+    When user enters a password "<password>"
     And user clicks on sign in button
     And user should get Failed to sign in message
     Then user verifies failed to signin message is displayed

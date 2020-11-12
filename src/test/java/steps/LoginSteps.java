@@ -102,10 +102,26 @@ public class LoginSteps {
         user_verifies_successful_login();
     }
 
+    @And("user enters valid username")
+    public void userEntersValidUsername() {
+    }
 
+    @And("user enters valid password")
+    public void userEntersValidPassword() {
+    }
 
+    @And("There should be an option to cancel login")
+    public void thereShouldBeAnOptionToCancelLogin() {
+    }
+
+    @And("user clicks on the cancel button")
+    public void userClicksOnTheCancelButton() {
+    }
+
+    @Then("user verifies user is on the homepage")
+    public void userVerifiesUserIsOnTheHomepage() {
+    }
 }
-
 
 
 
