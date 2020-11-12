@@ -5,6 +5,10 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 import utilities.Driver;
 import utilities.TestBase;
 
