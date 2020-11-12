@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class UserInfoSegmentPositiveTest {
+public class UserInfoSettingsPositiveTest {
 
     @Given("user enters a valid username {string}")
     public void user_enters_a_valid_username(String string) {
@@ -231,8 +231,8 @@ public class UserInfoSegmentPositiveTest {
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("user enters a new email {string}")
-    public void user_enters_a_new_email(String string) {
+    @Then("user enters a new invalid email {string}")
+    public void user_enters_a_new_invalid_email(String string) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
@@ -262,5 +262,22 @@ public class UserInfoSegmentPositiveTest {
     }
 
 
+    @Then("user verifies an error message is under email textbox displayed contains {string}")
+    public void userVerifiesAnErrorMessageIsUnderEmailTextboxDisplayedContains(String arg0) {
 
+    }
+
+    @Then("user verifies an error message under email textbox is displayed contains {string}")
+    public void userVerifiesAnErrorMessageUnderEmailTextboxIsDisplayedContains(String arg0) {
+
+    }
+
+    @Then("user verifies an error message under firstname textbox is displayed contains {string}")
+    public void userVerifiesAnErrorMessageUnderFirstnameTextboxIsDisplayedContains(String arg0) {
+
+    }
+
+    @Then("user verifies an error message under lastname textbox is displayed contains {string}")
+    public void userVerifiesAnErrorMessageUnderLastnameTextboxIsDisplayedContains(String arg0) {
+    }
 }

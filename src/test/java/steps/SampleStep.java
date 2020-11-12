@@ -18,9 +18,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 public class SampleStep {
-    
-    //trial from git remote main
-    
+    //added a trial sentence for git
     @Test
     public void test01(){
         Response response=ApiUtils.
@@ -80,6 +78,7 @@ public class SampleStep {
 //        response.prettyPrint();
         List<Account> accountList=response.as(List.class);
         JsonPath jsonPath=response.jsonPath();
+
 
 
 
