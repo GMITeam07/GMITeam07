@@ -90,8 +90,8 @@ public class LoginSteps {
         Driver.verifyElementDisplayed(element);
     }
 
-    @Then("user is logs in with valid credentials {string} {string}")
-    public void userIsLogsInWithValidCredentials(String username, String password) {
+    @Then("user logs in with valid credentials {string} {string}")
+    public void userLogsInWithValidCredentials(String username, String password) {
         user_is_on_the_gmi_bank_home_page();
         user_clicks_on_login_drop_down_menu();
         user_clicks_on_sign_in_option();

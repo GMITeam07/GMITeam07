@@ -1,22 +1,11 @@
 package steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class UserInfoSettingsPositiveTest {
-
-    @Given("user enters a valid username {string}")
-    public void user_enters_a_valid_username(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Given("user enters a valid password {string}")
-    public void user_enters_a_valid_password(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
 
     @Given("user clicks on User Account Menu")
     public void user_clicks_on_user_account_menu() {
@@ -119,13 +108,7 @@ public class UserInfoSettingsPositiveTest {
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("user")
-    public void user() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-     @Then("user verifies the user language \"English\"is same as api")
+    @Then("user verifies the user language \"English\"is same as api")
     public void user_verifies_the_user_language_english_is_same_as_api() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
@@ -137,13 +120,13 @@ public class UserInfoSettingsPositiveTest {
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("user verifies the user language \"Turkish\"is same as api")
-    public void user_verifies_the_user_language_turkish_is_same_as_api() {
+    @Then("user verifies the user language {string} is same as api")
+    public void user_verifies_the_user_language_is_same_as_api(String language) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("user verifies the user language \"Turkish\"is same as database")
+    @Then("user verifies the user language {string} is same as database")
     public void user_verifies_the_user_language_turkish_is_same_as_database() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
@@ -279,5 +262,15 @@ public class UserInfoSettingsPositiveTest {
 
     @Then("user verifies an error message under lastname textbox is displayed contains {string}")
     public void userVerifiesAnErrorMessageUnderLastnameTextboxIsDisplayedContains(String arg0) {
+    }
+
+    @Then("user enters a new valid email {string}")
+    public void userEntersANewValidEmail(String arg0) {
+
+    }
+
+    @And("User logs into user settings page with valid {string} and {string}")
+    public void userLogsIntoUserSettingsPageWithValidAnd(String arg0, String arg1) {
+
     }
 }
