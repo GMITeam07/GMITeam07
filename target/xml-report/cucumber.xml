@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="20.743">
 <testcase classname="Login Page" name="US_004 - TC_001 User is on the login page" time="20.015">
 <system-out><![CDATA[Given User on the GMIBank Homepage..........................................passed
@@ -11,3 +12,6 @@ Then verify username on the login page......................................pass
 ]]></system-out>
 </testcase>
 </testsuite>
+=======
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.606"/>
+>>>>>>> main
