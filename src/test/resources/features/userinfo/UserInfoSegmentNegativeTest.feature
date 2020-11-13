@@ -1,4 +1,4 @@
-@@NegativeTest
+@NegativeTest
 Feature: User tests the user info segment
 
   Scenario Outline:TC_0008_0006_User tests the user info settings email textbox
