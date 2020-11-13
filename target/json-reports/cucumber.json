@@ -1,0 +1,156 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2020-11-13T00:04:23.235Z",
+        "before": [
+          {
+            "result": {
+              "duration": 107000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "user logs into GMI Home Page",
+        "description": "",
+        "id": "login-page;user-logs-into-gmi-home-page;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1562000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 7179000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is on the GMIBank HomePage",
+            "match": {
+              "location": "steps.LoginSteps.user_is_on_the_gmi_bank_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 77000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user clicks on login Drop down menu",
+            "match": {
+              "location": "steps.LoginSteps.user_clicks_on_login_drop_down_menu()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 98000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user clicks on Sign in option",
+            "match": {
+              "location": "steps.LoginSteps.user_clicks_on_sign_in_option()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 86000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user enters a valid username \"validadmin_username\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"validadmin_username\"",
+                  "offset": 29
+                }
+              ],
+              "location": "steps.LoginSteps.user_enters_a_valid_username(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 98000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user enters a valid password \"validadmin_password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"validadmin_password\"",
+                  "offset": 29
+                }
+              ],
+              "location": "steps.LoginSteps.user_enters_a_valid_password(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 81000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user clicks on sign in button",
+            "match": {
+              "location": "steps.LoginSteps.user_clicks_on_sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 109000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user verifies successful login",
+            "match": {
+              "location": "steps.LoginSteps.user_verifies_successful_login()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@loginpage"
+          }
+        ]
+      }
+    ],
+    "name": "Login Page",
+    "description": "",
+    "id": "login-page",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/loginPage.feature",
+    "tags": [
+      {
+        "name": "@loginpage",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

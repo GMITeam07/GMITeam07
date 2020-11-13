@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="9.778">
+<testcase classname="Login Page" name="user logs into GMI Home Page" time="9.468">
+<system-out><![CDATA[Given user is on the GMIBank HomePage.......................................passed
+When user clicks on login Drop down menu....................................passed
+Then user clicks on Sign in option..........................................passed
+And user enters a valid username "validadmin_username"......................passed
+When user enters a valid password "validadmin_password".....................passed
+And user clicks on sign in button...........................................passed
+Then user verifies successful login.........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
