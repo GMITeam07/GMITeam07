@@ -7,7 +7,6 @@ import utilities.Driver;
 
 public class LoginPage {
 
-
     public  LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -16,7 +15,7 @@ public class LoginPage {
     public WebElement loginDrpDwn;
 
     @FindBy(id = "login-item")
-    public WebElement signinBtn;
+    public WebElement signinOptionDrpDwn;
 
     @FindBy(id = "username")
     public WebElement userName;
@@ -24,7 +23,8 @@ public class LoginPage {
     @FindBy(id = "password")
     public WebElement password;
 
-    public WebElement signInButton;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signinSubmitButton;
 
     @FindBy(xpath = "//button[@tabindex='1']")
     public WebElement cancelButton;
@@ -39,27 +39,13 @@ public class LoginPage {
     public WebElement invalidFeedbackUsername;
 
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
-    public WebElement invalidFeedbackPasswor;
+    public WebElement invalidFeedbackPassword;
 
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement failedSigninMessage;
 
     @FindBy (id = "account-menu")
     public WebElement accountMenu;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
