@@ -42,7 +42,7 @@ public class LoginPage {
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
     public WebElement invalidFeedbackPassword;
 
-    @FindBy(xpath = "//div[@role='alert']")
+    @FindBy(xpath = "//div[@class='alert alert-danger fade show']")
     public WebElement failedSigninMessage;
 
     @FindBy (id = "account-menu")

@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,7 +10,7 @@ import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class Login {
+public class LoginSteps {
 
    LoginPage loginPage = new LoginPage();
 
@@ -101,25 +102,26 @@ public class Login {
         user_verifies_successful_login();
     }
 
+    @And("user enters valid username")
+    public void userEntersValidUsername() {
+    }
 
+    @And("user enters valid password")
+    public void userEntersValidPassword() {
+    }
 
+    @And("There should be an option to cancel login")
+    public void thereShouldBeAnOptionToCancelLogin() {
+    }
 
+    @And("user clicks on the cancel button")
+    public void userClicksOnTheCancelButton() {
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
-
+    @Then("user verifies user is on the homepage")
+    public void userVerifiesUserIsOnTheHomepage() {
+    }
+}
 
 
 
