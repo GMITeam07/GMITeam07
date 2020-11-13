@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Account {
-
     @SerializedName("id")
     @Expose
     private int id;
@@ -15,7 +14,7 @@ public class Account {
 
     @SerializedName("balance")
     @Expose
-    private int balance;
+    private double balance;
 
     @SerializedName("accountType")
     @Expose
@@ -35,11 +34,11 @@ public class Account {
 
     @SerializedName("employee")
     @Expose
-    private String employee;
+    private String employee = null;
 
     @SerializedName("accountLogs")
     @Expose
-    private String accountLogs;
+    private String accountLogs = null;
 
     public Account() {
     }
@@ -74,11 +73,11 @@ public class Account {
         this.description = description;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
@@ -133,9 +132,9 @@ public class Account {
     @Override
     public String toString() {
         return "{\n" +
-                "id: " + id +",\n" +
+                "id: " + id + ",\n" +
                 "description: " + description + ",\n" +
-                "balance: " + balance +",\n" +
+                "balance: " + balance + ",\n" +
                 "accountType: " + accountType + ",\n" +
                 "accountStatusType: " + accountStatusType + ",\n" +
                 "createDate: " + createDate + ",\n" +
