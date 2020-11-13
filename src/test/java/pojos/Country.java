@@ -17,12 +17,12 @@ public class Country {
 
     @SerializedName("states")
     @Expose
-    private List<String> states;
+    private String states;
 
     public Country() {
     }
 
-    public Country(int id, String name, List<String> states) {
+    public Country(int id, String name, String states) {
         this.id = id;
         this.name = name;
         this.states = states;
@@ -44,28 +44,20 @@ public class Country {
         this.name = name;
     }
 
-    public List<String> getStates() {
+    public String getStates() {
         return states;
     }
 
-    public void setStates(List<String> states) {
+    public void setStates(String states) {
         this.states = states;
     }
 
-    public void statesToString(){
-        String statesToString="";
-        getStates().stream().map(t->t+",\n").collect(Collectors.joining());
-        // -----to remove the last comma
-        statesToString.substring(0,statesToString.length()-1);
-    }
-//trial for git
-    //trial 2
     @Override
     public String toString() {
-        return "{\n" +
+        return "\n{\n" +
                 "  id: " + getId() +",\n"+
                 "  name: " + getName() + ",\n"+
-                "  states: " + getStates() +",\n"+
-                "}";
+                "  states: " + getStates()+"\n"+
+                "}\n";
     }
 }
