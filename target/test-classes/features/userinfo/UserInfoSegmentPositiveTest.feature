@@ -8,6 +8,7 @@ Feature: User tests the user info segment
 
   Scenario Outline:TC_0008_0001_User tests the user info settings page WebElements
   user verifies the firstname, lastname, email and language options available
+
     And user enters a valid username "<username>"
     And user enters a valid password "<password>"
     And user clicks on sign in button
