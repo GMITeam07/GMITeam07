@@ -3,17 +3,50 @@
     "line": 2,
     "elements": [
       {
+<<<<<<< HEAD
         "start_timestamp": "2020-11-12T20:10:31.325Z",
+=======
+        "start_timestamp": "2020-11-13T00:04:23.235Z",
+        "before": [
+          {
+            "result": {
+              "duration": 107000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.Hooks.setUp()"
+            }
+          }
+        ],
+>>>>>>> main
         "line": 16,
         "name": "user logs into GMI Home Page",
         "description": "",
         "id": "login-page;user-logs-into-gmi-home-page;;2",
+<<<<<<< HEAD
+=======
+        "after": [
+          {
+            "result": {
+              "duration": 1562000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+>>>>>>> main
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
+<<<<<<< HEAD
               "duration": 7189000000,
+=======
+              "duration": 7179000000,
+>>>>>>> main
               "status": "passed"
             },
             "line": 5,
@@ -25,7 +58,11 @@
           },
           {
             "result": {
+<<<<<<< HEAD
               "duration": 73000000,
+=======
+              "duration": 77000000,
+>>>>>>> main
               "status": "passed"
             },
             "line": 6,
@@ -37,7 +74,11 @@
           },
           {
             "result": {
+<<<<<<< HEAD
               "duration": 102000000,
+=======
+              "duration": 98000000,
+>>>>>>> main
               "status": "passed"
             },
             "line": 7,
@@ -49,7 +90,11 @@
           },
           {
             "result": {
+<<<<<<< HEAD
               "duration": 82000000,
+=======
+              "duration": 86000000,
+>>>>>>> main
               "status": "passed"
             },
             "line": 8,
@@ -67,7 +112,11 @@
           },
           {
             "result": {
+<<<<<<< HEAD
               "duration": 90000000,
+=======
+              "duration": 98000000,
+>>>>>>> main
               "status": "passed"
             },
             "line": 9,
@@ -85,7 +134,11 @@
           },
           {
             "result": {
+<<<<<<< HEAD
               "duration": 67000000,
+=======
+              "duration": 81000000,
+>>>>>>> main
               "status": "passed"
             },
             "line": 10,
@@ -97,7 +150,11 @@
           },
           {
             "result": {
+<<<<<<< HEAD
               "duration": 114000000,
+=======
+              "duration": 109000000,
+>>>>>>> main
               "status": "passed"
             },
             "line": 11,

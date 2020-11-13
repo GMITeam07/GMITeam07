@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 
 public class UserInfoSettingsPositiveTest {
 
+<<<<<<< HEAD
 //    @Given("user enters a valid username {string}")
 //    public void user_enters_a_valid_username(String string) {
 //        // Write code here that turns the phrase above into concrete actions
@@ -19,6 +20,9 @@ public class UserInfoSettingsPositiveTest {
 //    }
 
     @Given("user clicks on User Account Menu")
+=======
+      @Given("user clicks on User Account Menu")
+>>>>>>> main
     public void user_clicks_on_user_account_menu() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
