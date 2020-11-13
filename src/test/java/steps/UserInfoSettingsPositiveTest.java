@@ -19,6 +19,7 @@ public class UserInfoSettingsPositiveTest {
     private User userDB=new User();
     private User userNew=new User();
 
+
     LoginPage loginPage=new LoginPage();
     UserSettingsPage userSettingsPage =new UserSettingsPage();
     HomePage homePage=new HomePage();
