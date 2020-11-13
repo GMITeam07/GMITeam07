@@ -16,11 +16,11 @@ Feature: User tests the user info segment
     Examples:
       | username               | password               |
       | validadmin_username    | validadmin_password    |
-      | validuser_username     | validuser_password     |
-      | validmanager_username  | validmanager_password  |
-      | validemployee_username | validemployee_password |
-      | validcustomer_username | validcustomer_password |
-      | validjoker_username    | validjoker_password    |
+#      | validuser_username     | validuser_password     |
+#      | validmanager_username  | validmanager_password  |
+#      | validemployee_username | validemployee_password |
+#      | validcustomer_username | validcustomer_password |
+#      | validjoker_username    | validjoker_password    |
 
   Scenario Outline:TC_0008_0002_User Info settings language drop down
   must have 2, "English" and "Türkçe" editable options
@@ -48,17 +48,17 @@ Feature: User tests the user info segment
     Examples:
       | username               | password               |language|
       | validadmin_username    | validadmin_password    |English |
-      | validadmin_username    | validadmin_password    |Türkçe|
-      | validuser_username     | validuser_password     |English |
-      | validuser_username     | validuser_password     |Türkçe |
-      | validmanager_username  | validmanager_password  |English |
-      | validmanager_username  | validmanager_password  |Türkçe |
-      | validemployee_username | validemployee_password |English |
-      | validemployee_username | validemployee_password |Türkçe |
-      | validcustomer_username | validcustomer_password |English |
-      | validcustomer_username | validcustomer_password |Türkçe |
-      | validjoker_username    | validjoker_password    |English |
-      | validjoker_username    | validjoker_password    |Türkçe |
+#      | validadmin_username    | validadmin_password    |Türkçe|
+#      | validuser_username     | validuser_password     |English |
+#      | validuser_username     | validuser_password     |Türkçe |
+#      | validmanager_username  | validmanager_password  |English |
+#      | validmanager_username  | validmanager_password  |Türkçe |
+#      | validemployee_username | validemployee_password |English |
+#      | validemployee_username | validemployee_password |Türkçe |
+#      | validcustomer_username | validcustomer_password |English |
+#      | validcustomer_username | validcustomer_password |Türkçe |
+#      | validjoker_username    | validjoker_password    |English |
+#      | validjoker_username    | validjoker_password    |Türkçe |
 
   @usersettings
   Scenario Outline:TC_0008_0003_User Info settings firstname textbox must be editable
@@ -122,7 +122,7 @@ Feature: User tests the user info segment
 
   @usersettings
   Scenario Outline:TC_0008_0005_User Info settings email textbox must be editable
-    user edits the email and verifies changes over api and database
+  user edits the email and verifies changes over api and database
 
     And user logs in with valid credentials "<username>" "<password>"
     And user clicks on User Account Menu

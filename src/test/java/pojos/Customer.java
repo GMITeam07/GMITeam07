@@ -3,8 +3,9 @@ package pojos;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Customer {
+import java.util.List;
 
+public class Customer {
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -52,37 +53,31 @@ public class Customer {
     private String state;
     @SerializedName("user")
     @Expose
-    private User user;
-
+    private UserForCustomerClass user;
     @SerializedName("accounts")
     @Expose
-    private Object accounts;
+    private List<Account> accounts = null;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
     public Customer() {
     }
 
-    public Customer(Integer id,
-                    String firstName,
-                    String lastName,
-                    String middleInitial,
-                    String email,
-                    String mobilePhoneNumber,
-                    String phoneNumber,
-                    String zipCode,
-                    String address,
-                    String city,
-                    String ssn,
-                    String createDate,
-                    Boolean zelleEnrolled,
-                    Object country,
-                    String state,
-                    User user,
-                    Object accounts) {
-        super();
+    public Customer (Integer id, String firstName,
+                     String lastName,
+                     String middleInitial,
+                     String email,
+                     String mobilePhoneNumber,
+                     String phoneNumber,
+                     String zipCode,
+                     String address,
+                     String city,
+                     String ssn,
+                     String createDate,
+                     Boolean zelleEnrolled,
+                     Country country,
+                     String state,
+                     UserForCustomerClass user,
+                     List<Account> accounts) {
+
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -222,42 +217,44 @@ public class Customer {
         this.state = state;
     }
 
-    public User getUser() {
+    public UserForCustomerClass getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserForCustomerClass user) {
         this.user = user;
     }
 
-    public Object getAccounts() {
+    public List<Account> getAccounts() {
         return accounts;
     }
 
-    public void setAccounts(Object accounts) {
+    public void setAccounts(List<Account> accounts) {
         this.accounts = accounts;
     }
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder=new StringBuilder();
-        stringBuilder.append("id"+ id).
-                append("firstName"+ firstName).
-                append("lastName"+ lastName).
-                append("middleInitial"+ middleInitial).
-                append("email"+ email).
-                append("mobilePhoneNumber"+ mobilePhoneNumber).
-                append("phoneNumber"+ phoneNumber).
-                append("zipCode"+ zipCode).
-                append("address"+ address).
-                append("city"+ city).
-                append("ssn"+ ssn).
-                append("createDate"+ createDate).
-                append("zelleEnrolled"+ zelleEnrolled).
-                append("country"+ country).
-                append("state"+ state).
-                append("user"+ user).
-                append("accounts"+ accounts).toString();
+        StringBuilder stringBuilder=new StringBuilder("");
+        stringBuilder.append("{\n").
+                append("id: "+ id+"\n").
+                append("firstName: "+ firstName+"\n").
+                append("lastName: "+ lastName+"\n").
+                append("middleInitial: "+ middleInitial+"\n").
+                append("email: "+ email+"\n").
+                append("mobilePhoneNumber: "+ mobilePhoneNumber+"\n").
+                append("phoneNumber: "+ phoneNumber+"\n").
+                append("zipCode: "+ zipCode+"\n").
+                append("address: "+ address+"\n").
+                append("city: "+ city+"\n").
+                append("ssn: "+ ssn+"\n").
+                append("createDate: "+ createDate+"\n").
+                append("zelleEnrolled: "+ zelleEnrolled+"\n").
+                append("country: "+ country+"\n").
+                append("state: "+ state+"\n").
+                append("user: "+ user+"\n").
+                append("accounts: "+ accounts+"\n").
+                append("\n}").toString();
         return stringBuilder.toString();
     }
 

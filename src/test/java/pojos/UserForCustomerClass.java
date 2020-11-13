@@ -3,10 +3,7 @@ package pojos;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-public class User {
+public class UserForCustomerClass {
 
     @SerializedName("id")
     @Expose
@@ -32,32 +29,23 @@ public class User {
     @SerializedName("langKey")
     @Expose
     private String langKey;
-    @SerializedName("createdBy")
-    @Expose
-    private String createdBy;
-    @SerializedName("createdDate")
-    @Expose
-    private String createdDate;
-    @SerializedName("lastModifiedBy")
-    @Expose
-    private String lastModifiedBy;
-    @SerializedName("lastModifiedDate")
-    @Expose
-    private String lastModifiedDate;
-    @SerializedName("authorities")
-    @Expose
-    private List<String> authorities = null;
 
-    public User() {
+    @SerializedName("resetDate")
+    @Expose
+    private String resetDate;
+
+    public UserForCustomerClass() {
     }
 
-    public User(Integer id, String login,
-                String firstName, String lastName,
-                String email, String imageUrl,
-                Boolean activated, String langKey,
-                String createdBy, String createdDate,
-                String lastModifiedBy, String lastModifiedDate,
-                List<String> authorities) {
+    public UserForCustomerClass(Integer id,
+                                String login,
+                                String firstName,
+                                String lastName,
+                                String email,
+                                Boolean activated,
+                                String langKey,
+                                String imageUrl,
+                                String resetDate) {
 //        super();
         this.id = id;
         this.login = login;
@@ -67,11 +55,7 @@ public class User {
         this.imageUrl = imageUrl;
         this.activated = activated;
         this.langKey = langKey;
-        this.createdBy = createdBy;
-        this.createdDate = createdDate;
-        this.lastModifiedBy = lastModifiedBy;
-        this.lastModifiedDate = lastModifiedDate;
-        this.authorities = authorities;
+        this.resetDate = resetDate;
     }
 
     public Integer getId() {
@@ -138,44 +122,12 @@ public class User {
         this.langKey = langKey;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
+    public String getResetDate() {
+        return resetDate;
     }
 
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(String createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getLastModifiedBy() {
-        return lastModifiedBy;
-    }
-
-    public void setLastModifiedBy(String lastModifiedBy) {
-        this.lastModifiedBy = lastModifiedBy;
-    }
-
-    public String getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    public void setLastModifiedDate(String lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
-
-    public List<String> getAuthorities() {
-        return authorities;
-    }
-
-    public void setAuthorities(List<String> authorities) {
-        this.authorities = authorities;
+    public void setResetDate(String resetDate) {
+        this.resetDate = resetDate;
     }
 
     @Override
@@ -188,14 +140,10 @@ public class User {
                 append("\tfirstName: "+ firstName+"\n").
                 append("\tlastName: "+ lastName+"\n").
                 append("\temail: "+ email+"\n").
-                append("\timageUrl: "+ imageUrl+"\n").
                 append("\tactivated: "+ activated+"\n").
                 append("\tlangKey: "+ langKey+"\n").
-                append("\tcreatedBy: "+ createdBy+"\n").
-                append("\tcreatedDate: "+ createdDate+"\n").
-                append("\tlastModifiedBy: "+ lastModifiedBy+"\n").
-                append("\tlastModifiedDate: "+ lastModifiedDate+"\n").
-                append("\tauthorities: "+ authorities).
+                append("\timageUrl: "+ imageUrl+"\n").
+                append("\tresetDate: "+ resetDate +"\n").
                 append("\n}\n").
                 toString();
         return stringBuilder.toString();
