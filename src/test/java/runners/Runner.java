@@ -14,9 +14,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "steps",
 
-        tags = "@signin",
+        tags = "@loginpage",
 
-        dryRun = true
+        dryRun = false
 )
 
 
