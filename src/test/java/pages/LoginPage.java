@@ -48,7 +48,13 @@ public class LoginPage {
     public WebElement accountMenu;
 
 
+<<<<<<< HEAD
     }
+=======
+
+
+}
+>>>>>>> main
 
 
 

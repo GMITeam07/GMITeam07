@@ -1,6 +1,7 @@
-@@NegativeTest
+@NegativeTest
 Feature: User tests the user info segment
 
+<<<<<<< HEAD
   Background: User is on the GMIBank Home Page
     Given user is on the GMIBank HomePage
     Then user clicks on login Drop down menu
@@ -12,6 +13,12 @@ Feature: User tests the user info segment
     And user enters a valid username "<username>"
     And user enters a valid password "<password>"
     And user clicks on sign in button
+=======
+  Scenario Outline:TC_0008_0006_User tests the user info settings email textbox
+  email should not be empty, should not accept . extension and should not accept without @ sign
+
+    And user logs in with valid credentials "<username>" "<password>"
+>>>>>>> main
     And user clicks on User Account Menu
     When user selects the User Info option
     Then user verifies the page displays text "User settings for [" text is displayed"
@@ -32,9 +39,13 @@ Feature: User tests the user info segment
   Scenario Outline:TC_0008_0007_User tests the user info settings email textbox should not be empty
   email should not be empty and should give error message when empty
 
+<<<<<<< HEAD
     And user enters a valid username "<username>"
     And user enters a valid password "<password>"
     And user clicks on sign in button
+=======
+    And user logs in with valid credentials "<username>" "<password>"
+>>>>>>> main
     And user clicks on User Account Menu
     When user selects the User Info option
     Then user verifies the page displays text "User settings for [" text is displayed"
@@ -49,9 +60,13 @@ Feature: User tests the user info segment
   Scenario Outline:TC_0008_0008_User tests the user info settings email textbox
   email should not be empty, should not accept . extension and should not accept without @ sign
 
+<<<<<<< HEAD
     And user enters a valid username "<username>"
     And user enters a valid password "<password>"
     And user clicks on sign in button
+=======
+    And user logs in with valid credentials "<username>" "<password>"
+>>>>>>> main
     And user clicks on User Account Menu
     When user selects the User Info option
     Then user verifies the page displays text "User settings for [" text is displayed"
