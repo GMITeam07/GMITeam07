@@ -1,7 +1,7 @@
 @GMIPasswordEditing
 Feature: sign in feature
   Background:
-    Given user is logs in with valid credentials "<employee>" "<employee>"
+    Given user is logs in with valid credentials "<User>" "<User>"
 
   Scenario Outline: The user should be able to change the password on the home page.
     And user clicks the sighIn dropdown
@@ -15,8 +15,9 @@ Feature: sign in feature
     Examples:
       | password   | new password |  confirm password |
       | TechAdmin8 | Admin2       |   Admin2          |
-
-    @NegativePassword
+      | TechAdmin8 | TechAdmin2!  |   TechAdmin2!     |
+      | TechAdmin8 | Admin#4      |   Admin#4         |
+  @NegativePassword
   Scenario Outline: The user should not be able to change the password on the home page.
       And user clicks the sighIn dropdown
       And user selects the password dropdown
@@ -29,3 +30,4 @@ Feature: sign in feature
     Examples:
       | password   |   new password |   confirm password |
       | TechAdmin8 |   TechAdmin8   |   TechAdmin8       |
+

@@ -11,11 +11,11 @@ public class PasswordSegment {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath ="//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
-    public WebElement dropdown;
+    @FindBy(xpath = "//a[@aria-haspopup='true']")
+    public WebElement loginDrpDwn;
 
     @FindBy(id = "login-item")
-    public WebElement  SignIn;
+    public WebElement signinOptionDrpDwn;
 
     @FindBy(xpath = "//input[@name='username']")
     public WebElement userName;
@@ -24,7 +24,7 @@ public class PasswordSegment {
     public WebElement password;
 
     @FindBy(xpath = "//button[@type='submit']")
-    public WebElement signInButton;
+    public WebElement signinSubmitButton;
 
     @FindBy(xpath = "//input[@name='currentPassword']")
     public WebElement currentPassword;
@@ -36,6 +36,6 @@ public class PasswordSegment {
     public WebElement confirmNewPassword;
 
     @FindBy(xpath = "//button[@type='submit']")
-    public WebElement sabeButton;
+    public WebElement saveButton;
 
 }
