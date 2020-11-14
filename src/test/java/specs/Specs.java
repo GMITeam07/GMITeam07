@@ -5,11 +5,10 @@ import io.restassured.specification.RequestSpecification;
 
 public class Specs {
 
-    public static RequestSpecification specGmiBank(){
+    public static RequestSpecification specMainUrl(){
         RequestSpecBuilder requestSpecBuilder=new RequestSpecBuilder();
         return requestSpecBuilder.setBaseUri(
-                "https://gmibank.com").build();
+                "https://www.gmibank.com").build();
     }
-
 
 }

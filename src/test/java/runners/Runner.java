@@ -16,8 +16,9 @@ import org.junit.runner.RunWith;
 
         tags = "",
 
-        dryRun = true
+        dryRun = false
 )
 
 public class Runner {
 }
+
