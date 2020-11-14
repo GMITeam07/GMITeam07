@@ -1,4 +1,4 @@
-  @loginpage
+  @signIn
   Feature: sign in feature
   Background:
       Given user is logs in with valid credentials "<employee>" "<employee>"

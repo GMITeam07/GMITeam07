@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 24726000000,
+              "duration": 21842000000,
               "status": "passed"
             },
             "line": 4,
@@ -34,7 +34,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-11-13T20:28:15.297Z",
+        "start_timestamp": "2020-11-13T20:46:36.626Z",
         "line": 22,
         "name": "US_013 - User should create a new account",
         "description": "",
@@ -44,8 +44,8 @@
         "steps": [
           {
             "result": {
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#entity\\-menu\"}\n  (Session info: chrome\u003d86.0.4240.193)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027NILPC\u0027, ip: \u0027192.168.0.148\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.193, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\\Users\\Nilgun\\AppData\\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49652}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: a804202e8ece67d9ed1fe8d396568514\n*** Element info: {Using\u003did, value\u003dentity-menu}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\r\n\tat steps.NewAccountCreationFileSteps.user_clicks_on_My_Operations(NewAccountCreationFileSteps.java:19)\r\n\tat ✽.user clicks on My Operations(file:///C:/Users/Nilgun/IdeaProjects/MyProjects/GMI/src/test/resources/features/NewAccountCreationFile.feature:8)\r\n",
-              "duration": 10167000000,
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#entity\\-menu\"}\n  (Session info: chrome\u003d86.0.4240.193)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027NILPC\u0027, ip: \u0027192.168.0.148\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.193, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\\Users\\Nilgun\\AppData\\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50403}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 5143ea2c69ed3e162f404e86ddcbfde0\n*** Element info: {Using\u003did, value\u003dentity-menu}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\r\n\tat steps.NewAccountCreationFileSteps.user_clicks_on_My_Operations(NewAccountCreationFileSteps.java:19)\r\n\tat ✽.user clicks on My Operations(file:///C:/Users/Nilgun/IdeaProjects/MyProjects/GMI/src/test/resources/features/NewAccountCreationFile.feature:8)\r\n",
+              "duration": 10131000000,
               "status": "failed"
             },
             "line": 8,
@@ -68,7 +68,7 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 2000000,
               "status": "skipped"
             },
             "line": 10,
@@ -97,6 +97,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "skipped"
             },
             "line": 12,
@@ -114,7 +115,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "skipped"
             },
             "line": 13,
@@ -132,7 +132,7 @@
           },
           {
             "result": {
-              "duration": 3000000,
+              "duration": 1000000,
               "status": "skipped"
             },
             "line": 14,
@@ -184,6 +184,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "skipped"
             },
             "line": 17,
@@ -201,6 +202,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "skipped"
             },
             "line": 18,
@@ -213,7 +215,7 @@
         ],
         "tags": [
           {
-            "name": "@loginpage"
+            "name": "@signIn"
           },
           {
             "name": "@CreateNewAccount"
@@ -228,143 +230,11 @@
     "uri": "file:src/test/resources/features/NewAccountCreationFile.feature",
     "tags": [
       {
-        "name": "@loginpage",
+        "name": "@signIn",
         "type": "Tag",
         "location": {
           "line": 1,
           "column": 3
-        }
-      }
-    ]
-  },
-  {
-    "line": 2,
-    "elements": [
-      {
-        "start_timestamp": "2020-11-13T20:28:50.964Z",
-        "line": 16,
-        "name": "user logs into GMI Home Page",
-        "description": "",
-        "id": "login-page;user-logs-into-gmi-home-page;;2",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 889000000,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "user is on the GMIBank HomePage",
-            "match": {
-              "location": "steps.LoginSteps.user_is_on_the_gmi_bank_home_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 426000000,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "user clicks on login Drop down menu",
-            "match": {
-              "location": "steps.LoginSteps.user_clicks_on_login_drop_down_menu()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 277000000,
-              "status": "passed"
-            },
-            "line": 7,
-            "name": "user clicks on Sign in option",
-            "match": {
-              "location": "steps.LoginSteps.user_clicks_on_sign_in_option()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 304000000,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "user enters a valid username \"validadmin_username\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"validadmin_username\"",
-                  "offset": 29
-                }
-              ],
-              "location": "steps.LoginSteps.user_enters_a_valid_username(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 372000000,
-              "status": "passed"
-            },
-            "line": 9,
-            "name": "user enters a valid password \"validadmin_password\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"validadmin_password\"",
-                  "offset": 29
-                }
-              ],
-              "location": "steps.LoginSteps.user_enters_a_valid_password(java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 595000000,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "user clicks on sign in button",
-            "match": {
-              "location": "steps.LoginSteps.user_clicks_on_sign_in_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 245000000,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "user verifies successful login",
-            "match": {
-              "location": "steps.LoginSteps.user_verifies_successful_login()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@loginpage"
-          }
-        ]
-      }
-    ],
-    "name": "Login Page",
-    "description": "",
-    "id": "login-page",
-    "keyword": "Feature",
-    "uri": "file:src/test/resources/features/loginPage.feature",
-    "tags": [
-      {
-        "name": "@loginpage",
-        "type": "Tag",
-        "location": {
-          "line": 1,
-          "column": 1
         }
       }
     ]

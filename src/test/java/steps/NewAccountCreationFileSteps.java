@@ -11,7 +11,7 @@ public class NewAccountCreationFileSteps {
 
     NewAccountCreationPage newAccountPage = new NewAccountCreationPage();
 
-    LoginPage loginPage = new LoginPage();
+    //LoginPage loginPage = new LoginPage();
 
 
     @Given("user clicks on My Operations")

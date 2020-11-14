@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="39.83">
-<testcase classname="sign in feature" name="US_013 - User should create a new account" time="35.416">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#entity\-menu&quot;}&#10;  (Session info: chrome=86.0.4240.193)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'NILPC', ip: '192.168.0.148', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.193, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Nilgun\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49652}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: a804202e8ece67d9ed1fe8d396568514&#10;*** Element info: {Using=id, value=entity-menu}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given user is logs in with valid credentials "<employee>" "<employee>"......passed
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="33.553">
+<testcase classname="sign in feature" name="US_013 - User should create a new account" time="32.271">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#entity\-menu&quot;}&#10;  (Session info: chrome=86.0.4240.193)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'NILPC', ip: '192.168.0.148', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.193, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Nilgun\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50403}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 5143ea2c69ed3e162f404e86ddcbfde0&#10;*** Element info: {Using=id, value=entity-menu}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given user is logs in with valid credentials "<employee>" "<employee>"......passed
 And user clicks on My Operations............................................failed
 And user selects on Manage Accounts.........................................skipped
 And user clicks on Create a New Account button..............................skipped
@@ -21,8 +21,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'NILPC', ip: '192.168.0.148', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.193, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Nilgun\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49652}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: a804202e8ece67d9ed1fe8d396568514
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.193, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Nilgun\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50403}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 5143ea2c69ed3e162f404e86ddcbfde0
 *** Element info: {Using=id, value=entity-menu}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -44,15 +44,5 @@ Session ID: a804202e8ece67d9ed1fe8d396568514
 	at steps.NewAccountCreationFileSteps.user_clicks_on_My_Operations(NewAccountCreationFileSteps.java:19)
 	at ✽.user clicks on My Operations(file:///C:/Users/Nilgun/IdeaProjects/MyProjects/GMI/src/test/resources/features/NewAccountCreationFile.feature:8)
 ]]></failure>
-</testcase>
-<testcase classname="Login Page" name="user logs into GMI Home Page" time="3.129">
-<system-out><![CDATA[Given user is on the GMIBank HomePage.......................................passed
-When user clicks on login Drop down menu....................................passed
-Then user clicks on Sign in option..........................................passed
-And user enters a valid username "validadmin_username"......................passed
-When user enters a valid password "validadmin_password".....................passed
-And user clicks on sign in button...........................................passed
-Then user verifies successful login.........................................passed
-]]></system-out>
 </testcase>
 </testsuite>
