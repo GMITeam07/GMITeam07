@@ -4,85 +4,58 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
-import pojos.Account;
-import pojos.Accounts;
-import pojos.UserInfo;
-import specs.Specs;
+import pojos.*;
 import utilities.ApiUtils;
-import utilities.ConfigReader;
-import utilities.DBUtils;
 
+import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
 public class SampleStep {
-    //added a trial sentence for git
     @Test
-    public void test01(){
-        Response response=ApiUtils.
-                getRequest("admin","/api/account");  // endpoint e ne yazarsanız cevap gelip cıktı alıcak
-//        response.prettyPrint();
-        UserInfo userInfos=response.as(UserInfo.class);
-        System.out.println(userInfos.toString());
+    public void getAUserOverApi(){
+        System.out.println(
+                ApiUtils.getUsersAsList("admin"));
     }
 
     @Test
-    public void test02(){
-        Response response=ApiUtils.
-                getRequest("admin","/api/tp-account-registrations");  // endpoint e ne yazarsanız cevap gelip cıktı alıcak
-         UserInfo userInfo =response.as(UserInfo.class);
-         System.out.println(userInfo);
+    public void getAccountOverApi(){
+        Account account1=ApiUtils.getAccountByAccountId(
+                "admin",
+                2303);
+
+        Account account2=ApiUtils.getAccountByAccountId(
+                "team07admin",
+                "S123456s?",
+                2304);
+        System.out.println(account1);
+        System.out.println(account2);
     }
 
     @Test
-    public void test03(){
-        Response response=ApiUtils.
-                getRequest("admin","/api/tp-account-registrations/1251");  // endpoint e ne yazarsanız cevap gelip cıktı alıcak
-
-        response.prettyPrint();
-//        List list=ApiUtils.getTpAccountRegistrations();
-//        list.stream().map(t->t).forEach(System.out::println);
+    public void getaccountsByList() throws IOException {
+        // getting all bank accounts as list
+        System.out.println(ApiUtils.getAccountsAsList("admin"));
     }
 
     @Test
-    public void test04(){
-        Response response=ApiUtils.
-                getRequest("admin","/api/tp-customers");  // endpoint e ne yazarsanız cevap gelip cıktı alıcak
-        response.prettyPrint();
-
+    public void getCountriesAsList() throws IOException {
+        List<Country> list= ApiUtils.getCountriesAsList();
+        System.out.println(list.get(5).getName());
+        list.stream().
+                map(t->t).
+                forEach(System.out::println);
     }
     @Test
-    public void test05(){
-        Response response=ApiUtils.getUserInfoByLoginId("team07admin");
-        response.prettyPrint();
-    }
-
-    @Test
-    public void test06(){
-//        DBUtils.createConnection();
-//
-//        List list=(DBUtils.getQueryResultList("SELECT * FROM public.tp-customers"));
-//        list.stream().map(t->t.toString()).forEach(System.out::println);
-
-        System.out.println("-------lets see the difference of DataBase and API---------------");
-
-//        Response response=ApiUtils.getRequest("admin","/api/tp-customers");
-        Response response=given().
-                auth().
-                preemptive().
-                basic("team07admin","S123456s?"  ).
-                accept(ContentType.JSON).
-                when().get("https://www.gmibank.com/api/tp-accounts/3964");
-//        response.prettyPrint();
-        List<Account> accountList=response.as(List.class);
-        JsonPath jsonPath=response.jsonPath();
-
-
+    public void getCustomersByList() throws IOException {
+        List<Customer> allCustomers= ApiUtils.getCustomersAsList("admin");
+        System.out.println(allCustomers.get(0).toString());
+        allCustomers.stream().
+                map(t->t).
+                forEach(System.out::println);
 
 
     }
-
 
 }

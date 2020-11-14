@@ -2,18 +2,24 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import utilities.Driver;
 
-public class UserInfoSettingsPage {
-    @FindBy(xpath="//body//div//h2/span")
+public class UserSettingsPage {
+    public UserSettingsPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
+    @FindBy(xpath="//body//div//h2")
     public WebElement userSettingsText;
 
     @FindBy(xpath="//body//div//h2/span/strong")
     public WebElement loginNameText;
 
-    @FindBy(xpath="//form//div//input[@name='firstname']")
+    @FindBy(id="firstName")
     public WebElement firstnameTextBox;
 
-    @FindBy(xpath="//form//div//input[@name='lastname']")
+    @FindBy(id="lastName")
     public WebElement lastnameTextBox;
 
     @FindBy(xpath="//form//div//input[@name='email']")
@@ -45,7 +51,6 @@ public class UserInfoSettingsPage {
 
     @FindBy(xpath = "//div/button[@aria-label='close']")
     public WebElement settingsSavedMessageAlertCloseBtn;
-
 
 
 }
