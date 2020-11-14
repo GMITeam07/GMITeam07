@@ -6,10 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class PasswordSegmentSteps {
-    @Given("user is logs in with valid credentials {string} {string}")
-    public void user_is_logs_in_with_valid_credentials(String string, String string2) {
 
-    }
     @When("user clicks the sighIn dropdown")
     public void userClickTheSighInDropdown() {
     }
