@@ -7,10 +7,7 @@ import org.apache.maven.shared.utils.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,5 +32,19 @@ public class ReUsableMethods {
         return "coid".concat(String.valueOf(System.currentTimeMillis()));
     }
 
+    //AKSU SOR ONDAN SONRA PUSH ET
+    public static void selectByIndex (WebElement element, int index){
+        Select select = new Select(element);
+        select.selectByIndex(index);
+    }
 
+    public static void selectByValue (WebElement element, String value){
+        Select select = new Select(element);
+        select.selectByValue(value);
+    }
+
+    public static void selectByVisibleText (WebElement element, String value){
+        Select select = new Select(element);
+        select.selectByVisibleText(value);
+    }
 }

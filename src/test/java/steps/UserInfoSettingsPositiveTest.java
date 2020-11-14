@@ -6,39 +6,24 @@ import io.cucumber.java.en.When;
 
 public class UserInfoSettingsPositiveTest {
 
-<<<<<<< HEAD
-//    @Given("user enters a valid username {string}")
-//    public void user_enters_a_valid_username(String string) {
+
+//      @Given("user clicks on User Account Menu")
+//    public void user_clicks_on_user_account_menu() {
 //        // Write code here that turns the phrase above into concrete actions
 //        throw new io.cucumber.java.PendingException();
 //    }
 //
-//    @Given("user enters a valid password {string}")
-//    public void user_enters_a_valid_password(String string) {
+//    @When("user selects the User Info option")
+//    public void user_selects_the_user_info_option() {
 //        // Write code here that turns the phrase above into concrete actions
 //        throw new io.cucumber.java.PendingException();
 //    }
-
-    @Given("user clicks on User Account Menu")
-=======
-      @Given("user clicks on User Account Menu")
->>>>>>> main
-    public void user_clicks_on_user_account_menu() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @When("user selects the User Info option")
-    public void user_selects_the_user_info_option() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Then("user verifies the page displays text {string} text is displayed\"")
-    public void user_verifies_the_page_displays_text_text_is_displayed(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+//
+//    @Then("user verifies the page displays text {string} text is displayed\"")
+//    public void user_verifies_the_page_displays_text_text_is_displayed(String string) {
+//        // Write code here that turns the phrase above into concrete actions
+//        throw new io.cucumber.java.PendingException();
+ //   }
 
     @Then("user verifies {string} is written in message inside bracelets")
     public void user_verifies_is_written_in_message_inside_bracelets(String string) {
@@ -111,11 +96,11 @@ public class UserInfoSettingsPositiveTest {
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("user clicks on save button")
-    public void user_clicks_on_save_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+//    @Then("user clicks on save button")
+//    public void user_clicks_on_save_button() {
+//        // Write code here that turns the phrase above into concrete actions
+//        throw new io.cucumber.java.PendingException();
+//    }
 
     @Then("user verifies success message is displayed {string}")
     public void user_verifies_success_message_is_displayed(String string) {
@@ -152,11 +137,11 @@ public class UserInfoSettingsPositiveTest {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @Then("user clears the firstname textbox")
-    public void user_clears_the_firstname_textbox() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+//    @Then("user clears the firstname textbox")
+//    public void user_clears_the_firstname_textbox() {
+//        // Write code here that turns the phrase above into concrete actions
+//        throw new io.cucumber.java.PendingException();
+//    }
 
     @Then("user enters a new firstname {string}")
     public void user_enters_a_new_firstname(String string) {
@@ -194,11 +179,11 @@ public class UserInfoSettingsPositiveTest {
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("user clears the lastname textbox")
-    public void user_clears_the_lastname_textbox() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+//    @Then("user clears the lastname textbox")
+//    public void user_clears_the_lastname_textbox() {
+//        // Write code here that turns the phrase above into concrete actions
+//        throw new io.cucumber.java.PendingException();
+//    }
 
     @Then("user enters a new lastname {string}")
     public void user_enters_a_new_lastname(String string) {
