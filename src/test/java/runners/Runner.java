@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
 
         tags = "@checkPassword",
 
-        dryRun = true
+        dryRun = false
 )
 
 public class Runner {
