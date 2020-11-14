@@ -9,7 +9,6 @@ Feature: Login Page
     When user enters a valid password "<password>"
     And user clicks on sign in button
     Then user verifies successful login
-#    Then user is logs in with valid credentials "<username>" "<password>"
 
     Examples:
       | username            |password|
