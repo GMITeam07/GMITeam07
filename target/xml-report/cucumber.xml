@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="0.418">
-<testcase classname="SSN UI Test" name="User can search for a new applicant by their SSN and see all their registration info populated" time="0.104">
-<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user is on GMI web site...............................................undefined
-And user login to the account...............................................skipped
-Then user click my operations dropdown menu.................................skipped
-Then user click on manage customers icon....................................skipped
-Then click on create a new customer button..................................skipped
-And user write the ssn......................................................skipped
-Then click on search button.................................................skipped
-Then user verifies registration info populated..............................skipped
-]]></failure>
-</testcase>
-<testcase classname="SSN UI Test" name="User leaves SSN part blank and user should see the error message" time="0.014">
-<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user is on GMI web site...............................................undefined
-And user login to the account...............................................skipped
-Then user click my operations dropdown menu.................................skipped
-Then user click on manage customers icon....................................skipped
-Then click on create a new customer button..................................skipped
-And user does not write the ssn.............................................skipped
-Then click on search........................................................skipped
-Then user should see the error message......................................skipped
-]]></failure>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="11.787">
+<testcase classname="Login Page" name="user logs into GMI Home Page" time="11.396">
+<system-out><![CDATA[Given user is on the GMIBank HomePage.......................................passed
+When user clicks on login Drop down menu....................................passed
+Then user clicks on Sign in option..........................................passed
+And user enters a valid username "validadmin_username"......................passed
+When user enters a valid password "validadmin_password".....................passed
+And user clicks on sign in button...........................................passed
+Then user verifies successful login.........................................passed
+]]></system-out>
 </testcase>
 </testsuite>

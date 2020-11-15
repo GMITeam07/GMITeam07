@@ -1,5 +1,4 @@
-@address
-Feature: SSN UI Test
+Feature: Address of customer can be created
   Background: User on customer new page
     Given user is on GMI web site
     And user login to the account
@@ -7,16 +6,18 @@ Feature: SSN UI Test
     Then user click on manage customers icon
     Then click on create a new customer button
 
-  Scenario Outline: User can search for a new applicant by their SSN and see all their registration info populated
-    And user write the ssn "<ssn>"
-    Then click on search button
-    Then user verifies registration info populated
+    Scenario: Address as street and number should be blank and user should see the error the message
+      And user leaves the address part blank
+      Then user should see an error message
 
-    Examples:
-      | ssn |
-      | 145 |
+    Scenario: City box should be blank and user should see the error the message
+      And user leaves the city part blank
+      Then user should see an error message
 
-  Scenario: User leaves SSN part blank and user should see the error message
-    And user does not write the ssn
-    Then click on search
-    Then user should see the error message
+    Scenario: Address as street and number should be blank and user should see the error the message
+      And user leaves the state part blank
+      Then user should see an error message
+
+  Scenario: Address as street and number should be blank and user should see the error the message
+    And user does not choose any country from the dropdown menu
+    Then user should see an error message

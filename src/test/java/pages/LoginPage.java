@@ -6,20 +6,51 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class LoginPage {
-    public LoginPage() {
+
+    public  LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-    @FindBy(className = "fa-user")
-    public WebElement loginIcon;
 
-    @FindBy (xpath = "//*[@id=\"login-item\"]/span")
-    public WebElement signInOption;
+    @FindBy(xpath = "//a[@aria-haspopup='true']")
+    public WebElement loginDrpDwn;
 
-    @FindBy (id = "username")
-    public WebElement username;
+    @FindBy(id = "login-item")
+    public WebElement signinOptionDrpDwn;
 
-    @FindBy (id = "password")
+    @FindBy(id = "username")
+    public WebElement userName;
+
+    @FindBy(id = "password")
     public WebElement password;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signinSubmitButton;
+
+    @FindBy(xpath = "//button[@tabindex='1']")
+    public WebElement cancelButton;
+
+    @FindBy(linkText = "Did you forget your password?")
+    public WebElement forgetPasswordButton;
+
+    @FindBy(linkText = "Register a new account")
+    public WebElement registerNewAccountButton;
+
+    @FindBy(css = "div[class='invalid-feedback']")
+    public WebElement invalidFeedbackUsername;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
+    public WebElement invalidFeedbackPassword;
+
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement failedSigninMessage;
+
+    @FindBy (id = "account-menu")
+    public WebElement accountMenu;
+
+
 
 
 }
+
+
+

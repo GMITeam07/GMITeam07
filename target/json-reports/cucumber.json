@@ -3,255 +3,126 @@
     "line": 2,
     "elements": [
       {
-        "line": 3,
-        "name": "User on customer new page",
+        "start_timestamp": "2020-11-15T03:31:11.307Z",
+        "line": 15,
+        "name": "user logs into GMI Home Page",
         "description": "",
-        "type": "background",
-        "keyword": "Background",
+        "id": "login-page;user-logs-into-gmi-home-page;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 10229000000,
+              "status": "passed"
             },
-            "line": 4,
-            "name": "user is on GMI web site",
-            "match": {},
+            "line": 5,
+            "name": "user is on the GMIBank HomePage",
+            "match": {
+              "location": "steps.LoginSteps.user_is_on_the_gmi_bank_home_page()"
+            },
             "keyword": "Given "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 170000000,
+              "status": "passed"
             },
-            "line": 5,
-            "name": "user login to the account",
-            "match": {},
+            "line": 6,
+            "name": "user clicks on login Drop down menu",
+            "match": {
+              "location": "steps.LoginSteps.user_clicks_on_login_drop_down_menu()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 200000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user clicks on Sign in option",
+            "match": {
+              "location": "steps.LoginSteps.user_clicks_on_sign_in_option()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 145000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user enters a valid username \"validadmin_username\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"validadmin_username\"",
+                  "offset": 29
+                }
+              ],
+              "location": "steps.LoginSteps.user_enters_a_valid_username(java.lang.String)"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1000000,
-              "status": "skipped"
+              "duration": 237000000,
+              "status": "passed"
             },
-            "line": 6,
-            "name": "user click my operations dropdown menu",
-            "match": {},
-            "keyword": "Then "
+            "line": 9,
+            "name": "user enters a valid password \"validadmin_password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"validadmin_password\"",
+                  "offset": 29
+                }
+              ],
+              "location": "steps.LoginSteps.user_enters_a_valid_password(java.lang.String)"
+            },
+            "keyword": "When "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 128000000,
+              "status": "passed"
             },
-            "line": 7,
-            "name": "user click on manage customers icon",
-            "match": {},
-            "keyword": "Then "
+            "line": 10,
+            "name": "user clicks on sign in button",
+            "match": {
+              "location": "steps.LoginSteps.user_clicks_on_sign_in_button()"
+            },
+            "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
-            },
-            "line": 8,
-            "name": "click on create a new customer button",
-            "match": {},
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-11-13T02:38:39.030Z",
-        "before": [
-          {
-            "result": {
-              "duration": 3000000,
+              "duration": 179000000,
               "status": "passed"
-            },
-            "match": {
-              "location": "steps.Hooks.setUp()"
-            }
-          }
-        ],
-        "line": 10,
-        "name": "User can search for a new applicant by their SSN and see all their registration info populated",
-        "description": "",
-        "id": "ssn-ui-test;user-can-search-for-a-new-applicant-by-their-ssn-and-see-all-their-registration-info-populated",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "steps.Hooks.tearDown(io.cucumber.java.Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "skipped"
             },
             "line": 11,
-            "name": "user write the ssn",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "skipped"
+            "name": "user verifies successful login",
+            "match": {
+              "location": "steps.LoginSteps.user_verifies_successful_login()"
             },
-            "line": 12,
-            "name": "click on search button",
-            "match": {},
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 13,
-            "name": "user verifies registration info populated",
-            "match": {},
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@address"
-          }
-        ]
-      },
-      {
-        "line": 3,
-        "name": "User on customer new page",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 4,
-            "name": "user is on GMI web site",
-            "match": {},
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "skipped"
-            },
-            "line": 5,
-            "name": "user login to the account",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 6,
-            "name": "user click my operations dropdown menu",
-            "match": {},
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 7,
-            "name": "user click on manage customers icon",
-            "match": {},
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 2000000,
-              "status": "skipped"
-            },
-            "line": 8,
-            "name": "click on create a new customer button",
-            "match": {},
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-11-13T02:38:39.166Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "steps.Hooks.setUp()"
-            }
-          }
-        ],
-        "line": 15,
-        "name": "User leaves SSN part blank and user should see the error message",
-        "description": "",
-        "id": "ssn-ui-test;user-leaves-ssn-part-blank-and-user-should-see-the-error-message",
-        "after": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "steps.Hooks.tearDown(io.cucumber.java.Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "skipped"
-            },
-            "line": 16,
-            "name": "user does not write the ssn",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 17,
-            "name": "click on search",
-            "match": {},
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 18,
-            "name": "user should see the error message",
-            "match": {},
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@address"
+            "name": "@loginpage"
           }
         ]
       }
     ],
-    "name": "SSN UI Test",
+    "name": "Login Page",
     "description": "",
-    "id": "ssn-ui-test",
+    "id": "login-page",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/address.feature",
+    "uri": "file:src/test/resources/features/loginPage.feature",
     "tags": [
       {
-        "name": "@address",
+        "name": "@loginpage",
         "type": "Tag",
         "location": {
           "line": 1,

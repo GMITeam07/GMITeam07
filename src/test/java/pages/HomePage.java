@@ -7,12 +7,15 @@ import utilities.Driver;
 
 public class HomePage {
 
-    public HomePage(){
+
+    public HomePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-    @FindBy(xpath = "//*[@id=\"entity-menu\"]/a/span")
-    public WebElement MyOperationsOption;
 
-    @FindBy (xpath = "//*[@id=\"entity-menu\"]/div/a[1]/span")
-    public WebElement ManageCustomersOption;
+    @FindBy(xpath = "//div//a[1]//span[.='User Info']")
+    public WebElement userInfoDrpDnOption;
+
+    @FindBy (id = "account-menu")
+    public WebElement userAccountMenu;
+
 }
