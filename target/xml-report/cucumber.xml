@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="33.553">
-<testcase classname="sign in feature" name="US_013 - User should create a new account" time="32.271">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#entity\-menu&quot;}&#10;  (Session info: chrome=86.0.4240.193)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'NILPC', ip: '192.168.0.148', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.193, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Nilgun\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50403}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 5143ea2c69ed3e162f404e86ddcbfde0&#10;*** Element info: {Using=id, value=entity-menu}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given user is logs in with valid credentials "<employee>" "<employee>"......passed
-And user clicks on My Operations............................................failed
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="17.85">
+<testcase classname="sign in feature" name="US_013 - User should create a new account" time="13.638">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Then user is logs in with valid credentials "<username>" "<password>".......passed
+And user clicks on My Operations............................................undefined
 And user selects on Manage Accounts.........................................skipped
 And user clicks on Create a New Account button..............................skipped
 And user enters a Description "Td account"..................................skipped
@@ -13,36 +13,21 @@ And user selects Create Date "2020-11-11 12:00 PM"..........................skip
 And user selects a Closed Date "2029-12-10 4:00 PM".........................skipped
 And user selects Employee "random"..........................................skipped
 Then user clicks on Save Button.............................................skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#entity\-menu"}
-  (Session info: chrome=86.0.4240.193)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'NILPC', ip: '192.168.0.148', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.193, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Nilgun\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50403}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 5143ea2c69ed3e162f404e86ddcbfde0
-*** Element info: {Using=id, value=entity-menu}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at org.openqa.selenium.By$ById.findElement(By.java:188)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy17.click(Unknown Source)
-	at steps.NewAccountCreationFileSteps.user_clicks_on_My_Operations(NewAccountCreationFileSteps.java:19)
-	at ✽.user clicks on My Operations(file:///C:/Users/Nilgun/IdeaProjects/MyProjects/GMI/src/test/resources/features/NewAccountCreationFile.feature:8)
+]]></failure>
+</testcase>
+<testcase classname="sign in feature" name="US_013 - User should create a new account 2" time="0.04">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Then user is logs in with valid credentials "<username>" "<password>".......passed
+And user clicks on My Operations............................................undefined
+And user selects on Manage Accounts.........................................skipped
+And user clicks on Create a New Account button..............................skipped
+And user enters a Description "BMO account".................................skipped
+And user enters a Balance "55000"...........................................skipped
+And user selects Account Type "Investing"...................................skipped
+And user selects Account Status Type "Suspended"............................skipped
+And user selects Create Date "2020-11-13 5:00 PM"...........................skipped
+And user selects a Closed Date "2021-04-18 9:00 AM".........................skipped
+And user selects Employee "random"..........................................skipped
+Then user clicks on Save Button.............................................skipped
 ]]></failure>
 </testcase>
 </testsuite>

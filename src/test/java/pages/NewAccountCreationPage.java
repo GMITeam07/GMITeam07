@@ -21,7 +21,7 @@ public class NewAccountCreationPage {
     public WebElement password;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signIn;
-    @FindBy(id = "entity-menu")
+    @FindBy(xpath = "//li[@id='entity-menu']")
     public WebElement myOperations;
     @FindBy(xpath = "//a[@href='/tp-account']")
     public WebElement manageAccounts;

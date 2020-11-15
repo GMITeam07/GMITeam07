@@ -17,6 +17,7 @@ public class SampleStep {
     public void getAUserOverApi(){
         System.out.println(
                 ApiUtils.getUsersAsList("admin"));
+
     }
 
     @Test
@@ -49,13 +50,12 @@ public class SampleStep {
     }
     @Test
     public void getCustomersByList() throws IOException {
-        List<Customer> allCustomers= ApiUtils.getCustomersAsList("admin");
-        System.out.println(allCustomers.get(0).toString());
-        allCustomers.stream().
-                map(t->t).
-                forEach(System.out::println);
-
-
+////        List<Customer> allCustomers= ApiUtils.getCustomersAsList("admin");
+////        System.out.println(allCustomers.get(0).toString());
+////        allCustomers.stream().
+////                map(t->t).
+////                forEach(System.out::println);
+//        System.out.println(ApiUtils.getCustomerById(2552));
     }
 
 }

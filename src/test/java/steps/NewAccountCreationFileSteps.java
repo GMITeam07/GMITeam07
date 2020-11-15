@@ -6,12 +6,29 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.support.ui.Select;
 import pages.LoginPage;
 import pages.NewAccountCreationPage;
+import utilities.ConfigReader;
+import utilities.Driver;
 
 public class NewAccountCreationFileSteps {
 
     NewAccountCreationPage newAccountPage = new NewAccountCreationPage();
 
-    //LoginPage loginPage = new LoginPage();
+    LoginPage loginPage = new LoginPage();
+    LoginSteps loginSteps = new LoginSteps();
+
+    @And("user is on the GMIBank Page")
+    public void userIsOnTheGMIBankPage() throws InterruptedException {
+
+        Driver.getDriver().get(ConfigReader.getProperty("gmibank_url"));
+        Thread.sleep(3000);
+    }
+    @Given("user is logs in with valid credentials {string} {string}")
+    public void user_is_logs_in_with_valid_credentials(String string , String string2) throws InterruptedException {
+//        newAccountPage.username.sendKeys("Team07employee");
+//        newAccountPage.password.sendKeys("S123456s?");
+//        newAccountPage.signIn.click();
+        Thread.sleep(3000);
+    }
 
 
     @Given("user clicks on My Operations")
@@ -79,6 +96,8 @@ public class NewAccountCreationFileSteps {
         newAccountPage.saveButton.click();
     }
 
-    //Driver.closeDriver();
+
+
+   // Driver.closeDriver();
 
 }
