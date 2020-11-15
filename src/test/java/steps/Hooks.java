@@ -9,9 +9,12 @@ import utilities.BrowserUtils;
 import utilities.Driver;
 import utilities.TestBase;
 
+import java.util.concurrent.TimeUnit;
+
 public class Hooks {
     @Before(order = 1)
     public void setUp(){
+        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         TestBase.setExtentReports();
 
     }
