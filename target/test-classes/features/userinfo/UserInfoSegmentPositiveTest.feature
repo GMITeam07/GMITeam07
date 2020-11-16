@@ -2,16 +2,8 @@
 Feature: User tests the user info segment
 
   Scenario Outline:TC_0008_0001_User tests the user info settings page WebElements
-<<<<<<< HEAD
-  user verifies the firstname, lastname, email and language options available
-
-    And user enters a valid username "<username>"
-    And user enters a valid password "<password>"
-    And user clicks on sign in button
-=======
   user verifies the firstname, lastname, email and language options must be available
     And user logs in with valid credentials "<username>" "<password>"
->>>>>>> main
     And user clicks on User Account Menu
     When user selects the User Info option
     Then user verifies the page displays text "User settings for [" text is displayed"
