@@ -1,15 +1,19 @@
-@SignInGMI
+@SignIn
 Feature: sign in feature
    Background:
      Given user logs in with valid credentials "validuser_username" "validuser_password"
 
   @GMIPasswordEditing
-  Scenario Outline:TC_0009_0001_The user should be able to change the password on the home page
+  Scenario Outline:TC_0009_0001_The user test the password levelchart on the home page
+    status bar changes by password strenght
+
     When user clicks the login dropdown
     And user selects the password option
     And User enters current password "<password>"
     And user enters new password "<newpassword>"
     And user sees the level chart change accordingly
+    Then user clicks on save button
+
 
     Examples:
       | password   | newpassword |

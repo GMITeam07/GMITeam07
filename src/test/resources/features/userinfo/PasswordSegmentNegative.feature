@@ -1,4 +1,4 @@
-@NegativePasswordSegment
+@SignIn @NegativePasswordSegment
 Feature: sign in feature
 
   Background:
