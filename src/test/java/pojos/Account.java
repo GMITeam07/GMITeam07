@@ -143,4 +143,5 @@ public class Account {
                 "accountLogs: " + accountLogs + ",\n" +
                 '}';
     }
+
 }

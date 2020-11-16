@@ -1,8 +1,7 @@
 @SSN_Search
 Feature: SSN UI Test
   Background: User on customer new page
-    Given user is on GMI web site
-    And user login to the account
+    Given user logs in with valid credentials "validuser_username" "validadmin_password"
     Then user click my operations dropdown menu
     Then user click on manage customers icon
     Then click on create a new customer button
@@ -15,11 +14,9 @@ Feature: SSN UI Test
     Examples:
       | ssn         |
       | 222-22-2222 |
-      | 000-00-0000 |
-      | 999-99-9999 |
-      | 123-65-9876 |
+
 
   Scenario: User leaves SSN part blank and user should see the error message
-    And user does not write the ssn
+    And user clears the ssn text box on User Edit or Create Customer Page
     Then click on search
     Then user should see the error message

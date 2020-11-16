@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Driver;
 
 public class SSN_SearchPage {
@@ -19,7 +20,7 @@ public class SSN_SearchPage {
     @FindBy (className = "btn-secondary")
     public WebElement searchButton;
 
-    @FindBy (name = "firstName")
+    @FindBy (id = "tp-customer-firstName")
     public WebElement customerFirstName;
 
     @FindBy (name = "lastName")
@@ -40,6 +41,21 @@ public class SSN_SearchPage {
     @FindBy (name = "city")
     public WebElement customerCity;
 
+    @FindBy (className = "tp-customer-state")
+    public WebElement customerState;
+
+    @FindBy (className = "tp-customer-country")
+    public WebElement customerCountry;
+
     @FindBy (name = "ssn")
     public WebElement customerSSN;
+
+
+    @FindBy (className = "Toastify__toast-body")
+    public WebElement ssnErrorMessage;
+
+    @FindBy (className = "invalid-feedback")
+    public WebElement errorMessage;
+
+
 }

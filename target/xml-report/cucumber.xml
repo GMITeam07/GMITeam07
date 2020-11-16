@@ -1,13 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="11.787">
-<testcase classname="Login Page" name="user logs into GMI Home Page" time="11.396">
-<system-out><![CDATA[Given user is on the GMIBank HomePage.......................................passed
-When user clicks on login Drop down menu....................................passed
-Then user clicks on Sign in option..........................................passed
-And user enters a valid username "validadmin_username"......................passed
-When user enters a valid password "validadmin_password".....................passed
-And user clicks on sign in button...........................................passed
-Then user verifies successful login.........................................passed
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="34.919">
+<testcase classname="SSN UI Test" name="User can search for a new applicant by their SSN and see all their registration info populated" time="16.318">
+<system-out><![CDATA[Given user logs in with valid credentials "validuser_username" "validadmin_password".passed
+Then user click my operations dropdown menu.................................passed
+Then user click on manage customers icon....................................passed
+Then click on create a new customer button..................................passed
+And user write the ssn "222-22-2222"........................................passed
+Then click on search button.................................................passed
+Then user verifies registration info populated..............................passed
 ]]></system-out>
+</testcase>
+<testcase classname="SSN UI Test" name="User leaves SSN part blank and user should see the error message" time="17.943">
+<failure message="element not interactable&#10;  (Session info: chrome=86.0.4240.193)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-V88NCCD', ip: '10.146.18.88', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.193, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\ferha\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:65178}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: cb219fdad5076d6b7175371ad6dd60d3" type="org.openqa.selenium.ElementNotInteractableException"><![CDATA[Given user logs in with valid credentials "validuser_username" "validadmin_password".passed
+Then user click my operations dropdown menu.................................passed
+Then user click on manage customers icon....................................passed
+Then click on create a new customer button..................................passed
+And user does not write the ssn.............................................failed
+Then click on search........................................................skipped
+Then user should see the error message......................................skipped
+
+StackTrace:
+org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=86.0.4240.193)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-V88NCCD', ip: '10.146.18.88', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.193, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\ferha\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:65178}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: cb219fdad5076d6b7175371ad6dd60d3
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy19.click(Unknown Source)
+	at steps.SSN_SearchStepDef.user_does_not_write_the_ssn(SSN_SearchStepDef.java:64)
+	at ✽.user does not write the ssn(file:///C:/Users/ferha/IdeaProjects/GMITeam07/src/test/resources/features/ssnSearch.feature:20)
+]]></failure>
 </testcase>
 </testsuite>

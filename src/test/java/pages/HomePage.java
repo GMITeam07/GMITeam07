@@ -18,4 +18,9 @@ public class HomePage {
     @FindBy (id = "account-menu")
     public WebElement userAccountMenu;
 
+    @FindBy (xpath = "//*[@id=\'entity-menu\']/a/span")
+    public WebElement myOperations;
+    @FindBy (xpath = "//*[@id=\'entity-menu\']/div/a[1]/span")
+    public WebElement manageCustomers;
+
 }
