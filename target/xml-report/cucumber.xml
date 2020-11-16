@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="17.85">
-<testcase classname="sign in feature" name="US_013 - User should create a new account" time="13.638">
-<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Then user is logs in with valid credentials "<username>" "<password>".......passed
-And user clicks on My Operations............................................undefined
-And user selects on Manage Accounts.........................................skipped
-And user clicks on Create a New Account button..............................skipped
-And user enters a Description "Td account"..................................skipped
-And user enters a Balance "150000"..........................................skipped
-And user selects Account Type "Saving"......................................skipped
-And user selects Account Status Type "Active"...............................skipped
-And user selects Create Date "2020-11-11 12:00 PM"..........................skipped
-And user selects a Closed Date "2029-12-10 4:00 PM".........................skipped
-And user selects Employee "random"..........................................skipped
-Then user clicks on Save Button.............................................skipped
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="1.929">
+<testcase classname="sign in feature" name="US_013 - User should create a new account" time="0.325">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user logs in with valid credentials "validemployee_username" "validemployee_password".passed
+And user clicks on My Operations............................................passed
+And user selects on Manage Accounts.........................................passed
+And user clicks on Create a New Account button..............................passed
+And user enters a Description "Td account"..................................passed
+And user enters a Balance "150000"..........................................passed
+And user selects Account Type "Saving"......................................passed
+And user selects Account Status Type "Active"...............................passed
+And user selects Create Date "2020-11-11 12:00 PM"..........................passed
+And user selects a Closed Date "2029-12-10 4:00 PM".........................passed
+And user selects Employee "random"..........................................passed
+And user clicks on Save Button..............................................passed
+Then user verifies that account is created..................................undefined
 ]]></failure>
 </testcase>
-<testcase classname="sign in feature" name="US_013 - User should create a new account 2" time="0.04">
-<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Then user is logs in with valid credentials "<username>" "<password>".......passed
-And user clicks on My Operations............................................undefined
-And user selects on Manage Accounts.........................................skipped
-And user clicks on Create a New Account button..............................skipped
-And user enters a Description "BMO account".................................skipped
-And user enters a Balance "55000"...........................................skipped
-And user selects Account Type "Investing"...................................skipped
-And user selects Account Status Type "Suspended"............................skipped
-And user selects Create Date "2020-11-13 5:00 PM"...........................skipped
-And user selects a Closed Date "2021-04-18 9:00 AM".........................skipped
-And user selects Employee "random"..........................................skipped
-Then user clicks on Save Button.............................................skipped
-]]></failure>
+<testcase classname="sign in feature" name="" time="0.006">
+<system-out><![CDATA[Given user logs in with valid credentials "validemployee_username" "validemployee_password".passed
+Given user logs in with valid credentials "validadmin_username" "validadmin_password".passed
+]]></system-out>
 </testcase>
 </testsuite>

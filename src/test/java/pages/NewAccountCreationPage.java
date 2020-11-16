@@ -43,8 +43,8 @@ public class NewAccountCreationPage {
     public WebElement employeeBox;
     @FindBy(id = "save-entity")
     public WebElement saveButton;
-    @FindBy(id = "Toastify__toast-container Toastify__toast-container--top-left toastify-container")
-    public WebElement saved;
+    @FindBy(xpath= "//div[@class='Toastify__toast-container Toastify__toast-container--top-left toastify-container']")
+    public WebElement accountcreated;
 
 
 }

@@ -37,7 +37,10 @@ public class SampleStep {
     @Test
     public void getaccountsByList() throws IOException {
         // getting all bank accounts as list
-        System.out.println(ApiUtils.getAccountsAsList("admin"));
+        List list=ApiUtils.getAccountsAsList("admin");
+        list.stream().
+
+                map(t->t).forEach(System.out::println);
     }
 
     @Test

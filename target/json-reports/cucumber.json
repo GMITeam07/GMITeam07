@@ -4,306 +4,335 @@
     "elements": [
       {
         "line": 3,
-        "name": "User logs in GMIBank Home Page",
+        "name": "",
         "description": "",
         "type": "background",
         "keyword": "Background",
         "steps": [
           {
             "result": {
-              "duration": 13128000000,
               "status": "passed"
             },
             "line": 4,
-            "name": "user is logs in with valid credentials \"\u003cusername\u003e\" \"\u003cpassword\u003e\"",
+            "name": "user logs in with valid credentials \"validemployee_username\" \"validemployee_password\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"\u003cusername\u003e\"",
-                  "offset": 39
+                  "val": "\"validemployee_username\"",
+                  "offset": 36
                 },
                 {
-                  "val": "\"\u003cpassword\u003e\"",
-                  "offset": 52
+                  "val": "\"validemployee_password\"",
+                  "offset": 61
                 }
               ],
-              "location": "steps.NewAccountCreationFileSteps.user_is_logs_in_with_valid_credentials(java.lang.String,java.lang.String)"
+              "location": "steps.LoginSteps.userLogsInWithValidCredentials(java.lang.String,java.lang.String)"
             },
-            "keyword": "Then "
+            "keyword": "Given "
           }
         ]
       },
       {
-        "start_timestamp": "2020-11-15T03:19:30.150Z",
-        "line": 22,
+        "start_timestamp": "2020-11-16T16:48:21.629Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 27,
         "name": "US_013 - User should create a new account",
         "description": "",
         "id": "sign-in-feature;us-013---user-should-create-a-new-account;;2",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "status": "undefined"
-            },
-            "line": 8,
-            "name": "user clicks on My Operations",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "skipped"
-            },
-            "line": 9,
-            "name": "user selects on Manage Accounts",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "skipped"
+              "status": "passed"
             },
             "line": 10,
-            "name": "user clicks on Create a New Account button",
-            "match": {},
+            "name": "user clicks on My Operations",
+            "match": {
+              "location": "steps.NewAccountCreationFileSteps.user_clicks_on_My_Operations()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "status": "passed"
             },
             "line": 11,
-            "name": "user enters a Description \"Td account\"",
-            "match": {},
+            "name": "user selects on Manage Accounts",
+            "match": {
+              "location": "steps.NewAccountCreationFileSteps.user_selects_on_Manage_Accounts()"
+            },
             "keyword": "And "
           },
           {
             "result": {
               "duration": 1000000,
-              "status": "skipped"
+              "status": "passed"
             },
             "line": 12,
-            "name": "user enters a Balance \"150000\"",
-            "match": {},
+            "name": "user clicks on Create a New Account button",
+            "match": {
+              "location": "steps.NewAccountCreationFileSteps.user_clicks_on_Create_a_New_Account_button()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "status": "passed"
             },
             "line": 13,
-            "name": "user selects Account Type \"Saving\"",
-            "match": {},
+            "name": "user enters a Description \"Td account\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Td account\"",
+                  "offset": 26
+                }
+              ],
+              "location": "steps.NewAccountCreationFileSteps.user_enters_a_Description(java.lang.String)"
+            },
             "keyword": "And "
           },
           {
             "result": {
               "duration": 1000000,
-              "status": "skipped"
+              "status": "passed"
             },
             "line": 14,
-            "name": "user selects Account Status Type \"Active\"",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
+            "name": "user enters a Balance \"150000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"150000\"",
+                  "offset": 22
+                }
+              ],
+              "location": "steps.NewAccountCreationFileSteps.userEntersABalance(java.lang.String)"
             },
-            "line": 15,
-            "name": "user selects Create Date \"2020-11-11 12:00 PM\"",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 16,
-            "name": "user selects a Closed Date \"2029-12-10 4:00 PM\"",
-            "match": {},
             "keyword": "And "
           },
           {
             "result": {
               "duration": 1000000,
-              "status": "skipped"
+              "status": "passed"
             },
-            "line": 17,
-            "name": "user selects Employee \"random\"",
-            "match": {},
+            "line": 15,
+            "name": "user selects Account Type \"Saving\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Saving\"",
+                  "offset": 26
+                }
+              ],
+              "location": "steps.NewAccountCreationFileSteps.user_selects_Account_Type(java.lang.String)"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user selects Account Status Type \"Active\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Active\"",
+                  "offset": 33
+                }
+              ],
+              "location": "steps.NewAccountCreationFileSteps.user_selects_Account_Status_Type(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user selects Create Date \"2020-11-11 12:00 PM\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2020-11-11 12:00 PM\"",
+                  "offset": 25
+                }
+              ],
+              "location": "steps.NewAccountCreationFileSteps.userSelectsCreateDate(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
             },
             "line": 18,
+            "name": "user selects a Closed Date \"2029-12-10 4:00 PM\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2029-12-10 4:00 PM\"",
+                  "offset": 27
+                }
+              ],
+              "location": "steps.NewAccountCreationFileSteps.userSelectsAClosedDate(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user selects Employee \"random\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"random\"",
+                  "offset": 22
+                }
+              ],
+              "location": "steps.NewAccountCreationFileSteps.userSelectsEmployee(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 20,
             "name": "user clicks on Save Button",
+            "match": {
+              "location": "steps.NewAccountCreationFileSteps.user_clicks_on_Save_Button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 21,
+            "name": "user verifies that account is created",
             "match": {},
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@signIn"
+            "name": "@NewAccountCreationPositive"
           },
           {
-            "name": "@CreateNewAccount"
+            "name": "@PositiveCreateNewAccount"
           }
         ]
       },
       {
         "line": 3,
-        "name": "User logs in GMIBank Home Page",
+        "name": "",
         "description": "",
         "type": "background",
         "keyword": "Background",
         "steps": [
           {
             "result": {
-              "duration": 6000000,
               "status": "passed"
             },
             "line": 4,
-            "name": "user is logs in with valid credentials \"\u003cusername\u003e\" \"\u003cpassword\u003e\"",
+            "name": "user logs in with valid credentials \"validemployee_username\" \"validemployee_password\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"\u003cusername\u003e\"",
-                  "offset": 39
+                  "val": "\"validemployee_username\"",
+                  "offset": 36
                 },
                 {
-                  "val": "\"\u003cpassword\u003e\"",
-                  "offset": 52
+                  "val": "\"validemployee_password\"",
+                  "offset": 61
                 }
               ],
-              "location": "steps.NewAccountCreationFileSteps.user_is_logs_in_with_valid_credentials(java.lang.String,java.lang.String)"
+              "location": "steps.LoginSteps.userLogsInWithValidCredentials(java.lang.String,java.lang.String)"
             },
-            "keyword": "Then "
+            "keyword": "Given "
           }
         ]
       },
       {
-        "start_timestamp": "2020-11-15T03:19:44.207Z",
-        "line": 23,
-        "name": "US_013 - User should create a new account",
+        "start_timestamp": "2020-11-16T16:48:22.107Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 43,
+        "name": "",
         "description": "",
-        "id": "sign-in-feature;us-013---user-should-create-a-new-account;;3",
+        "id": "sign-in-feature;;;2",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "status": "passed"
             },
-            "line": 8,
-            "name": "user clicks on My Operations",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "skipped"
+            "line": 39,
+            "name": "user logs in with valid credentials \"validadmin_username\" \"validadmin_password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"validadmin_username\"",
+                  "offset": 36
+                },
+                {
+                  "val": "\"validadmin_password\"",
+                  "offset": 58
+                }
+              ],
+              "location": "steps.LoginSteps.userLogsInWithValidCredentials(java.lang.String,java.lang.String)"
             },
-            "line": 9,
-            "name": "user selects on Manage Accounts",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 7000000,
-              "status": "skipped"
-            },
-            "line": 10,
-            "name": "user clicks on Create a New Account button",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 11,
-            "name": "user enters a Description \"BMO account\"",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 12,
-            "name": "user enters a Balance \"55000\"",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 13,
-            "name": "user selects Account Type \"Investing\"",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 14,
-            "name": "user selects Account Status Type \"Suspended\"",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 15,
-            "name": "user selects Create Date \"2020-11-13 5:00 PM\"",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 16,
-            "name": "user selects a Closed Date \"2021-04-18 9:00 AM\"",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 17,
-            "name": "user selects Employee \"random\"",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 18,
-            "name": "user clicks on Save Button",
-            "match": {},
-            "keyword": "Then "
+            "keyword": "Given "
           }
         ],
         "tags": [
           {
-            "name": "@signIn"
-          },
-          {
-            "name": "@CreateNewAccount"
+            "name": "@NewAccountCreationPositive"
           }
         ]
       }
@@ -312,14 +341,14 @@
     "description": "",
     "id": "sign-in-feature",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/NewAccountCreationFile.feature",
+    "uri": "file:src/test/resources/features/NewAccountCreationPositiveTest.feature",
     "tags": [
       {
-        "name": "@signIn",
+        "name": "@NewAccountCreationPositive",
         "type": "Tag",
         "location": {
           "line": 1,
-          "column": 3
+          "column": 1
         }
       }
     ]

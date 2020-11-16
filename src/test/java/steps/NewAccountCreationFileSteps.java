@@ -2,7 +2,9 @@ package steps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 import pages.LoginPage;
 import pages.NewAccountCreationPage;
@@ -15,20 +17,6 @@ public class NewAccountCreationFileSteps {
 
     LoginPage loginPage = new LoginPage();
     LoginSteps loginSteps = new LoginSteps();
-
-    @And("user is on the GMIBank Page")
-    public void userIsOnTheGMIBankPage() throws InterruptedException {
-
-        Driver.getDriver().get(ConfigReader.getProperty("gmibank_url"));
-        Thread.sleep(3000);
-    }
-    @Given("user is logs in with valid credentials {string} {string}")
-    public void user_is_logs_in_with_valid_credentials(String string , String string2) throws InterruptedException {
-//        newAccountPage.username.sendKeys("Team07employee");
-//        newAccountPage.password.sendKeys("S123456s?");
-//        newAccountPage.signIn.click();
-        Thread.sleep(3000);
-    }
 
 
     @Given("user clicks on My Operations")
@@ -50,13 +38,13 @@ public class NewAccountCreationFileSteps {
 
     @Given("user enters a Description {string}")
     public void user_enters_a_Description(String string) {
-        newAccountPage.descriptionBox.sendKeys("Td Account");
+        newAccountPage.descriptionBox.sendKeys("Td_account 2");
 
     }
     @And("user enters a Balance {string}")
     public void userEntersABalance(String arg0) {
 
-        newAccountPage.balanceBox.sendKeys("$150000");
+        newAccountPage.balanceBox.sendKeys("$1500_00");
 
     }
 
@@ -75,29 +63,35 @@ public class NewAccountCreationFileSteps {
 
     @And("user selects Create Date {string}")
     public void userSelectsCreateDate(String arg0) {
-        newAccountPage.createDateBox.sendKeys("2020-11-11 12:00 PM");
+        newAccountPage.createDateBox.sendKeys("2020-10-11 12:00 PM");
     }
 
     @And("user selects a Closed Date {string}")
     public void userSelectsAClosedDate(String arg0) {
-        newAccountPage.closedDateBox.sendKeys("2029-12-14 4:00 PM");
+        newAccountPage.closedDateBox.sendKeys("2029-12-10 4:00 PM");
     }
 
 
     @And("user selects Employee {string}")
-    public void userSelectsEmployee(String arg0) {
+    public void userSelectsEmployee(String arg0) throws InterruptedException {
         Select employee = new Select(newAccountPage.employeeBox);
         employee.selectByIndex(0);
+        Thread.sleep(4000);
 
     }
 
     @Given("user clicks on Save Button")
-    public void user_clicks_on_Save_Button() {
+    public void user_clicks_on_Save_Button() throws InterruptedException {
         newAccountPage.saveButton.click();
+
+        Thread.sleep(4000);
     }
 
+    @Then("user verifies that account is created")
+    public void user_verifies_that_account_is_created() {
+
+        Assert.assertTrue(newAccountPage.accountcreated.getText().toLowerCase().contains("Translation"));
 
 
-   // Driver.closeDriver();
-
+    }
 }

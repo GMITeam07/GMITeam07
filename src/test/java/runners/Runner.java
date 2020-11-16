@@ -15,11 +15,11 @@ import org.junit.runner.RunWith;
         glue = "steps",
 
 
-        tags = "@signIn",
+        tags = "@NewAccountCreationPositive",
 
 
 
-        dryRun = false
+        dryRun = true
 )
 
 
