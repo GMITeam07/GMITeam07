@@ -71,8 +71,6 @@ public class PasswordSegmentSteps {
 
     @Then("User verifies that {string} is not displyed")
     public void userVerifiesThatIsNotDisplyed(String succesmessage) throws InterruptedException {
-        Thread.sleep(5000);
-        passwordSegment.popUpSave.getText();
         Assert.assertTrue(Driver.waitForInVisibility(By.xpath
                 ( "//div[@class='Toastify__toast-container Toastify__toast-container--top-left toastify-container']"),2));
 
