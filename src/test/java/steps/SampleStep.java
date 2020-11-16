@@ -17,6 +17,7 @@ public class SampleStep {
     public void getAUserOverApi(){
         System.out.println(
                 ApiUtils.getUsersAsList("admin"));
+
     }
 
     @Test
