@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="664a7730-0cd4-4fe6-ab8a-96a9712c38cb" name="Default Changelist" comment="LoginPage Negative test updated">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/steps/UserInfoSettingsPositiveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/UserInfoSettingsPositiveTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/taner" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="main" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="GMITeam07" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="GMITeam07" />
+  </component>
+  <component name="ProjectId" id="1k9cyUuOwZQeK9iyZlaWWBc6g9Y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\steel\IdeaProjects\GMITeam07\src\test\resources\features\loginpage" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Cucumber Java.Feature: loginPage">
+    <configuration name="Feature: loginCancel" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/loginpage/loginCancel.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GMITeam07" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: loginCancel" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: loginPage" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/loginPage.feature" />
+      <option name="GLUE" value="steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GMITeam07" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: loginPage" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: loginPageNegative" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/loginpage/loginPageNegative.feature" />
+      <option name="GLUE" value="steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GMITeam07" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: loginPageNegative" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: user logs into GMI Home Page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/loginPage.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GMITeam07" />
+      <option name="NAME_FILTER" value="^user logs into GMI Home Page$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^user logs into GMI Home Page$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: user logs into GMI Home Page" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Runner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GMITeam07" />
+      <option name="PACKAGE_NAME" value="runners" />
+      <option name="MAIN_CLASS_NAME" value="runners.Runner" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cucumber Java.Feature: loginPage" />
+        <item itemvalue="JUnit.Runner" />
+        <item itemvalue="Cucumber Java.Scenario: user logs into GMI Home Page" />
+        <item itemvalue="Cucumber Java.Feature: loginPageNegative" />
+        <item itemvalue="Cucumber Java.Feature: loginCancel" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="664a7730-0cd4-4fe6-ab8a-96a9712c38cb" name="Default Changelist" comment="" />
+      <created>1605116501642</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605116501642</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Control +K --&gt; Kisayol commit">
+      <created>1605215632814</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605215632814</updated>
+    </task>
+    <task id="LOCAL-00002" summary="LoginPage Negative test">
+      <created>1605223149043</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605223149043</updated>
+    </task>
+    <task id="LOCAL-00003" summary="LoginPage Negative test updated">
+      <created>1605298624198</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605298624198</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Control +K --&gt; Kisayol commit" />
+    <MESSAGE value="LoginPage Negative test" />
+    <MESSAGE value="LoginPage Negative test updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="LoginPage Negative test updated" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="465" y="257" width="435" height="219" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605224449063">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="465" y="257" width="435" height="219" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1605224449063" />
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1605299756592">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1366.728@0.0.1366.728" timestamp="1605299756592" />
+    <state x="461" y="230" key="Github.CreatePullRequestDialog" timestamp="1605160372889">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="461" y="230" key="Github.CreatePullRequestDialog/0.0.1366.728@0.0.1366.728" timestamp="1605160372889" />
+    <state width="1321" height="202" key="GridCell.Tab.0.bottom" timestamp="1605495415138">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1321" height="202" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605495415138" />
+    <state width="1321" height="202" key="GridCell.Tab.0.center" timestamp="1605495415138">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1321" height="202" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1605495415138" />
+    <state width="1321" height="202" key="GridCell.Tab.0.left" timestamp="1605495415137">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1321" height="202" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1605495415137" />
+    <state width="1321" height="202" key="GridCell.Tab.0.right" timestamp="1605495415138">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1321" height="202" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1605495415138" />
+    <state x="256" y="145" key="IDE.errors.dialog" timestamp="1605301181528">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="256" y="145" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1605301181528" />
+    <state x="159" y="17" width="1110" height="621" key="MergeDialog" timestamp="1605299782328">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="159" y="17" width="1110" height="621" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1605299782328" />
+    <state x="994" y="152" key="MultipleFileMergeDialog" timestamp="1605299782343">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="994" y="152" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1605299782343" />
+    <state x="183" y="8" key="SettingsEditor" timestamp="1605302897660">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="183" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1605302897660" />
+    <state x="274" y="96" key="Vcs.Push.Dialog.v2" timestamp="1605215655862">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="274" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605215655862" />
+    <state x="491" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605303328803">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="491" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1605303328803" />
+    <state x="461" y="76" key="git4idea.branch.GitSmartOperationDialog" timestamp="1605495049461">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="461" y="76" key="git4idea.branch.GitSmartOperationDialog/0.0.1366.728@0.0.1366.728" timestamp="1605495049461" />
+    <state x="478" y="151" key="git4idea.merge.GitMergeDialog" timestamp="1605325814744">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="478" y="151" key="git4idea.merge.GitMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1605325814744" />
+    <state x="394" y="151" key="git4idea.merge.GitPullDialog" timestamp="1605494765421">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="394" y="151" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1605494765421" />
+    <state x="530" y="413" key="org.jetbrains.plugins.cucumber.inspections.ui.CreateStepDefinitionFileDialog" timestamp="1605214880996">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="530" y="413" key="org.jetbrains.plugins.cucumber.inspections.ui.CreateStepDefinitionFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1605214880996" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605302908374">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605302908374" />
+  </component>
+</project>
