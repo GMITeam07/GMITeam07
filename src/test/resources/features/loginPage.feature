@@ -1,7 +1,7 @@
 @loginpage
 Feature: Login Page
 
-  Scenario Outline: user logs into GMI Home Page
+  Scenario: user logs into GMI Home Page
     Given user is on the GMIBank HomePage
     When user clicks on login Drop down menu
     Then user clicks on Sign in option
@@ -11,7 +11,7 @@ Feature: Login Page
     Then user verifies successful login
 #    Then user is logs in with valid credentials "<username>" "<password>"
 
-    Examples:
-      | username            |password|
-      |validadmin_username|validadmin_password|
+#    Examples:
+ #     | username            |password|
+ #     |validadmin_username|validadmin_password|
 
