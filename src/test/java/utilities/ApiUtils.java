@@ -1,6 +1,5 @@
 package utilities;
 
-import io.cucumber.messages.internal.com.google.gson.JsonObject;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.Account;
@@ -10,9 +9,7 @@ import pojos.User;
 import specs.Specs;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
@@ -41,6 +38,8 @@ public class ApiUtils {
                 when().get(endpoint);
         return response;
     }
+
+
 
     /* ----------------------------------------------*/
     public static Country getCountryById(int countryId){
@@ -104,7 +103,7 @@ public class ApiUtils {
         Response response=getRequest(userType, "/api/users");
 
         List<User> list=response.getBody().jsonPath().getList("",User.class);
-        List<User> userList=list.stream().
+                List<User> userList=list.stream().
                 map(t->
                 {
                     User user=t;
@@ -114,12 +113,17 @@ public class ApiUtils {
         return userList;
     }
 
+
     public static User getUserByUserId(int userId){
         return getUsersAsList("admin").stream().
                 filter(t->t.getId()==userId).
                 findAny().
                 get();
+
+
     }
+
+
     /*-------------------------------------------------------------------------------*/
     public static Response getTpAccountRegistrations(){
         Response response=ApiUtils.getRequest("admin","/api/tp-accounts");
@@ -162,7 +166,7 @@ public class ApiUtils {
                         ConfigReader.getProperty("validadmin_password")).
                 spec(Specs.specMainUrl()).
                 accept(ContentType.JSON).
-                when().get("/api/customers/"+customerId);
+                when().get("/api/tp-customers/"+customerId);
         response.prettyPrint();
         Customer customer=response.as(Customer.class);
         return customer;
