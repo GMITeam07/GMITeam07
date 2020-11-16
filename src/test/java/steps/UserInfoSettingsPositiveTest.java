@@ -41,12 +41,12 @@ public class UserInfoSettingsPositiveTest {
         Assert.assertTrue(userSettingsPage.userSettingsText.getText().contains(userSettingsForText));
     }
 
-    @Then("user verifies {string} is written in message inside bracelets")
-    public void user_verifies_is_written_in_message_inside_bracelets(String username) {
-
-        Assert.assertTrue(userSettingsPage.loginNameText.
-                getText().contains(LoginSteps.getLoginname(username)));
-    }
+//    @Then("user verifies {string} is written in message inside bracelets")
+//    public void user_verifies_is_written_in_message_inside_bracelets(String username) {
+//
+//        Assert.assertTrue(userSettingsPage.loginNameText.
+//                getText().contains(LoginSteps.getLoginname(username)));
+//    }
 
     @Then("user verifies firstname textbox is available")
     public void user_verifies_firstname_textbox_is_available() {

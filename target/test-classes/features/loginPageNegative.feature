@@ -2,7 +2,7 @@
 Feature: Login page should not be accessible with invalid credentials
 
   Scenario Outline: User is on the GMIBank HomePage
-    Given User is on the GMIBank HomePage
+    Given user is on the GMIBank HomePage
     When user clicks on login Drop down menu
     Then user clicks on Sign in option
     And user enters a username "<username>"
