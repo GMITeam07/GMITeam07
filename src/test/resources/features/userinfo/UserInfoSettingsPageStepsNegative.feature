@@ -11,6 +11,7 @@ Feature: User tests the user info segment
     When user clears the email textbox
     Then user verifies an error message is under email textbox displayed contains "<youremailisrequired>"
     Examples:
+
       | username       | password  | youremailisrequired    |
       | team07user     | S123456s? | Your email is required |
       | team07admin    | S123456s? | Your email is required |
@@ -34,6 +35,7 @@ Feature: User tests the user info segment
     Then user reinitialize the user data by UI
 
     Examples:
+
       | username       | password  | successfulsavedmessage |
       | team07user     | S123456s? | Settings saved!        |
       | team07admin    | S123456s? | Settings saved!        |
@@ -57,6 +59,7 @@ Feature: User tests the user info segment
 
 
     Examples:
+
       | username       | password  | invalidshortemail | shortemailmessage     | successfulsavedmessage |
       | team07user     | S123456s? | a@sz              | at least 5 characters | Settings saved!        |
       | team07admin    | S123456s? | @t.c              | at least 5 characters | Settings saved!        |
@@ -81,6 +84,7 @@ Feature: User tests the user info segment
     Then user verifies successful saved message "<successfulsavedmessage>" is not displayed
 
     Examples:
+
       | username       | password  | invalidemail | thisfieldisinvalid    | successfulsavedmessage |
       | team07user     | S123456s? | sadf@.com    | This field is invalid | Settings saved!        |
       | team07admin    | S123456s? | bsr@gzom     | This field is invalid | Settings saved!        |
@@ -124,6 +128,7 @@ Feature: User tests the user info segment
     Then user verifies successful saved message "<successmessage>" is not displayed
 
     Examples:
+
       | username       | password  | successmessage  |
       | team07user     | S123456s? | Settings saved! |
       | team07admin    | S123456s? | Settings saved! |
@@ -133,7 +138,6 @@ Feature: User tests the user info segment
 
     #-----------------------------------------------------------------------------
   @usersettings @negativeTest
-    @Ramazan
   Scenario Outline: TC_0010_sample for excel data
 
     Given user is on the User Setings Page with valid username "<username>" and password "<password>"
@@ -147,4 +151,3 @@ Feature: User tests the user info segment
       | team07user | S123456s? | 0     | firstname | lastname |
       | team07user | S123456s? | 1     | firstname | lastname |
       | team07user | S123456s? | 2     | firstname | lastname |
-

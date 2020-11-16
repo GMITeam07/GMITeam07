@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class UserSettingsTestSteps {
+public class UserInfoSettingsPageSteps {
     ExcelUtil excelUtil=new ExcelUtil();
     List<Map<String,String>> excelData=new ArrayList<>();
 

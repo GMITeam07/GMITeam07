@@ -15,6 +15,7 @@ Feature: User tests the user info segment
 
     @usersettings
     Examples:
+<<<<<<< HEAD
       | username       | password  |
       | team07user     | S123456s? |
       | team07admin    | S123456s? |
@@ -49,6 +50,7 @@ Feature: User tests the user info segment
 
 
     Examples:
+
       | username       | password  | firstlanguageselection | secondlanguageselection | successfulsavedmessage |
       | team07user     | S123456s? | Türkçe                 | English                 | Settings saved!        |
       | team07admin    | S123456s? | English                | Türkçe                  | Settings saved!        |
@@ -59,6 +61,7 @@ Feature: User tests the user info segment
 #-----------------------------------------------------------------------------
   @usersettings @positivetest
   Scenario Outline:TC_0003_User Info settings firstname,lastname, email textboxes must be editable
+
   User Info settings firstname,lastname, email textboxes must be editable and verifies on UI and Api
   #   this test is passed completed
   #   This feature completed with datas
@@ -82,6 +85,7 @@ Feature: User tests the user info segment
     Then user logs out
 
     Examples:
+
       | username       | password  | newfirstname | newlastname | newemail               | newlanguage | successfulsavedmessage |
       | team07user     | S123456s? | Jack         | Sparrow     | jacksparrow@timail.com | English     | Settings saved!        |
       | team07admin    | S123456s? | John         | Smith       | johnsmith09@zmail.zom  | Türkçe      | Settings saved!        |
