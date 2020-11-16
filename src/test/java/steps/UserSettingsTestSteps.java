@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,8 +12,16 @@ import pages.UserSettingsPage;
 import pojos.User;
 import utilities.ApiUtils;
 import utilities.Driver;
+import utilities.ExcelUtil;
+import utilities.ReUsableMethods;
 
-public class UserInfoSettingsPositiveTest {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+public class UserSettingsTestSteps {
+    ExcelUtil excelUtil=new ExcelUtil();
+    List<Map<String,String>> excelData=new ArrayList<>();
 
     private String loginName;
     private User initialUIUser =new User();
@@ -91,7 +100,7 @@ public class UserInfoSettingsPositiveTest {
 
     @Then("user verifies successful saved message {string} is displayed")
     public void userVerifiesSuccessfulSavedMessageIsDisplayed(String successfulSavedMessage) {
-        Driver.waitForVisibility(userSettingsPage.settingsSavedMessageAlert,3);
+        Driver.waitForVisibility(userSettingsPage.settingsSavedsuccessfullyMessageAlert,3);
     }
 
     @Then("user verifies firstselected language dropdown option is {string}")
@@ -103,15 +112,17 @@ public class UserInfoSettingsPositiveTest {
     @Then("user records initial UI user data on User Settings Page {string}")
     public void userRecordsInitialUIUserDataOnUserSettingsPage(String username) {
 
-        initialUIUser.setFirstName(userSettingsPage.emailTextBox.getAttribute("value").toString());
+        initialUIUser.setFirstName(userSettingsPage.firstnameTextBox.getAttribute("value").toString());
         initialUIUser.setLastName(userSettingsPage.lastnameTextBox.getAttribute("value").toString());
         initialUIUser.setEmail(userSettingsPage.emailTextBox.getAttribute("value").toString());
         initialUIUser.setLangKey(Driver.getFirstSelectedOption(userSettingsPage.languageDrpDwn).equalsIgnoreCase("English") ? "en" : "tr");
+        System.out.println("initial UI user : "+initialUIUser);
 
     }
     @When("user retrieves initial Api user data {string}")
     public void userRetrievesInitialApiUserData(String username) {
         initialApiUser= ApiUtils.getUserByLogin(username);
+        System.out.println("initial api user:"+initialApiUser);
     }
 
     @Then("user selects the initial language on language drop down")
@@ -124,26 +135,31 @@ public class UserInfoSettingsPositiveTest {
 
     @When("user enters new user data {string} {string} {string} {string}")
     public void userEntersNewUserData(String firstname, String lastname, String email, String language) {
+
+        newApiUserTobeRegistered.setFirstName(firstname);
+        newApiUserTobeRegistered.setLastName(lastname);
+        newApiUserTobeRegistered.setEmail(email);
+        newApiUserTobeRegistered.setLangKey(language.equalsIgnoreCase("English")? "en":"tr");
+
         userSettingsPage.firstnameTextBox.clear();
-        userSettingsPage.firstnameTextBox.sendKeys(initialUIUser.getFirstName());
+        userSettingsPage.firstnameTextBox.sendKeys(firstname);
 
         userSettingsPage.lastnameTextBox.clear();
-        userSettingsPage.lastnameTextBox.sendKeys(initialUIUser.getLastName());
+        userSettingsPage.lastnameTextBox.sendKeys(lastname);
 
         userSettingsPage.emailTextBox.clear();
-        userSettingsPage.emailTextBox.sendKeys(initialUIUser.getEmail());
+        userSettingsPage.emailTextBox.sendKeys(email);
 
         Driver.selectByVisibleText(
                 userSettingsPage.languageDrpDwn,
-                initialUIUser.getLangKey().equalsIgnoreCase("en")? "English":"Türkçe"
-                );
+                language);
 
     }
 
     @Then("user records current displaying UI user data {string}")
     public void userRecordsCurrentDisplayingUserData(String username) {
 
-        currentDisplayingUIUser.setFirstName(userSettingsPage.emailTextBox.getAttribute("value").toString());
+        currentDisplayingUIUser.setFirstName(userSettingsPage.firstnameTextBox.getAttribute("value").toString());
         currentDisplayingUIUser.setLastName(userSettingsPage.lastnameTextBox.getAttribute("value").toString());
         currentDisplayingUIUser.setEmail(userSettingsPage.emailTextBox.getAttribute("value").toString());
         currentDisplayingUIUser.setLangKey(Driver.getFirstSelectedOption(userSettingsPage.languageDrpDwn).equalsIgnoreCase("English")? "en":"tr");
@@ -155,7 +171,7 @@ public class UserInfoSettingsPositiveTest {
         currentDisplayingUIUser.getFirstName().equalsIgnoreCase(initialUIUser.getFirstName())&&
                 currentDisplayingUIUser.getLastName().equalsIgnoreCase(initialUIUser.getLastName())&&
                 currentDisplayingUIUser.getEmail().equalsIgnoreCase(initialUIUser.getEmail())&&
-                currentDisplayingUIUser.getLangKey().equalsIgnoreCase(currentDisplayingUIUser.getLangKey())
+                currentDisplayingUIUser.getLangKey().equalsIgnoreCase(initialUIUser.getLangKey())
 
         );
     }
@@ -163,11 +179,15 @@ public class UserInfoSettingsPositiveTest {
     @Then("user retrieves current displaying Api User data {string}")
     public void userRetrievesCurrentDisplayingApiUserData(String username) {
         currentDisplayingApiUser=ApiUtils.getUserByLogin(username);
+        System.out.println("displayed user api : "+currentDisplayingApiUser);
     }
 
     @Then("user verifies current displaying Api user data is same as initial Api user data")
     public void userVerifiesCurrentDisplayingApiUserDataIsSameAsInitialApiUserData() {
-        Assert.assertEquals(currentDisplayingApiUser,initialApiUser);
+
+        Assert.assertTrue(compareUserSettingsPageUsers(
+                currentDisplayingApiUser,initialApiUser
+                        ));
     }
 
     @Then("user verifies current displaying user data is same as current displaying UI data")
@@ -177,6 +197,8 @@ public class UserInfoSettingsPositiveTest {
 
     @Then("user verifies current displaying Api user data is same as current displaying UI data")
     public void userVerifiesCurrentDisplayingApiUserDataIsSameAsCurrentDisplayingUIData() {
+        System.out.println(currentDisplayingApiUser);
+        System.out.println(currentDisplayingUIUser);
         Assert.assertTrue
                 (
                 currentDisplayingApiUser.getFirstName().equalsIgnoreCase(currentDisplayingUIUser.getFirstName())&&
@@ -188,10 +210,10 @@ public class UserInfoSettingsPositiveTest {
 
     @Then("user verifies an error message is under email textbox displayed contains {string}")
     public void userVerifiesAnErrorMessageIsUnderEmailTextboxDisplayedContains(String errormessage) {
-        Assert.assertTrue(userSettingsPage.emailErrorMessages.getText().
+        Assert.assertTrue(Driver.waitForVisibility(userSettingsPage.emailErrorMessages,2).
+                getText().
                 toLowerCase().
-                contains(errormessage.
-                        toLowerCase()));
+                contains(errormessage.toLowerCase()));
     }
 
     @Then("user clears the firstname textbox")
@@ -207,6 +229,7 @@ public class UserInfoSettingsPositiveTest {
     }
     @Then("user clears the email textbox")
     public void user_clears_the_email_textbox() {
+
         userSettingsPage.emailTextBox.clear();
 
     }
@@ -218,35 +241,87 @@ public class UserInfoSettingsPositiveTest {
 
     @Then("user verifies an error message under email textbox is displayed contains {string}")
     public void userVerifiesAnErrorMessageUnderEmailTextboxIsDisplayedContains(String errormessage) {
-        Driver.waitForVisibility(By.partialLinkText(errormessage),2);
+        Driver.waitForVisibility(userSettingsPage.emailAtLeast5CharactersText,6);
     }
 
     @Then("user verifies an error message under firstname textbox is displayed contains {string}")
     public void userVerifiesAnErrorMessageUnderFirstnameTextboxIsDisplayedContains(String firstnameerrormessage) {
-        Driver.waitForVisibility(By.partialLinkText(firstnameerrormessage),2);
+
+        Driver.waitForVisibility(userSettingsPage.firstnameRequiredText,2);
     }
 
     @Then("user verifies an error message under lastname textbox is displayed contains {string}")
     public void userVerifiesAnErrorMessageUnderLastnameTextboxIsDisplayedContains(String lastnameErrormessage) {
-        Driver.waitForVisibility(By.partialLinkText(lastnameErrormessage),2);
+        Driver.waitForVisibility(userSettingsPage.lastnameRequiredText,2);
     }
 
     @Then("user reinitialize the user data by UI")
     public void userReinitializeTheUserDataByUI() {
+        System.out.println("---------"+initialUIUser);
+        userSettingsPage.firstnameTextBox.clear();
+        userSettingsPage.lastnameTextBox.clear();
+        userSettingsPage.emailTextBox.clear();
+
         userSettingsPage.firstnameTextBox.sendKeys(initialUIUser.getFirstName());
         userSettingsPage.lastnameTextBox.sendKeys(initialUIUser.getLastName());
         userSettingsPage.emailTextBox.sendKeys(initialUIUser.getEmail());
         Driver.selectByVisibleText(userSettingsPage.languageDrpDwn,
-                initialUIUser.getLangKey().equalsIgnoreCase("en")? "Englis":"Türkçe");
+                initialUIUser.getLangKey().equalsIgnoreCase("en")? "English":"Türkçe");
+        userSettingsPage.saveBtn.click();
+        Driver.waitForVisibility(userSettingsPage.settingsSavedsuccessfullyMessageAlert,2);
     }
 
     @Then("user verifies successful saved message {string} is not displayed")
-    public void userVerifiesSuccessfulSavedMessageIsNotDisplayed(String arg0) {
-        System.out.println(Driver.waitForInVisibility( userSettingsPage.settingsSavedMessageAlert,3));
+    public void userVerifiesSuccessfulSavedMessageIsNotDisplayed(String succesmessage) {
+        System.out.println(Driver.waitForInVisibility(By.xpath("//*[@id='root']/div/div/div[1]/div/div/div[1]/span/strong"),3));
+        Assert.assertTrue(
+                "success message should not be displayed",
+                Driver.waitForInVisibility(By.xpath("//*[@id='root']/div/div/div[1]/div/div/div[1]/span/strong"),3));
     }
 
     @When("user enters a new short email {string}")
     public void userEntersANewShortEmail(String invalidshortemail) {
         userSettingsPage.emailTextBox.sendKeys(invalidshortemail);
     }
+
+    @And("user quits the driver")
+    public void userQuitsTheDriver() {
+        Driver.closeDriver();
+    }
+
+    @And("user close the driver")
+    public void userCloseTheDriver() {
+        Driver.getDriver().close();
+    }
+
+
+    @Then("user verifies current displaying UI user data is same as new UI user data tobe registered")
+    public void userVerifiesCurrentDisplayingUIUserDataIsSameAsNewUIUserDataTobeRegistered() {
+
+        Assert.assertTrue(compareUserSettingsPageUsers(currentDisplayingApiUser,newApiUserTobeRegistered));
+    }
+
+    public boolean compareUserSettingsPageUsers(User user1,User user2){
+        return
+                user1.getFirstName().equalsIgnoreCase(user2.getFirstName())&&
+                        user1.getLastName().equalsIgnoreCase(user2.getLastName())&&
+                        user1.getEmail().equalsIgnoreCase(user2.getEmail())&&
+                        user1.getLangKey().equalsIgnoreCase(user2.getLangKey());
+    }
+
+    @Then("user enters the excel path {string} sheet name {string}")
+    public void userEntersTheExcelPathSheetName(String path, String sheet) {
+        excelUtil.setExcel(path,sheet);
+        excelData=excelUtil.getDataList();
+    }
+
+    @Then("user enters a valid row {int} firstname {string} lastname {string}")
+    public void userEntersAValidRowFirstnameLastname(int int1, String firstname, String lastname) throws InterruptedException {
+        userSettingsPage.firstnameTextBox.clear();
+        userSettingsPage.lastnameTextBox.clear();
+        userSettingsPage.firstnameTextBox.sendKeys(excelData.get(int1).get(firstname));
+        userSettingsPage.lastnameTextBox.sendKeys(excelData.get(int1).get(lastname));
+        Thread.sleep(5000);
+    }
+
 }

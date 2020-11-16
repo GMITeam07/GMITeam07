@@ -3,15 +3,22 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+import pages.HomePage;
 import pages.LoginPage;
 
+import pages.UserSettingsPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 public class LoginSteps {
 
     LoginPage loginPage = new LoginPage();
+    HomePage homePage=new HomePage();
+    UserSettingsPage userSettingsPage=new UserSettingsPage();
 
     @Given("user is on the GMIBank HomePage")
     public void user_is_on_the_gmi_bank_home_page() {
@@ -136,6 +143,18 @@ public class LoginSteps {
         return user_username;
 
     }
+
+    @Given("user is on the User Setings Page with valid username {string} and password {string}")
+    public void userIsOnTheUserSetingsPageWithValidUsernameAndPassword(String username, String password) {
+        //tested functioning properly
+
+        userLogsInWithValidCredentials(username,password);
+        homePage.userAccountMenu.click();
+        homePage.userInfoDrpDnOption.click();
+        Driver.waitForVisibility(userSettingsPage.userSettingsText,2);
+        Driver.waitForVisibility(userSettingsPage.loginNameText,2);
+    }
+
 }
 
 

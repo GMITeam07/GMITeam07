@@ -10,10 +10,10 @@ public class UserSettingsPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath="//body//div//h2")
+    @FindBy(id="settings-title")
     public WebElement userSettingsText;
 
-    @FindBy(xpath="//body//div//h2/span/strong")
+    @FindBy(xpath="//*[@id='settings-title']//span//strong")
     public WebElement loginNameText;
 
     @FindBy(id="firstName")
@@ -37,17 +37,25 @@ public class UserSettingsPage {
     @FindBy(xpath="//form//div[.='Your last name is required.']")
     public WebElement lastnameRequiredText;
 
+    @FindBy(xpath="//form//div[3]/div[@class='invalid-feedback']")
+    public WebElement lastNameErrorMessages;
+
+
     @FindBy(xpath="//form//div[.='Your email is required.']")
     public WebElement emailRequiredText;
 
-    @FindBy(partialLinkText = "at least 5 characters")
+    @FindBy(xpath="//form//div[3]/div[@class='invalid-feedback']")
+    public WebElement emailErrorMessages;
+
+
+    @FindBy(xpath = "//*[@id=\"settings-form\"]/div[3]/div")
     public WebElement emailAtLeast5CharactersText;
 
     @FindBy(partialLinkText = "This field is invalid")
     public WebElement emailThisFieldIsInvalidText;
 
-    @FindBy(xpath = "//div//div//span/strong")
-    public WebElement settingsSavedMessageAlert;
+    @FindBy(xpath = "//*[@id='root']/div/div/div[1]/div/div/div[1]/span/strong")
+    public WebElement settingsSavedsuccessfullyMessageAlert;
 
     @FindBy(xpath = "//div/button[@aria-label='close']")
     public WebElement settingsSavedMessageAlertCloseBtn;

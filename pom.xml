@@ -130,7 +130,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M1</version>
                 <configuration>
-                    <parallel>classes</parallel>
+                    <parallel>methods</parallel>
                     <forkMode>perthread</forkMode>
                     <threadCount>4</threadCount>
                     <reuseForks>false</reuseForks>

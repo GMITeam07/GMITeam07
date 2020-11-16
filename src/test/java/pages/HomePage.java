@@ -10,9 +10,13 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//div//a[1]//span[.='User Info']")
+    @FindBy(xpath = "//*[@id='account-menu']/div/a[1]/span")
     public WebElement userInfoDrpDnOption;
 
     @FindBy (id = "account-menu")
     public WebElement userAccountMenu;
+
+    @FindBy (xpath = "//*[@id='account-menu']/div/a[3]/span")
+    public WebElement signOutOptionBtn;
+
 }

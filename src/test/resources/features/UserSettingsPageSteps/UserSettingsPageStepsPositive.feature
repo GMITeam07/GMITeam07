@@ -1,151 +1,122 @@
-@UserInfo  @PositiveTest
+@UserSettings  @PositiveTest
 Feature: User tests the user info segment
 
   Scenario Outline:TC_0008_0001_User tests the user info settings page WebElements
   user verifies the firstname, lastname, email and language options must be available
-    And user logs in with valid credentials "<username>" "<password>"
-    And user clicks on User Account Menu
-    When user selects the User Info option
-    Then user verifies the page displays text "User settings for [" text is displayed"
-    Then user verifies "<username>" is written in message inside bracelets
+#this test is passed completed
+    Given user is on the User Setings Page with valid username "<username>" and password "<password>"
     Then user verifies firstname textbox is available
     Then user verifies lastname textbox is available
     Then user verifies email textbox is available
-    Then user verifies the language dropdown menu exists
-
-    Examples:
-      | username               | password               |
-      | validadmin_username    | validadmin_password    |
-#      | validuser_username     | validuser_password     |
-#      | validmanager_username  | validmanager_password  |
-#      | validemployee_username | validemployee_password |
-#      | validcustomer_username | validcustomer_password |
-#      | validjoker_username    | validjoker_password    |
-
-  Scenario Outline:TC_0008_0002_User Info settings language drop down
-  must have 2, "English" and "Türkçe" editable options
-
-    And user logs in with valid credentials "<username>" "<password>"
-    And user clicks on User Account Menu
-    When user selects the User Info option
-    Then user verifies the page displays text "User settings for [" text is displayed"
-    Then user verifies "<username>" is written in message inside bracelets
     Then user verifies language drop down menu has "English" and "Türkçe" options
-    Then user gets the user data from UI
-    When user retrieves the user info "<username>" by api
-    Then user verifies the user data is same as api data
-    Then user retrieves the user info "<username>" by database
-    Then user verifies the user data is same as database data
-    Then user selects language "<language>"
-    Then user clicks on save button
-    Then user verifies success message is displayed "<successmessage>"
+    Then user logs out
 
-    Then user retrieves the user info "<username>" by api
-    Then user retrieves the user info "<username>" by database
-    Then user verifies the user language "<language>" is same as api
-    Then user verifies the user language "<language>" is same as database
+    @usersettings
+    Examples:
+      | username    | password  |
+      | team07admin | S123456s? |
+#      | validadmin_username    |
+#      | validuser_username     |
+#      | validuser_username     |
+#      | validmanager_username  |
+#      | validmanager_username  |
+#      | validemployee_username |
+#      | validemployee_username |
+#      | validcustomer_username |
+#      | validcustomer_username |
+#      | validjoker_username    |
+#      | validjoker_username    |
+
+
+  Scenario Outline:TC_0008_0002_User Info settings language drop down language options
+  user tests that user settings language drop down options are editable
+
+  #this test is passed completed
+    Given user is on the User Setings Page with valid username "<username>" and password "<password>"
+    Then user records initial UI user data on User Settings Page "<username>"
+    Then user selects the "<firstlanguageselection>" on language drop down
+    Then user clicks on save button on User Settings Page
+    Then user verifies successful saved message "<successfullsavedmessage>" is displayed
+    And user logs out
+    Given user is on the User Setings Page with valid username "<username>" and password "<password>"
+    Then user verifies firstselected language dropdown option is "<firstlanguageselection>"
+    Then user selects the "<secondlanguageselection>" on language drop down
+    Then user clicks on save button on User Settings Page
+    Then user verifies successful saved message "<successfullsavedmessage>" is displayed
+    Then user logs out
+    Given user is on the User Setings Page with valid username "<username>" and password "<password>"
+    Then user verifies firstselected language dropdown option is "<secondlanguageselection>"
+    Then user selects the initial language on language drop down
+    Then user clicks on save button on User Settings Page
+    Then user verifies successful saved message "<successfullsavedmessage>" is displayed
+    Then user logs out
+
 
     Examples:
-      | username               | password               |language|
-      | validadmin_username    | validadmin_password    |English |
-#      | validadmin_username    | validadmin_password    |Türkçe|
-#      | validuser_username     | validuser_password     |English |
-#      | validuser_username     | validuser_password     |Türkçe |
-#      | validmanager_username  | validmanager_password  |English |
-#      | validmanager_username  | validmanager_password  |Türkçe |
-#      | validemployee_username | validemployee_password |English |
-#      | validemployee_username | validemployee_password |Türkçe |
-#      | validcustomer_username | validcustomer_password |English |
-#      | validcustomer_username | validcustomer_password |Türkçe |
-#      | validjoker_username    | validjoker_password    |English |
-#      | validjoker_username    | validjoker_password    |Türkçe |
+      | username    | password  | firstlanguageselection | secondlanguageselection | successfullsavedmessage |
+      | team07admin | S123456s? | English                | Türkçe                  | Settings saved!         |
+#      | validadmin_username    | validadmin_password    | Türkçe                 | English                 | Settings saved!         |
+#      | validuser_username     | validuser_password     | English                | Türkçe                  | Settings saved!         |
+#      | validuser_username     | validuser_password     | Türkçe                 | English                 | Settings saved!         |
+#      | validmanager_username  | validmanager_password  | English                | Türkçe                  | Settings saved!         |
+#      | validmanager_username  | validmanager_password  | English                | Türkçe                  | Settings saved!         |
+#      | validemployee_username | validemployee_password | Türkçe                 | English                 | Settings saved!         |
+#      | validemployee_username | validemployee_password | English                | Türkçe                  | Settings saved!         |
+#      | validcustomer_username | validcustomer_password | Türkçe                 | English                 | Settings saved!         |
+#      | validcustomer_username | validcustomer_password | English                | Türkçe                  | Settings saved!         |
+#      | validjoker_username    | validjoker_password    | English                | Türkçe                  | Settings saved!         |
+#      | validjoker_username    | validjoker_password    | Türkçe                 | English                 | Settings saved!         |
 
-  @usersettings
-  Scenario Outline:TC_0008_0003_User Info settings firstname textbox must be editable
-  user edits the firstname and verifies changes over api and database
-    And user logs in with valid credentials "<username>" "<password>"
-    And user clicks on User Account Menu
-    When user selects the User Info option
-    Then user verifies the page displays text "User settings for [" text is displayed"
-    Then user verifies "<username>" is written in message inside bracelets
+
+  Scenario Outline:TC_0008_0003_User Info settings firstname,lastname, email textboxes must be editable
+  User Info settings firstname,lastname, email textboxes must be editable and verifies on UI and Api
+  #   this test is passed completed
+  #   This feature completed with datas
+
+    Given user is on the User Setings Page with valid username "<username>" and password "<password>"
+    Then user records initial UI user data on User Settings Page "<username>"
+    When user retrieves initial Api user data "<username>"
+    When user enters new user data "<newfirstname>" "<newlastname>" "<newemail>" "<newlanguage>"
+    Then user clicks on save button on User Settings Page
+    Then user verifies successful saved message "<successfulsavedmessage>" is displayed
+    Then user logs out
+    Given user is on the User Setings Page with valid username "<username>" and password "<password>"
+    Then user records current displaying UI user data "<username>"
+    Then user retrieves current displaying Api User data "<username>"
+    Then user verifies current displaying UI user data is same as new UI user data tobe registered
+    Then user verifies current displaying Api user data is same as initial Api user data
+    Then user verifies current displaying Api user data is same as current displaying UI data
+    Then user reinitialize the user data by UI
+    Then user clicks on save button on User Settings Page
+    Then user verifies successful saved message "<successfulsavedmessage>" is displayed
+    Then user logs out
+
+    Examples:
+      | username    | password  | newfirstname | newlastname | newemail                   | newlanguage | successfulsavedmessage |
+      | team07admin | S123456s? | Jackson      | Smith       | jacksonsmith0102@zmail.com | English     | Settings saved!        |
+#      | validadmin_username    | validadmin_password    | Jackson      | White       | jacksonwhite0102@zmail    | Türkçe      | Settings saved!        |
+#      | validuser_username     | validuser_password     | Marlton      | Eastwood    | marltoneastwood0102@zmail | English     | Settings saved!        |
+#      | validuser_username     | validuser_password     | Johanson     | Claus       | johansonclaus0102@zmail   | Türkçe      | Settings saved!        |
+#      | validmanager_username  | validmanager_password  | George       | Smith       | georgesmith0102@zmail     | English     | Settings saved!        |
+#      | validmanager_username  | validmanager_password  | nancy        | Ebeling     | nancyebeling0102@zmail    | Türkçe      | Settings saved!        |
+#      | validemployee_username | validemployee_password | Mary         | Hans        | MaryHans0102@zmail        | English     | Settings saved!        |
+#      | validemployee_username | validemployee_password | Howard       | Carp        | howardcorp0102@zmail      | Türkçe      | Settings saved!        |
+#      | validcustomer_username | validcustomer_password | Traver       | Nicholson   | travernicholson0102@zmail | English     | Settings saved!        |
+#      | validcustomer_username | validcustomer_password | Brian        | Smith       | briansmith@zmail          | Türkçe      | Settings saved!        |
+#      | validjoker_username    | validjoker_password    | Jose         | Smith       | josesmith0102@zmail       | English     | Settings saved!        |
+#      | validjoker_username    | validjoker_password    | Chris        | Black       | chrisblack0102@zmail      | Türkçe      | Settings saved!        |
+
+  Scenario Outline: sample for excel data
+
+    Given user is on the User Setings Page with valid username "<username>" and password "<password>"
+    Then user enters the excel path "Book1.xlsx" sheet name "sheet1"
     Then user clears the firstname textbox
-    Then user enters a new firstname "<newfirstname>"
-    Then user clicks on save button
-    Then user verifies success message is displayed "<successmessage>"
-    Then user refreshes the page
-    Then user verifies the UI firstname is same as "<newfirstname>"
-    When user retrieves the user info "<username>" by database
-    Then user verifies the api firstname "firstname" is same as "<newfirstname>"
-    Then user verifies the user data is same as database data
-    When user retrieves the user info "<username>" by api
-    Then user verifies the database firstname "firstname" is same as "<newfirstname>"
-    Then user verifies the user data is same as api data
-    Then user clears the firstname textbox
-    Then user enters the initial firstname to firstname textbox
-    Then user clicks on save button
-    Then user verifies success message is displayed "<successmessage>"
+    Then user enters a valid row <rowno> firstname "<firstname>" lastname "<lastname>"
+    Then user logs out
+
 
     Examples:
-      | username            | password            | newfirstname | successmessage  |
-      | validadmin_username | validadmin_password | jackson      | Settings saved! |
-
-
-  @usersettings
-  Scenario Outline:TC_0008_0004_User Info settings lastname textbox must be editable
-  user edits the lastname and verifies changes over api and database
-
-    And user logs in with valid credentials "<username>" "<password>"
-    And user clicks on User Account Menu
-    When user selects the User Info option
-    Then user verifies the page displays text "User settings for [" text is displayed"
-    Then user verifies "<username>" is written in message inside bracelets
-    Then user clears the lastname textbox
-    Then user enters a new lastname "<newlastname>"
-    Then user clicks on save button
-    Then user verifies success message is displayed "<successmessage>"
-    Then user refreshes the page
-    Then user verifies the lastname is same as "<newlastname>"
-    When user retrieves the user info "<username>" by database
-    Then user verifies the api lastname "lastname" is same as "<newlastname>"
-    Then user verifies the user data is same as database data
-    When user retrieves the user info "<username>" by api
-    Then user verifies the database lastname "lastname" is same as "<newlastname>"
-    Then user verifies the user data is same as api data
-    Then user clears the lastname textbox
-    Then user enters the initial lastname to lastname textbox
-    Then user clicks on save button
-    Then user verifies success message is displayed "<successmessage>"
-
-    Examples:
-      | username            | password            | newlastname | successmessage  |
-      | validadmin_username | validadmin_password | jackson      | Settings saved! |
-
-  @usersettings
-  Scenario Outline:TC_0008_0005_User Info settings email textbox must be editable
-  user edits the email and verifies changes over api and database
-
-    And user logs in with valid credentials "<username>" "<password>"
-    And user clicks on User Account Menu
-    When user selects the User Info option
-    Then user verifies the page displays text "User settings for [" text is displayed"
-    Then user verifies "<username>" is written in message inside bracelets
-    Then user clears the email textbox
-    Then user enters a new valid email "<newemailname>"
-    Then user clicks on save button
-    Then user verifies success message is displayed "<successmessage>"
-    Then user refreshes the page
-    Then user verifies the email is same as "<newemailname>"
-    When user retrieves the user info "<username>" by database
-    Then user verifies the api email "email" is same as "<newemailname>"
-    Then user verifies the user data is same as database data
-    When user retrieves the user info "<username>" by api
-    Then user verifies the database email "email" is same as "<newemailname>"
-    Then user verifies the user data is same as api data
-    Then user clears the email textbox
-    Then user enters the initial email to email textbox
-    Then user clicks on save button
-    Then user verifies success message is displayed "<successmessage>"
-
-    Examples:
-      | username            | password            | newemailname | successmessage  |
-      | validadmin_username | validadmin_password | jackson@zmail.com      | Settings saved! |
+      | username   | password  | rowno | firstname | lastname |
+      | team07user | S123456s? | 0     | firstname | lastname |
+      | team07user | S123456s? | 1     | firstname | lastname |
+      | team07user | S123456s? | 2     | firstname | lastname |
