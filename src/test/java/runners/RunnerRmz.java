@@ -6,18 +6,22 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        publish = true,
         plugin = {
+                "pretty:target/default-cucumber-reports",
                 "html:target/default-cucumber-reports",
                 "json:target/json-reports/cucumber.json",
-                "junit:target/xml-report/cucumber.xml"
+                "junit:target/xml-report/cucumber.xml",
+                        "pretty"
         },
         features = "src/test/resources/features",
         glue = "steps",
-        tags = "",
-        dryRun = false
 
+        tags = "@Ramazan",
+
+        dryRun = false
 )
 
-public class Runner {
+public class RunnerRmz {
 }
 
