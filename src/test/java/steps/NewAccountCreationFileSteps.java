@@ -76,22 +76,17 @@ public class NewAccountCreationFileSteps {
     public void userSelectsEmployee(String arg0) throws InterruptedException {
         Select employee = new Select(newAccountPage.employeeBox);
         employee.selectByIndex(0);
-        Thread.sleep(4000);
-
     }
 
     @Given("user clicks on Save Button")
     public void user_clicks_on_Save_Button() throws InterruptedException {
-        newAccountPage.saveButton.click();
-
-        Thread.sleep(4000);
+        Driver.waitForClickablility(newAccountPage.saveButton,4).click();
     }
 
-    @Then("user verifies that account is created")
-    public void user_verifies_that_account_is_created() {
-
-        Assert.assertTrue(newAccountPage.accountcreated.getText().toLowerCase().contains("Translation"));
-
-
-    }
+//    @Then("user verifies that account is created {string}")
+//    public void user_verifies_that_account_is_created(String string) {
+//
+//        Assert.assertTrue(newAccountPage.accountcreated.getText().toLowerCase().contains("account created"));
+//
+//    }
 }

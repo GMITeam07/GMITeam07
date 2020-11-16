@@ -115,7 +115,6 @@ public class LoginSteps {
         user_clicks_on_sign_in_button();
         user_verifies_successful_login();
 
-
     }
 
     public static String getLoginname(String username){

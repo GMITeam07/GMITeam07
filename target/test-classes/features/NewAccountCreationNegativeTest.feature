@@ -5,7 +5,7 @@ Feature: sign in feature
 
 
   @NegativeCreateNewAccount
-  Scenario Outline:US_013 - User should create a new account
+  Scenario Outline:TC_0029_0013 - User should not create a new account
 
     And user clicks on My Operations
     And user selects on Manage Accounts
@@ -17,11 +17,12 @@ Feature: sign in feature
     And user selects Create Date "<createdate>"
     And user selects a Closed Date "<closeddate>"
     And user selects Employee "<employee>"
-    Then user clicks on Save Button
+    And user clicks on Save Button
+    #Then user verifies that account is created "<created>"
 
     Examples:
-      | description  | balance | accounttype | accountstatus | createdate          | closeddate         | employee |
-      | Td_account 2 | $1500_00  | Saving      | Active        | 2020-10-11 12:00 PM | 2029-12-10 4:00 PM | random   |
+      | description  | balance  | accounttype | accountstatus | createdate          | closeddate         | employee | created             |
+      | Td_account 2 | $1500_00 | Saving      | Active        | 2020-10-11 12:00 PM | 2029-12-10 4:00 PM | random   | account not created |
      # | BMO account_8*     | 55000    | Investing   | Suspended     | 2020-08-13 5:00 PM  | 2015-04-17 9:00 AM | random   |
      # | Ottawa account     | $35000   | Checking    | Closed        | 2020-11-15 12:00 PM | 2020-12-10 4:00 PM | random   |
      # | Halifax account    | 455000   | Investing   | Suspended     | 2020-11-13 9:00 PM  | 2022-07-20 7:00 AM | random   |
