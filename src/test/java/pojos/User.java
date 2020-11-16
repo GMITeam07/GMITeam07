@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class User {
@@ -201,4 +202,9 @@ public class User {
         return stringBuilder.toString();
     }
 
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getLogin(), getFirstName(), getLastName(), getEmail(), getImageUrl(), getActivated(), getLangKey(), getCreatedBy(), getCreatedDate(), getLastModifiedBy(), getLastModifiedDate(), getAuthorities());
+    }
 }
