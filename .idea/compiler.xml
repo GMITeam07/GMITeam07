@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="GMIbankCucumber" />
+        <module name="GMITeam07New" />
         <module name="GMITeam07" />
         <module name="GMIBank" />
       </profile>
