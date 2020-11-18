@@ -10,9 +10,7 @@ Feature: Login Page
     And user clicks on sign in button
     Then user verifies successful login
 
-
-    #Examples:
+   # Examples:
       #| username            |password|
-      #|validadmin_username|validadmin_password|
-
+     # |validadmin_username|validadmin_password|
 
