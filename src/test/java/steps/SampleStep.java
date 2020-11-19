@@ -1,14 +1,22 @@
 package steps;
 
+import com.google.gson.JsonObject;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import pages.UserSettingsPage;
 import pojos.*;
 import utilities.ApiUtils;
+import utilities.DBUtils;
 import utilities.Driver;
 
+import javax.swing.text.Document;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
 
@@ -66,14 +74,18 @@ public class SampleStep {
         System.out.println(ApiUtils.getCustomerById(2553));
     }
 
+
     @Test
-    public void rmzfeature(){
-        LoginSteps loginSteps=new LoginSteps();
-        UserSettingsPage userSettingsPage=new UserSettingsPage();
-        loginSteps.userIsOnTheUserSetingsPageWithValidUsernameAndPassword("team07admin","S123456s?");
-        Driver.waitForVisibility(By.id("settings-title"),3);
-        System.out.println(userSettingsPage.firstnameTextBox.getAttribute("value"));
+    public void apiStates() throws IOException {
+        Response response=ApiUtils.getRequest("admin", "/api/users");
+
+        List<User> list=response.
+                getBody().
+                jsonPath().
+                getList("",User.class);
+
 
     }
+
 
 }

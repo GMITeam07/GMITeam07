@@ -2,10 +2,7 @@ package utilities;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import pojos.Account;
-import pojos.Country;
-import pojos.Customer;
-import pojos.User;
+import pojos.*;
 import specs.Specs;
 
 import java.io.IOException;
@@ -186,5 +183,39 @@ public class ApiUtils {
         return customerList;
     }
     /*------------------------------------------------------------------------*/
+
+    public static State getStateById(int stateId){
+
+        Response response=
+                given().
+                        auth().
+                        preemptive().
+                        basic("team07admin","S123456s?").
+                        accept(ContentType.JSON).
+                        when().
+                        get("https://www.gmibank.com/api/tp-states/"+stateId);
+
+        State state=response.as(State.class);
+
+        return state;
+
+    }
+
+    public static List<State> getStatesAsList(){
+        Response response=
+                given().
+                        auth().
+                        preemptive().
+                        basic("team07admin","S123456s?").
+                        accept(ContentType.JSON).
+                        when().
+                        get("https://www.gmibank.com/api/tp-states");
+
+        List<State> listOfStates=response.jsonPath().getList("",State.class);
+
+        return listOfStates;
+    }
+
+
 
 }
