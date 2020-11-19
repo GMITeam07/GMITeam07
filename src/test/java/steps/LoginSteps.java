@@ -62,7 +62,6 @@ public class LoginSteps {
                 user_username = ConfigReader.getProperty("validjoker_username");
                 break;
         }
-        System.out.println(user_username);
         loginPage.userName.sendKeys(user_username);
     }
 
@@ -89,7 +88,6 @@ public class LoginSteps {
                 userpassword = ConfigReader.getProperty("validjoker_password");
                 break;
         }
-        System.out.println(userpassword);
         loginPage.password.sendKeys(userpassword);
     }
 
@@ -101,7 +99,6 @@ public class LoginSteps {
     @Then("user verifies successful login")
     public void user_verifies_successful_login() {
         WebElement element = loginPage.accountMenu;
-        System.out.println(element.getText());
         Driver.verifyElementDisplayed(element);
     }
 
