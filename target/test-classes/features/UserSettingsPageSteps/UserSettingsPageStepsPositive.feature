@@ -109,7 +109,7 @@ Feature: User tests the user info segment
   Scenario Outline: sample for excel data
 
     Given user is on the User Setings Page with valid username "<username>" and password "<password>"
-    Then user enters the excel path "Book1.xlsx" sheet name "sheet1"
+    Then user enters the excel path "src\test\resources\excelfiles\UserSettingsPageTestData.xlsx" sheet name "sheet1"
     Then user clears the firstname textbox
     Then user enters a valid row <rowno> firstname "<firstname>" lastname "<lastname>"
     Then user logs out

@@ -14,11 +14,10 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "steps",
 
-        tags = "",
+        tags = "@loginPageNegativeTest",
 
         dryRun = false
 )
 
-public class Runner {
+public class RunnerTaner {
 }
-

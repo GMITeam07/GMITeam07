@@ -115,25 +115,13 @@ public class LoginSteps {
         user_verifies_successful_login();
     }
 
-    @And("user enters valid username")
-    public void userEntersValidUsername() {
-    }
 
-    @And("user enters valid password")
-    public void userEntersValidPassword() {
-    }
-
-    @And("There should be an option to cancel login")
-    public void thereShouldBeAnOptionToCancelLogin() {
-    }
 
     @And("user clicks on the cancel button")
     public void userClicksOnTheCancelButton() {
+        loginPage.cancelButton.click();
     }
 
-    @Then("user verifies user is on the homepage")
-    public void userVerifiesUserIsOnTheHomepage() {
-    }
 
     @Given("user is on the User Setings Page with valid username {string} and password {string}")
     public void userIsOnTheUserSetingsPageWithValidUsernameAndPassword(String username, String password) {

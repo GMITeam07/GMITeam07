@@ -1,6 +1,5 @@
 package steps;
 
-import com.google.gson.internal.bind.util.ISO8601Utils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -112,5 +111,16 @@ public class LoginNegativeSteps {
         Driver.verifyElementDisplayed(loginPage.failedSigninMessage);
 
     }
+    @Then("user clicks register a new account button")
+    public void user_clicks_register_a_new_account_button() {
+        loginPage.registerNewAccountButton.click();
+    }
+
+    @Then("user clicks did you forget your password button")
+    public void user_clicks_did_you_forget_your_password_button() {
+        loginPage.forgetPasswordButton.click();
+    }
+
+
 
 }
