@@ -45,7 +45,8 @@ public class SampleStep {
     @Test
     public void getaccountsByList() throws IOException {
         // getting all bank accounts as list
-        System.out.println(ApiUtils.getAccountsAsList("admin"));
+        ApiUtils.getAccountsAsList("admin").stream().
+                map(t->t).forEach(System.out::println);
     }
 
     @Test
@@ -61,6 +62,7 @@ public class SampleStep {
 
     @Test
     public void getCustomersByList() throws IOException {
+
         List<Customer> allCustomers= ApiUtils.getCustomersAsList("admin");
         System.out.println(allCustomers.get(0).toString());
 

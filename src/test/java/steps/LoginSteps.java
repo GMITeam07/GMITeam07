@@ -13,6 +13,8 @@ import pages.UserSettingsPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import java.util.Scanner;
+
 public class LoginSteps {
 
     LoginPage loginPage = new LoginPage();
@@ -36,6 +38,7 @@ public class LoginSteps {
 
     @Then("user enters a valid username {string}")
     public void user_enters_a_valid_username(String username) {
+
         String user_username = username;
 
         switch (username) {
@@ -63,8 +66,7 @@ public class LoginSteps {
 
     @When("user enters a valid password {string}")
     public void user_enters_a_valid_password(String password) {
-
-        String userpassword = password;
+                String userpassword = password ;
         switch (password) {
             case "validuser_password":
                 userpassword = ConfigReader.getProperty("validuser_password");
@@ -108,7 +110,6 @@ public class LoginSteps {
         user_enters_a_valid_password(password);
         user_clicks_on_sign_in_button();
         user_verifies_successful_login();
-
 
     }
 
