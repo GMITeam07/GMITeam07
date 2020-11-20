@@ -1,8 +1,8 @@
 @CustomersPopulated
   Feature: System should allow user to manage their account
 
-    Background: User logins GMIBank Home Page
-      Then user is logs in with valid credentials "validcustomer_username" "validuser_password"
+ #   Background: User logins GMIBank Home Page
+  #    Then user logs in with valid credentials "validcustomer_username" "validuser_password"
 
     @accountTypesAndBalance
     Scenario: User should see all account types and balance populated

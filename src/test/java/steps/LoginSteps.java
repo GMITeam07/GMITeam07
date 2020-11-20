@@ -3,18 +3,13 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 import pages.HomePage;
 import pages.LoginPage;
-
 import pages.UserSettingsPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import java.util.Scanner;
 
 public class LoginSteps {
 
@@ -111,7 +106,6 @@ public class LoginSteps {
         user_enters_a_valid_password(password);
         user_clicks_on_sign_in_button();
         user_verifies_successful_login();
-
     }
 
     public static String getLoginname(String username){

@@ -2,7 +2,7 @@
 Feature: User Info Update
 
   Background: User logins GMIBank Home Page
-    Then user is logs in with valid credentials "validuser_username" "validuser_password"
+    Then user logs in with valid credentials "validuser_username" "validuser_password"
 
     @invalidEmail
   Scenario Outline: System should not allow to make updates with invalid credentials
@@ -71,4 +71,11 @@ Feature: User Info Update
     Then user should be see just English and Turkish language options
 
 
-
+  Scenario : user logs into GMI Home Page
+    Given user is on the GMIBank HomePage
+    When user clicks on login Drop down menu
+    Then user clicks on Sign in option
+    And user enters a valid username "username"
+    When user enters a valid password "password"
+    And user clicks on sign in button
+    Then user verifies successful login
