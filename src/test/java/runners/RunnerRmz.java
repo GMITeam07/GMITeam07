@@ -1,0 +1,27 @@
+package runners;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        publish = true,
+        plugin = {
+                "pretty:target/default-cucumber-reports",
+                "html:target/default-cucumber-reports",
+                "json:target/json-reports/cucumber.json",
+                "junit:target/xml-report/cucumber.xml",
+                        "pretty"
+        },
+        features = "src/test/resources/features",
+        glue = "steps",
+
+        tags = "@Ramazan",
+
+        dryRun = false
+)
+
+public class RunnerRmz {
+}
+
