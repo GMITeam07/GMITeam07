@@ -6,13 +6,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.UserInfoSettingsUpdatePage;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReUsableMethods;
 
 public class UserInfoSettingsUpdateStep {
     UserInfoSettingsUpdatePage userInfoSettingsUpdatePage = new UserInfoSettingsUpdatePage();
@@ -66,7 +63,7 @@ public class UserInfoSettingsUpdateStep {
 
     @And("User enters invalid email{string}")
     public void userEntersInvalidEmail(String invalidEmail) {
-        String email="invalid_email1";
+        String email="invalidEmail";
 
         switch (invalidEmail) {
             case "invalid_email1":

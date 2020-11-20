@@ -2,7 +2,7 @@
 Feature: User Info Update
 
   Background: User logins GMIBank Home Page
-    Then user is logs in with valid credentials "<username>" "<password>"
+    Then user is logs in with valid credentials "validuser_username" "validuser_password"
 
     @invalidEmail
   Scenario Outline: System should not allow to make updates with invalid credentials

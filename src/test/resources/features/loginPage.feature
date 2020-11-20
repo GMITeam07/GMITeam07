@@ -9,7 +9,7 @@ Feature: Login Page
   #  And user enters a valid username "<username>"
    # When user enters a valid password "<password>"
     And user enters a valid username "username"
-    When user enters a valid password "password"
+    When user enters a valid password "pasword"
     And user clicks on sign in button
     Then user verifies successful login
 

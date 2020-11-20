@@ -1,7 +1,7 @@
 
 Feature: Login Page
   @loginpage
-    Scenario:
+    Scenario: user logs into GMI Home Page
  # Scenario Outline: user logs into GMI Home Page
     Given user is on the GMIBank HomePage
     When user clicks on login Drop down menu
@@ -9,7 +9,7 @@ Feature: Login Page
   #  And user enters a valid username "<username>"
    # When user enters a valid password "<password>"
     And user enters a valid username "username"
-    When user enters a valid password "password"
+    When user enters a valid password "pasword"
     And user clicks on sign in button
     Then user verifies successful login
 
