@@ -35,6 +35,7 @@ public class ExcelUtil {
             FileInputStream fileInputStream = new FileInputStream(path);
             workBook = WorkbookFactory.create(fileInputStream);
             workSheet = workBook.getSheet(sheetName);
+            fileInputStream.close();
 
         } catch (Exception e) {
             throw new RuntimeException(e);
