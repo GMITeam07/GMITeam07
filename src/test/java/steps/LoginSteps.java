@@ -152,6 +152,10 @@ public class LoginSteps {
         Driver.waitForVisibility(userSettingsPage.loginNameText,2);
     }
 
+    @Given("user is on the User Management Page with valid credentials {string} {string}")
+    public void userIsOnTheUserManagementPageWithValidCredentials(String username, String password) {
+
+    }
 }
 
 
