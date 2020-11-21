@@ -1,7 +1,6 @@
 package steps;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -14,11 +13,6 @@ import utilities.Driver;
 public class UserInfoSettingsUpdateStep {
     UserInfoSettingsUpdatePage userInfoSettingsUpdatePage = new UserInfoSettingsUpdatePage();
 
-    @Given("user clicks on User Account Menu")
-    public void user_clicks_on_user_account_menu() {
-  //      Driver.waitForClickablility(userInfoSettingsUpdatePage.accountMenu,20000);
-       userInfoSettingsUpdatePage.accountMenu.click();
-    }
 
     @When("user selects the User Info option")
     public void user_selects_the_user_info_option() {
@@ -29,15 +23,6 @@ public class UserInfoSettingsUpdateStep {
     public void user_verifies_the_page_displays_text_text_is_displayed(String string) {
       Driver.verifyElementDisplayed(userInfoSettingsUpdatePage.userSettingsText);
 
-    }
-    @Then("user clears the lastname textbox")
-    public void user_clears_the_lastname_textbox() {
-        Driver.getDriver().findElement(By.id("lastName")).clear();
-    }
-
-    @Then("user clears the firstname textbox")
-    public void user_clears_the_firstname_textbox() {
-        Driver.getDriver().findElement(By.id("firstName")).clear();
     }
 
     @Then("user clicks on save button")
