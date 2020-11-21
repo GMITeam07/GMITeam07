@@ -197,21 +197,8 @@ public class ApiUtils {
         return state;
     }
 
-    public static List<State> getStatesAsList(){
-        Response response=
-                given().
-                        auth().
-                        preemptive().
-                        basic("team07admin","S123456s?").
-                        accept(ContentType.JSON).
-                        when().
-                        get("https://www.gmibank.com/api/tp-states");
-        List<State> listOfStates=response.jsonPath().getList("",State.class);
-        return listOfStates;
-    }
 
 
 
-
-
+    
 }

@@ -1,5 +1,8 @@
 package steps;
 
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import pages.UserSettingsPage;
@@ -75,5 +78,24 @@ public class SampleStep {
         System.out.println(userSettingsPage.firstnameTextBox.getAttribute("value"));
 
     }
+
+    @Test
+    public void apiStates() throws IOException {
+        System.out.println( ApiUtils.getStateById(19226));
+
+  //      System.out.println(ApiUtils.getUserByLogin("team07Admin"));
+        System.out.println(ApiUtils.getUserByLogin("admin"));
+
+
+
+
+
+
+
+
+
+
+    }
+
 
 }
