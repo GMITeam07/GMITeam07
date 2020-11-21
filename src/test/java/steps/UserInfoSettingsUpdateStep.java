@@ -101,9 +101,4 @@ public class UserInfoSettingsUpdateStep {
 
     }
 
-    @Then("user clicks sign out button")
-    public void userClicksSignOutButton() {
-        userInfoSettingsUpdatePage.accountMenu.click();
-     userInfoSettingsUpdatePage.singOut.click();
-    }
 }

@@ -9,8 +9,7 @@
         When User clicks my operations drop down
         And User clicks manage accounts
         And User should see all account types and balance populated
-        Then user clicks sign out button
-
+        Then user logs out
 
 
 
@@ -20,5 +19,5 @@
       And User clicks manage accounts
       And User clicks view button
       And user should view transactions
-  #    Then user clicks sign out button
+  #    Then user logs out
 

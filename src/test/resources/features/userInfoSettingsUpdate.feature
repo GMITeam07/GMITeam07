@@ -15,7 +15,7 @@ Feature: User Info Update
     And User enters invalid email"<invalid email>"
     And user clicks on save button
     Then User should see This field is invalid massage
-    Then user clicks sign out button
+    Then user logs out
 
     Examples:
       | firstname | lastname  |invalid email|
@@ -36,7 +36,7 @@ Feature: User Info Update
     And user enters valid email "<valid email>"
     And user clicks on save button
     Then user should see Your first name is required massage
-      Then user clicks sign out button
+    Then user logs out
 
 
     Examples:
@@ -55,7 +55,7 @@ Feature: User Info Update
     And user enters valid email "<valid email>"
     And user clicks on save button
     Then User should see Your last name is required massage
-      Then user clicks sign out button
+    Then user logs out
 
 
     Examples:
@@ -69,6 +69,7 @@ Feature: User Info Update
     When user verifies the page displays text "User settings for [" text is displayed"
     And user clicks Language drop down
     Then user should be see just English and Turkish language options
+    Then user logs out
 
 
 
