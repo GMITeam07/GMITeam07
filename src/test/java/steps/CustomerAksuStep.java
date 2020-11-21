@@ -35,16 +35,6 @@ public class CustomerAksuStep {
 
         }
 
-
-//        for(WebElement accountType : accountTypes){
-//            System.out.print("\n accountType " + accountType.getText());
-//        }
-//
-//        for(WebElement balance : balances){
-//            System.out.print("\n balance " + balance.getText());
-//        }
-
-
        }
 
     @And("User clicks view button")
