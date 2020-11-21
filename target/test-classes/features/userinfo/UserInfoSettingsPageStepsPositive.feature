@@ -15,7 +15,7 @@ Feature: User tests the user info segment
 
     @usersettings
     Examples:
-<<<<<<< HEAD
+
       | username       | password  |
       | team07user     | S123456s? |
       | team07admin    | S123456s? |
@@ -31,6 +31,9 @@ Feature: User tests the user info segment
   #this test is passed completed
     Given user is on the User Setings Page with valid username "<username>" and password "<password>"
     Then user records initial UI user data on User Settings Page "<username>"
+    Then user records initial API user data on User Settings Page "<username>"
+    Then user records initial DB user data on User Settings Page "<username>"
+
     Then user selects the "<firstlanguageselection>" on language drop down
     Then user clicks on save button on User Settings Page
     Then user verifies successful saved message "<successfullsavedmessage>" is displayed
