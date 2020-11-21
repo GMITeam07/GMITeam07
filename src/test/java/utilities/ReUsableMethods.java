@@ -8,6 +8,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import pojos.Customer;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,6 +31,20 @@ public class ReUsableMethods {
     public static String generateClientOrderId() {
         /*This method generates a random String id   */
         return "coid".concat(String.valueOf(System.currentTimeMillis()));
+    }
+
+    public void createNewCustomer(String ssn,
+                                  String firstname,
+                                  String lastname,
+                                  String middlename,
+                                  String address,
+                                  String mobilenumber,
+                                  String username,
+                                  String login){
+        Customer customer=new Customer();
+        customer.setAddress(address);
+
+
     }
 
     //AKSU SOR ONDAN SONRA PUSH ET

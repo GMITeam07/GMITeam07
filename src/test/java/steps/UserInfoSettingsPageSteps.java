@@ -325,4 +325,12 @@ public class UserInfoSettingsPageSteps {
     public void userClicksOnFirstnameTextbox() {
         userSettingsPage.firstnameTextBox.click();
     }
+
+    @Then("user clicks on email text box on User Settings Page")
+    public void userClicksOnEmailTextBoxOnUserSettingsPage() {
+        userSettingsPage.emailTextBox.click();
+        ApiUtils.getUserByLogin("team07admin");
+
+    }
+
 }
