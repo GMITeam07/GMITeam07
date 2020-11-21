@@ -2,22 +2,23 @@
 Feature: User tests the user info segment
 
 #-----------------------------------------------------------------------------
-  @usersettings @negativeTest
+  @usersettings @negativeTest @ramazan
   Scenario Outline:TC_0004_User tests the user info settings email textbox
   email should create a red message your email is required when empty
 
     Given user is on the User Setings Page with valid username "<username>" and password "<password>"
     Then user records current displaying UI user data "<username>"
     When user clears the email textbox
+    Then user clicks on email text box on User Settings Page
     Then user verifies an error message is under email textbox displayed contains "<youremailisrequired>"
     Examples:
 
       | username       | password  | youremailisrequired    |
       | team07user     | S123456s? | Your email is required |
-      | team07admin    | S123456s? | Your email is required |
-      | team07manager  | S123456s? | Your email is required |
-      | team07customer | S123456s? | Your email is required |
-      | team07employee | S123456s? | Your email is required |
+#      | team07admin    | S123456s? | Your email is required |
+#      | team07manager  | S123456s? | Your email is required |
+#      | team07customer | S123456s? | Your email is required |
+#      | team07employee | S123456s? | Your email is required |
 
     #-----------------------------------------------------------------------------
   @usersettings @negativeTest
