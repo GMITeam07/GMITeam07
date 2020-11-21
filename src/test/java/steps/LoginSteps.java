@@ -6,7 +6,6 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 import pages.HomePage;
 import pages.LoginPage;
 
@@ -153,6 +152,10 @@ public class LoginSteps {
         Driver.waitForVisibility(userSettingsPage.loginNameText,2);
     }
 
+    @Given("user is on the User Management Page with valid credentials {string} {string}")
+    public void userIsOnTheUserManagementPageWithValidCredentials(String username, String password) {
+
+    }
 }
 
 
