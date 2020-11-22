@@ -1,7 +1,8 @@
-@ReadCountries
-  Feature:
-    Background:
+@ReadCountriesAllInfo
+  Feature: Validate all Countries' info
 
+
+ @ApiCountries
       Scenario: US_021_TC_001-System should allow to read all countries info using api end point
                 "https://www.gmibank.com/api/tp-countries"
 
