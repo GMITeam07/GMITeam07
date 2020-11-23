@@ -19,4 +19,7 @@ public class HomePage {
     @FindBy (xpath = "//*[@id='account-menu']/div/a[3]/span")
     public WebElement signOutOptionBtn;
 
+    @FindBy(xpath="//*[@id='account-menu']/div/a[2]/span")
+    public WebElement registerDropDwnOption;
+
 }
