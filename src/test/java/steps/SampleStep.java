@@ -4,14 +4,29 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebElement;
 import pages.UserSettingsPage;
 import pojos.*;
+import specs.Specs;
 import utilities.ApiUtils;
+import utilities.ConfigReader;
+import utilities.DBUtils;
 import utilities.Driver;
 
+import javax.swing.text.Document;
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
 
@@ -40,7 +55,8 @@ public class SampleStep {
     @Test
     public void getaccountsByList() throws IOException {
         // getting all bank accounts as list
-        System.out.println(ApiUtils.getAccountsAsList("admin"));
+        ApiUtils.getAccountsAsList("admin").stream().
+                map(t->t).forEach(System.out::println);
     }
 
     @Test
@@ -56,6 +72,7 @@ public class SampleStep {
 
     @Test
     public void getCustomersByList() throws IOException {
+
         List<Customer> allCustomers= ApiUtils.getCustomersAsList("admin");
         System.out.println(allCustomers.get(0).toString());
 
@@ -70,16 +87,43 @@ public class SampleStep {
     }
 
     @Test
-    public void rmzfeature(){
-        LoginSteps loginSteps=new LoginSteps();
-        UserSettingsPage userSettingsPage=new UserSettingsPage();
-        loginSteps.userIsOnTheUserSetingsPageWithValidUsernameAndPassword("team07admin","S123456s?");
-        Driver.waitForVisibility(By.id("settings-title"),3);
-        System.out.println(userSettingsPage.firstnameTextBox.getAttribute("value"));
+    public void apiStates() throws IOException {
+
+
+
+        Map map=new HashMap();
+
+
+        map.put("ssn","123321234");
+        map.put("firstName","John");
+        map.put("lastName","Travolta");
+        map.put("email","johntravolta101@zmail.com");
+        map.put("address","46 Butmayin road");
+        map.put("phonenumber","1233221235");
+        map.put("userName","team07user101");
+        map.put("password","D123456d!!");
+
+        Response response=given().
+                auth().
+                preemptive().
+                basic(
+                        ConfigReader.getProperty("validadmin_username"),
+                        ConfigReader.getProperty("validadmin_password")).
+                headers(map).
+
+                spec(Specs.specMainUrl()).
+                accept(ContentType.JSON).
+                when().
+                post("/api/users");
+
+        response.prettyPrint();
+//        User user=ApiUtils.getUserByLogin("team07user101");
+//        System.out.println(user);
 
     }
 
     @Test
+<<<<<<< HEAD
     public void apiStates() throws IOException {
         System.out.println( ApiUtils.getStateById(19226));
 
@@ -93,6 +137,10 @@ public class SampleStep {
 
 
 
+=======
+    public void getToken() throws AWTException {
+        System.out.println(ApiUtils.getUserByLogin("firstuser"));
+>>>>>>> main
 
 
     }

@@ -7,7 +7,7 @@ import utilities.Driver;
 
 public class LoginPage {
 
-    public  LoginPage() {
+    public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -44,10 +44,8 @@ public class LoginPage {
     @FindBy(xpath = "//div[@class='alert alert-danger fade show']")
     public WebElement failedSigninMessage;
 
-    @FindBy (id = "account-menu")
+    @FindBy(id = "account-menu")
     public WebElement accountMenu;
-
-
 
 
 }

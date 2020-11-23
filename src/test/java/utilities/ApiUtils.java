@@ -1,5 +1,6 @@
 package utilities;
 
+import io.cucumber.messages.internal.com.google.gson.JsonObject;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.*;
@@ -19,8 +20,10 @@ public class ApiUtils {
                 basic(
                         ConfigReader.getProperty("valid"+userType+"_username"),
                         ConfigReader.getProperty("valid"+userType+"_password")).
+//                oauth2("eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtMDdhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOIiwiZXhwIjoxNjA1OTI2NTU4fQ.lGr6aw4fMZRBY9Ghy4NtoTBaWZdsybLU4FOGGRZx66t5WDbAk3GePCHutlDeNcYsFoCxPSc1RxRH_2Q9g6LnSg").
                 spec(Specs.specMainUrl()).accept(ContentType.JSON).
                 when().get(endpoint);
+
         return response;
     }
 
@@ -31,6 +34,7 @@ public class ApiUtils {
                 auth().
                 preemptive().
                 basic(username,password).
+//                oauth2("eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtMDdhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOIiwiZXhwIjoxNjA1OTI2NTU4fQ.lGr6aw4fMZRBY9Ghy4NtoTBaWZdsybLU4FOGGRZx66t5WDbAk3GePCHutlDeNcYsFoCxPSc1RxRH_2Q9g6LnSg").
                 spec(Specs.specMainUrl()).accept(ContentType.JSON).
                 when().get(endpoint);
         return response;
@@ -82,6 +86,31 @@ public class ApiUtils {
                 map(t->t).collect(Collectors.toList()).get(0);
     }
     /*----------------------------------------------------------------------------*/
+    public static void createUserByApi(){
+        JsonObject jsonObject=new JsonObject();
+        jsonObject.addProperty("ssn","123-32-1234");
+        jsonObject.addProperty("firstName","John");
+        jsonObject.addProperty("lastName","Travolta");
+        jsonObject.addProperty("email","johntravolta101@zmail.com");
+//        jsonObject.addProperty("imageUrl","zzzzzzzzzzzz");
+        jsonObject.addProperty("address","46 Butmayin road");
+        jsonObject.addProperty("phonenumber","123-322-1235");
+        jsonObject.addProperty("userName","team07user101");
+        jsonObject.addProperty("password","S123456s!");
+
+        Response response=given().
+                auth().
+                preemptive().
+                basic(
+                        ConfigReader.getProperty("validadmin_username"),
+                        ConfigReader.getProperty("validadmin_password")).
+                spec(Specs.specMainUrl()).
+                accept(ContentType.JSON).
+                when().post("/api/users");
+
+
+    }
+
     public static User getUserByLogin(String login){
         Response response=given().
                 auth().
@@ -185,6 +214,10 @@ public class ApiUtils {
     /*------------------------------------------------------------------------*/
 
     public static State getStateById(int stateId){
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
         Response response=
                 given().
                         auth().
@@ -193,8 +226,16 @@ public class ApiUtils {
                         accept(ContentType.JSON).
                         when().
                         get("https://www.gmibank.com/api/tp-states/"+stateId);
+<<<<<<< HEAD
         State state=response.as(State.class);
         return state;
+=======
+
+        State state=response.as(State.class);
+
+        return state;
+
+>>>>>>> main
     }
 
     public static List<State> getStatesAsList(){
@@ -206,12 +247,21 @@ public class ApiUtils {
                         accept(ContentType.JSON).
                         when().
                         get("https://www.gmibank.com/api/tp-states");
+<<<<<<< HEAD
         List<State> listOfStates=response.jsonPath().getList("",State.class);
+=======
+
+        List<State> listOfStates=response.jsonPath().getList("",State.class);
+
+>>>>>>> main
         return listOfStates;
     }
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> main
 }
