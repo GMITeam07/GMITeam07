@@ -1,6 +1,6 @@
 package utilities;
 
-import io.cucumber.messages.internal.com.google.gson.JsonObject;
+import com.google.gson.JsonObject;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.*;
