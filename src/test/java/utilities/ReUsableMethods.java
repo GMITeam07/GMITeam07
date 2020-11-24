@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pojos.Customer;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,6 +34,20 @@ public class ReUsableMethods {
     public static String generateClientOrderId() {
         /*This method generates a random String id   */
         return "coid".concat(String.valueOf(System.currentTimeMillis()));
+    }
+
+    public void createNewCustomer(String ssn,
+                                  String firstname,
+                                  String lastname,
+                                  String middlename,
+                                  String address,
+                                  String mobilenumber,
+                                  String username,
+                                  String login){
+        Customer customer=new Customer();
+        customer.setAddress(address);
+
+
     }
 
 

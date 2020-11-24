@@ -13,11 +13,12 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "steps",
-
-        tags = "@signin",
+        tags = "@EditSingleUser",
 
         dryRun = true
+
 )
+
 
 public class Runner {
 }
