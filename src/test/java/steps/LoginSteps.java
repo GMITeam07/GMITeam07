@@ -6,13 +6,14 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 import pages.HomePage;
 import pages.LoginPage;
 
 import pages.UserSettingsPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+
+import java.util.Scanner;
 
 public class LoginSteps {
 
@@ -37,6 +38,7 @@ public class LoginSteps {
 
     @Then("user enters a valid username {string}")
     public void user_enters_a_valid_username(String username) {
+
         String user_username = username;
 
         switch (username) {
@@ -59,14 +61,12 @@ public class LoginSteps {
                 user_username = ConfigReader.getProperty("validjoker_username");
                 break;
         }
-        System.out.println(user_username);
         loginPage.userName.sendKeys(user_username);
     }
 
     @When("user enters a valid password {string}")
     public void user_enters_a_valid_password(String password) {
-
-        String userpassword = password;
+                String userpassword = password ;
         switch (password) {
             case "validuser_password":
                 userpassword = ConfigReader.getProperty("validuser_password");
@@ -87,7 +87,6 @@ public class LoginSteps {
                 userpassword = ConfigReader.getProperty("validjoker_password");
                 break;
         }
-        System.out.println(userpassword);
         loginPage.password.sendKeys(userpassword);
     }
 
@@ -99,7 +98,6 @@ public class LoginSteps {
     @Then("user verifies successful login")
     public void user_verifies_successful_login() {
         WebElement element = loginPage.accountMenu;
-        System.out.println(element.getText());
         Driver.verifyElementDisplayed(element);
     }
 
@@ -112,7 +110,6 @@ public class LoginSteps {
         user_enters_a_valid_password(password);
         user_clicks_on_sign_in_button();
         user_verifies_successful_login();
-
 
     }
 
@@ -155,6 +152,23 @@ public class LoginSteps {
         Driver.waitForVisibility(userSettingsPage.loginNameText,2);
     }
 
+    @Given("user is on the User Management Page with valid credentials {string} {string}")
+    public void userIsOnTheUserManagementPageWithValidCredentials(String username, String password) {
+
+    }
+
+    @Given("user is on the New User Registration Page")
+    public void user_is_on_the_new_user_registration_page() {
+        user_is_on_the_gmi_bank_home_page();
+        user_clicks_on_login_drop_down_menu();
+        userClicksOnRegisterDropDownOption();
+
+    }
+
+    @Then("user clicks on Register drop down option")
+    public void userClicksOnRegisterDropDownOption() {
+        homePage.registerDropDwnOption.click();
+    }
 }
 
 

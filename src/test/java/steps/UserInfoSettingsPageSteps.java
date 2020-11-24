@@ -13,13 +13,12 @@ import pojos.User;
 import utilities.ApiUtils;
 import utilities.Driver;
 import utilities.ExcelUtil;
-import utilities.ReUsableMethods;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class UserSettingsTestSteps {
+public class UserInfoSettingsPageSteps {
     ExcelUtil excelUtil=new ExcelUtil();
     List<Map<String,String>> excelData=new ArrayList<>();
 
@@ -197,8 +196,6 @@ public class UserSettingsTestSteps {
 
     @Then("user verifies current displaying Api user data is same as current displaying UI data")
     public void userVerifiesCurrentDisplayingApiUserDataIsSameAsCurrentDisplayingUIData() {
-        System.out.println(currentDisplayingApiUser);
-        System.out.println(currentDisplayingUIUser);
         Assert.assertTrue
                 (
                 currentDisplayingApiUser.getFirstName().equalsIgnoreCase(currentDisplayingUIUser.getFirstName())&&
@@ -241,18 +238,18 @@ public class UserSettingsTestSteps {
 
     @Then("user verifies an error message under email textbox is displayed contains {string}")
     public void userVerifiesAnErrorMessageUnderEmailTextboxIsDisplayedContains(String errormessage) {
-        Driver.waitForVisibility(userSettingsPage.emailAtLeast5CharactersText,6);
+        Driver.waitForVisibility(userSettingsPage.emailErrorMessages,6);
     }
 
     @Then("user verifies an error message under firstname textbox is displayed contains {string}")
     public void userVerifiesAnErrorMessageUnderFirstnameTextboxIsDisplayedContains(String firstnameerrormessage) {
 
-        Driver.waitForVisibility(userSettingsPage.firstnameRequiredText,2);
+        Driver.waitForVisibility(userSettingsPage.firstnameErrorMessageText,2);
     }
 
     @Then("user verifies an error message under lastname textbox is displayed contains {string}")
     public void userVerifiesAnErrorMessageUnderLastnameTextboxIsDisplayedContains(String lastnameErrormessage) {
-        Driver.waitForVisibility(userSettingsPage.lastnameRequiredText,2);
+        Driver.waitForVisibility(userSettingsPage.lastnameErrorMessage,2);
     }
 
     @Then("user reinitialize the user data by UI")
@@ -273,7 +270,7 @@ public class UserSettingsTestSteps {
 
     @Then("user verifies successful saved message {string} is not displayed")
     public void userVerifiesSuccessfulSavedMessageIsNotDisplayed(String succesmessage) {
-        System.out.println(Driver.waitForInVisibility(By.xpath("//*[@id='root']/div/div/div[1]/div/div/div[1]/span/strong"),3));
+
         Assert.assertTrue(
                 "success message should not be displayed",
                 Driver.waitForInVisibility(By.xpath("//*[@id='root']/div/div/div[1]/div/div/div[1]/span/strong"),3));
@@ -321,7 +318,19 @@ public class UserSettingsTestSteps {
         userSettingsPage.lastnameTextBox.clear();
         userSettingsPage.firstnameTextBox.sendKeys(excelData.get(int1).get(firstname));
         userSettingsPage.lastnameTextBox.sendKeys(excelData.get(int1).get(lastname));
-        Thread.sleep(5000);
+
+    }
+
+    @Then("user clicks on firstname textbox")
+    public void userClicksOnFirstnameTextbox() {
+        userSettingsPage.firstnameTextBox.click();
+    }
+
+    @Then("user clicks on email text box on User Settings Page")
+    public void userClicksOnEmailTextBoxOnUserSettingsPage() {
+        userSettingsPage.emailTextBox.click();
+        ApiUtils.getUserByLogin("team07admin");
+
     }
 
 }

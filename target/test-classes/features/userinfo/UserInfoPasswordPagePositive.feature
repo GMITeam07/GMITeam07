@@ -12,7 +12,7 @@ Feature: sign in feature
     And User enters current password "<password>"
     And user enters new password "<newpassword>"
     And user sees the level chart change accordingly
-    Then user clicks on save button
+
 
 
     Examples:
