@@ -1,93 +1,137 @@
 package steps;
 
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
-import pojos.Account;
-import pojos.Accounts;
-import pojos.UserInfo;
+import pojos.*;
 import specs.Specs;
-import utilities.ApiUtils;
-import utilities.ConfigReader;
-import utilities.DBUtils;
+import utilities.*;
 
-import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static io.restassured.RestAssured.given;
+
 public class SampleStep {
-    //added a trial sentence for git
     @Test
-    public void test01(){
-        Response response=ApiUtils.
-                getRequest("admin","/api/account");  // endpoint e ne yazarsanız cevap gelip cıktı alıcak
-//        response.prettyPrint();
-        UserInfo userInfos=response.as(UserInfo.class);
-        System.out.println(userInfos.toString());
-    }
+    public void getAUserOverApi(){
+        System.out.println(
+                ApiUtils.getUsersAsList("admin"));
 
-
-
-
-
-    @Test
-    public void test02(){
-        Response response=ApiUtils.
-                getRequest("admin","/api/tp-account-registrations");  // endpoint e ne yazarsanız cevap gelip cıktı alıcak
-         UserInfo userInfo =response.as(UserInfo.class);
-         System.out.println(userInfo);
     }
 
     @Test
-    public void test03(){
-        Response response=ApiUtils.
-                getRequest("admin","/api/tp-account-registrations/1251");  // endpoint e ne yazarsanız cevap gelip cıktı alıcak
+    public void getAccountOverApi(){
+        Account account1=ApiUtils.getAccountByAccountId(
+                "admin",
+                2303);
 
-        response.prettyPrint();
-//        List list=ApiUtils.getTpAccountRegistrations();
-//        list.stream().map(t->t).forEach(System.out::println);
+        Account account2=ApiUtils.getAccountByAccountId(
+                "team07admin",
+                "S123456s?",
+                2304);
+        System.out.println(account1);
+        System.out.println(account2);
     }
 
     @Test
-    public void test04(){
-        Response response=ApiUtils.
-                getRequest("admin","/api/tp-customers");  // endpoint e ne yazarsanız cevap gelip cıktı alıcak
-        response.prettyPrint();
-
-    }
-    @Test
-    public void test05(){
-        Response response=ApiUtils.getUserInfoByLoginId("team07admin");
-        response.prettyPrint();
+    public void getaccountsByList() throws IOException {
+        // getting all bank accounts as list
+        ApiUtils.getAccountsAsList("admin").stream().
+                map(t->t).forEach(System.out::println);
     }
 
     @Test
-    public void test06(){
-//        DBUtils.createConnection();
-//
-//        List list=(DBUtils.getQueryResultList("SELECT * FROM public.tp-customers"));
-//        list.stream().map(t->t.toString()).forEach(System.out::println);
+    public void getCountriesAsList() throws IOException {
 
-        System.out.println("-------lets see the difference of DataBase and API---------------");
+        List<Country> list= ApiUtils.getCountriesAsList();
 
-//        Response response=ApiUtils.getRequest("admin","/api/tp-customers");
-        Response response= RestAssured.given().
+        System.out.println(list.get(5).getName());
+        list.stream().
+                map(t->t).
+                forEach(System.out::println);
+    }
+
+    @Test
+    public void getCustomersByList() throws IOException {
+
+        List<Customer> allCustomers= ApiUtils.getCustomersAsList("admin");
+        System.out.println(allCustomers.get(0).toString());
+
+        allCustomers.stream().
+                map(t->t).
+                forEach(System.out::println);
+    }
+
+    @Test
+    public void getCustomerById() throws IOException {
+        System.out.println(ApiUtils.getCustomerById(2553));
+    }
+
+    @Test
+    public void apiStates() throws IOException {
+
+
+
+        Map map=new HashMap();
+
+
+        map.put("ssn","123321234");
+        map.put("firstName","John");
+        map.put("lastName","Travolta");
+        map.put("email","johntravolta101@zmail.com");
+        map.put("address","46 Butmayin road");
+        map.put("phonenumber","1233221235");
+        map.put("userName","team07user101");
+        map.put("password","D123456d!!");
+
+        Response response=given().
                 auth().
                 preemptive().
-                basic("team07admin","S123456s?"  ).
-                accept(ContentType.JSON).
-                when().get("https://www.gmibank.com/api/tp-accounts/3964");
-//        response.prettyPrint();
-        List<Account> accountList=response.as(List.class);
-        JsonPath jsonPath=response.jsonPath();
+                basic(
+                        ConfigReader.getProperty("validadmin_username"),
+                        ConfigReader.getProperty("validadmin_password")).
+                headers(map).
 
+                spec(Specs.specMainUrl()).
+                accept(ContentType.JSON).
+                when().
+                post("/api/users");
+
+        response.prettyPrint();
+//        User user=ApiUtils.getUserByLogin("team07user101");
+//        System.out.println(user);
+
+    }
+
+    @Test
+    public void getToken() throws AWTException {
+        System.out.println(ApiUtils.getUserByLogin("firstuser"));
+    }
+
+    @Test
+    public void sampleDB() throws SQLException {
+//        String query="SELECT * FROM public.tp_state";
+//        DBUtilsNew.getQueryAsAListOfMaps(query).
+//                stream().map(t->t).
+//                forEach(System.out::println);
+
+//        String query2="SELECT * FROM public.tp_state WHERE id>=19240";
+//        DBUtilsNew.getQueryAsAListOfMaps(query2).
+//                stream().map(t->t).
+//                forEach(System.out::println);
+
+        String query3="SELECT * FROM public.tp_country WHERE name LIKE '%UNITED%'";
+        DBUtilsNew.getQueryAsAListOfMaps(query3).
+                stream().map(t->t).
+                forEach(System.out::println);
 
 
 
     }
-
 
 }
