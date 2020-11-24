@@ -1,5 +1,6 @@
 package pojos;
 
+
 import java.io.Serializable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -20,12 +21,15 @@ public class State implements Serializable
     private String tpcountry;
 
 
+
     /**
      * No args constructor for use in serialization
      *
      */
     public State() {
     }
+
+
 
     /**
      *
@@ -78,5 +82,6 @@ public class State implements Serializable
                 append("\n}").
                 toString();
     }
+
 
 }
