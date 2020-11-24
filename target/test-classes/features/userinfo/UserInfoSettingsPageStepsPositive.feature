@@ -15,7 +15,7 @@ Feature: User tests the user info segment
 
     @usersettings
     Examples:
-
+<<<<<<< HEAD
       | username       | password  |
       | team07user     | S123456s? |
       | team07admin    | S123456s? |
