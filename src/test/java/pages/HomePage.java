@@ -19,9 +19,14 @@ public class HomePage {
     @FindBy (xpath = "//*[@id='account-menu']/div/a[3]/span")
     public WebElement signOutOptionBtn;
 
+
     @FindBy (xpath = "//*[@id='entity-menu']/a/span")
     public WebElement myOperations;
     @FindBy (xpath = "//*[@id='entity-menu']/div/a[1]/span")
     public WebElement manageCustomers;
+
+    @FindBy(xpath="//*[@id='account-menu']/div/a[2]/span")
+    public WebElement registerDropDwnOption;
+
 
 }
