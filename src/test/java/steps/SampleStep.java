@@ -1,18 +1,18 @@
 package steps;
 
-import io.cucumber.messages.internal.com.google.gson.JsonObject;
-import io.cucumber.messages.internal.com.google.protobuf.Api;
+
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
+
 import io.restassured.response.Response;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import pages.UserSettingsPage;
 import pojos.*;
-import utilities.ApiUtils;
-import utilities.Driver;
+import specs.Specs;
+import utilities.*;
 
+import java.awt.*;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -43,9 +43,7 @@ public class SampleStep {
     @Test
     public void getaccountsByList() throws IOException {
         // getting all bank accounts as list
-        List list=ApiUtils.getAccountsAsList("admin");
-        list.stream().
-
+        ApiUtils.getAccountsAsList("admin").stream().
                 map(t->t).forEach(System.out::println);
     }
 
@@ -62,12 +60,79 @@ public class SampleStep {
 
     @Test
     public void getCustomersByList() throws IOException {
-////        List<Customer> allCustomers= ApiUtils.getCustomersAsList("admin");
-////        System.out.println(allCustomers.get(0).toString());
-////        allCustomers.stream().
-////                map(t->t).
-////                forEach(System.out::println);
-//        System.out.println(ApiUtils.getCustomerById(2552));
+
+        List<Customer> allCustomers= ApiUtils.getCustomersAsList("admin");
+        System.out.println(allCustomers.get(0).toString());
+
+        allCustomers.stream().
+                map(t->t).
+                forEach(System.out::println);
+    }
+
+    @Test
+    public void getCustomerById() throws IOException {
+        System.out.println(ApiUtils.getCustomerById(2553));
+    }
+
+    @Test
+    public void apiState() throws IOException {
+
+
+
+        Map map=new HashMap();
+
+
+        map.put("ssn","123321234");
+        map.put("firstName","John");
+        map.put("lastName","Travolta");
+        map.put("email","johntravolta101@zmail.com");
+        map.put("address","46 Butmayin road");
+        map.put("phonenumber","1233221235");
+        map.put("userName","team07user101");
+        map.put("password","D123456d!!");
+
+        Response response=given().
+                auth().
+                preemptive().
+                basic(
+                        ConfigReader.getProperty("validadmin_username"),
+                        ConfigReader.getProperty("validadmin_password")).
+                headers(map).
+
+                spec(Specs.specMainUrl()).
+                accept(ContentType.JSON).
+                when().
+                post("/api/users");
+
+        response.prettyPrint();
+//        User user=ApiUtils.getUserByLogin("team07user101");
+//        System.out.println(user);
+
+    }
+
+    @Test
+    public void getToken() throws AWTException {
+        System.out.println(ApiUtils.getUserByLogin("firstuser"));
+    }
+
+    @Test
+    public void sampleDB() throws SQLException {
+//        String query="SELECT * FROM public.tp_state";
+//        DBUtilsNew.getQueryAsAListOfMaps(query).
+//                stream().map(t->t).
+//                forEach(System.out::println);
+
+//        String query2="SELECT * FROM public.tp_state WHERE id>=19240";
+//        DBUtilsNew.getQueryAsAListOfMaps(query2).
+//                stream().map(t->t).
+//                forEach(System.out::println);
+
+        String query3="SELECT * FROM public.tp_country WHERE name LIKE '%UNITED%'";
+        DBUtilsNew.getQueryAsAListOfMaps(query3).
+                stream().map(t->t).
+                forEach(System.out::println);
+
+
 
     }
     @Test

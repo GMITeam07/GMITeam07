@@ -176,13 +176,16 @@ public class DBUtils {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
         try {
             resultSet = statement.executeQuery(query);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
     }
+
     public static int getRowCount() throws Exception {
         resultSet.last();
         int rowCount = resultSet.getRow();

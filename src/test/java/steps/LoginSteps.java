@@ -6,7 +6,6 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 import pages.HomePage;
 import pages.LoginPage;
 
@@ -153,6 +152,23 @@ public class LoginSteps {
         Driver.waitForVisibility(userSettingsPage.loginNameText,2);
     }
 
+    @Given("user is on the User Management Page with valid credentials {string} {string}")
+    public void userIsOnTheUserManagementPageWithValidCredentials(String username, String password) {
+
+    }
+
+    @Given("user is on the New User Registration Page")
+    public void user_is_on_the_new_user_registration_page() {
+        user_is_on_the_gmi_bank_home_page();
+        user_clicks_on_login_drop_down_menu();
+        userClicksOnRegisterDropDownOption();
+
+    }
+
+    @Then("user clicks on Register drop down option")
+    public void userClicksOnRegisterDropDownOption() {
+        homePage.registerDropDwnOption.click();
+    }
 }
 
 
