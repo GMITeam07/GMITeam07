@@ -1,32 +1,18 @@
 package steps;
 
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.WebElement;
-import pages.UserSettingsPage;
 import pojos.*;
 import specs.Specs;
-import utilities.ApiUtils;
-import utilities.ConfigReader;
-import utilities.DBUtils;
-import utilities.Driver;
+import utilities.*;
 
-import javax.swing.text.Document;
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
 
@@ -125,9 +111,27 @@ public class SampleStep {
     @Test
     public void getToken() throws AWTException {
         System.out.println(ApiUtils.getUserByLogin("firstuser"));
+    }
+
+    @Test
+    public void sampleDB() throws SQLException {
+//        String query="SELECT * FROM public.tp_state";
+//        DBUtilsNew.getQueryAsAListOfMaps(query).
+//                stream().map(t->t).
+//                forEach(System.out::println);
+
+//        String query2="SELECT * FROM public.tp_state WHERE id>=19240";
+//        DBUtilsNew.getQueryAsAListOfMaps(query2).
+//                stream().map(t->t).
+//                forEach(System.out::println);
+
+        String query3="SELECT * FROM public.tp_country WHERE name LIKE '%UNITED%'";
+        DBUtilsNew.getQueryAsAListOfMaps(query3).
+                stream().map(t->t).
+                forEach(System.out::println);
+
 
 
     }
-
 
 }
