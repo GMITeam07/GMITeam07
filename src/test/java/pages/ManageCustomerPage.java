@@ -67,8 +67,10 @@ public class ManageCustomerPage {
     public  WebElement userDelete;
 
     @FindBy(id = "jhi-confirm-delete-tPCustomer")
-    public WebElement alertDeleteButton;
+    public WebElement deleteButton;
 
+    @FindBy(xpath = "/html/body/div[2]/div/div[1]/div/div/div[1]/h5/span")
+    public WebElement deleteAlert;
     @FindBy(linkText = "»»")
     public WebElement lastPageButton;
 //ul[@class='pagination'])/li[6]

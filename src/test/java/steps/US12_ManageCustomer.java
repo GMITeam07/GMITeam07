@@ -141,9 +141,9 @@ public class US12_ManageCustomer {
     }
     @Then("user can delete a customer")
     public void user_can_delete_a_customer() {
-        manageCustomerPage.alertDeleteButton.click();
-        Driver.waitForVisibility(manageCustomerPage.userDelete,10);
-        Assert.assertFalse(manageCustomerPage.userDelete.isDisplayed());
+        manageCustomerPage.deleteButton.click();
+        Driver.waitForVisibility(manageCustomerPage.alertDeleteQuestion,10);
+        Assert.assertTrue(manageCustomerPage.deleteAlert.isDisplayed());
     }
 
 

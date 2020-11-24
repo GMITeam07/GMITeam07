@@ -1,5 +1,6 @@
 package steps;
 
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -12,10 +13,10 @@ import utilities.ApiUtils;
 import utilities.ConfigReader;
 import utilities.DBUtils;
 
+import javax.swing.*;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-
-import static io.restassured.RestAssured.given;
 
 public class SampleStep {
     //added a trial sentence for git
@@ -27,6 +28,10 @@ public class SampleStep {
         UserInfo userInfos=response.as(UserInfo.class);
         System.out.println(userInfos.toString());
     }
+
+
+
+
 
     @Test
     public void test02(){
@@ -69,7 +74,7 @@ public class SampleStep {
         System.out.println("-------lets see the difference of DataBase and API---------------");
 
 //        Response response=ApiUtils.getRequest("admin","/api/tp-customers");
-        Response response=given().
+        Response response= RestAssured.given().
                 auth().
                 preemptive().
                 basic("team07admin","S123456s?"  ).
