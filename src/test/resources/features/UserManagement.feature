@@ -16,12 +16,15 @@ Feature: sign in feature
     And Admin enters a Email "<email>"
     And Admin click the activeted button
     And Admin selects the language
-    And Admin selects the role
+    And Admin selects the role "<role>"
     Then Admin clicks the save button
 
     Examples:
-      | username | FirstName | lastName  | email                    |
-      | HarryP   | Harry     | Potter    | Harry_Potter@gmail.com   |
-      | WilliamJ | William   | Jay       | WilliamJay@gmail.com     |
-      | KateW    | Kate      | Windbrook | Kate_Windbrook@gmail.com |
-      | JoeD     | Joe       | Day       | Joe_Day@gmail.com        |
+      | username | FirstName | lastName  | email                    | role          |
+      | HarryP   | Harry     | Potter    | Harry_Potter@gmail.com   | ROLE_ADMIN    |
+      | WilliamJ | William   | Jay       | WilliamJay@gmail.com     | ROLE_EMPLOYEE |
+      | KateW    | Kate      | Windbrook | Kate_Windbrook@gmail.com | ROLE_MANAGER  |
+      | JoeD     | Joe       | Day       | Joe_Day@gmail.com        | ROLE_USER     |
+
+    @Usermanagement2
+

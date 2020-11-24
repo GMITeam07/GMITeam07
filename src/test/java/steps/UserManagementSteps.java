@@ -68,12 +68,12 @@ public class UserManagementSteps {
     }
 
 
-    @And("Admin selects the role")
-    public void adminSelectsTheRole() {
+    @And("Admin selects the role {string}")
+    public void adminSelectsTheRole(String role) {
+
+     Driver.selectByVisibleText(userManagementPage.profile,role);
 
 
-        Select select = new Select(userManagementPage.profile);
-        select.selectByVisibleText("ROLE_USER");
 
 
 
@@ -83,6 +83,7 @@ public class UserManagementSteps {
     @Then("Admin clicks the save button")
     public void admin_clicks_the_save_button() {
         userManagementPage.saveButton.click();
+
 
     }
 

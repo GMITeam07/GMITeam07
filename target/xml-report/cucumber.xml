@@ -1,2 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.197"/>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="40.673">
+<testcase classname="sign in feature" name="US_017_TC001_Admin can manage the all user" time="13.177">
+<system-out><![CDATA[Given user logs in with valid credentials "validadmin_username" "validadmin_password".passed
+When Admin clicks the Administration button.................................passed
+And Admin select the usermangement dropdown.................................passed
+When Admin clicks the Crete a new button....................................passed
+And Admin enters a login "HarryP"...........................................passed
+And Admin enters a FirstName "Harry"........................................passed
+And Admin enters a LastName "Potter"........................................passed
+And Admin enters a Email "Harry_Potter@gmail.com"...........................passed
+And Admin click the activeted button........................................passed
+And Admin selects the language..............................................passed
+And Admin selects the role "ROLE_ADMIN".....................................passed
+Then Admin clicks the save button...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="sign in feature" name="US_017_TC001_Admin can manage the all user 2" time="9.356">
+<system-out><![CDATA[Given user logs in with valid credentials "validadmin_username" "validadmin_password".passed
+When Admin clicks the Administration button.................................passed
+And Admin select the usermangement dropdown.................................passed
+When Admin clicks the Crete a new button....................................passed
+And Admin enters a login "WilliamJ".........................................passed
+And Admin enters a FirstName "William"......................................passed
+And Admin enters a LastName "Jay"...........................................passed
+And Admin enters a Email "WilliamJay@gmail.com".............................passed
+And Admin click the activeted button........................................passed
+And Admin selects the language..............................................passed
+And Admin selects the role "ROLE_EMPLOYEE"..................................passed
+Then Admin clicks the save button...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="sign in feature" name="US_017_TC001_Admin can manage the all user 3" time="9.087">
+<system-out><![CDATA[Given user logs in with valid credentials "validadmin_username" "validadmin_password".passed
+When Admin clicks the Administration button.................................passed
+And Admin select the usermangement dropdown.................................passed
+When Admin clicks the Crete a new button....................................passed
+And Admin enters a login "KateW"............................................passed
+And Admin enters a FirstName "Kate".........................................passed
+And Admin enters a LastName "Windbrook".....................................passed
+And Admin enters a Email "Kate_Windbrook@gmail.com".........................passed
+And Admin click the activeted button........................................passed
+And Admin selects the language..............................................passed
+And Admin selects the role "ROLE_MANAGER"...................................passed
+Then Admin clicks the save button...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="sign in feature" name="US_017_TC001_Admin can manage the all user 4" time="8.239">
+<system-out><![CDATA[Given user logs in with valid credentials "validadmin_username" "validadmin_password".passed
+When Admin clicks the Administration button.................................passed
+And Admin select the usermangement dropdown.................................passed
+When Admin clicks the Crete a new button....................................passed
+And Admin enters a login "JoeD".............................................passed
+And Admin enters a FirstName "Joe"..........................................passed
+And Admin enters a LastName "Day"...........................................passed
+And Admin enters a Email "Joe_Day@gmail.com"................................passed
+And Admin click the activeted button........................................passed
+And Admin selects the language..............................................passed
+And Admin selects the role "ROLE_USER"......................................passed
+Then Admin clicks the save button...........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
