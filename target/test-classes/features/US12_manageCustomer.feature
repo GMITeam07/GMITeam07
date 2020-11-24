@@ -1,7 +1,7 @@
 @US12
 Feature: An Employee can manage Customer
   Background:
-    Given user is logs in with valid credentials "validemployee_username" "validemployee_password"
+    Given user logs in with valid credentials "validemployee_username" "validemployee_password"
     And user clicks to My Operations drop down menu
     And user clicks to Manage Costumers
 
