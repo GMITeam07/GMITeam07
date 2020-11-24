@@ -12,15 +12,19 @@ public class User {
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("login")
     @Expose
     private String login;
+
     @SerializedName("firstName")
     @Expose
     private String firstName;
+
     @SerializedName("lastName")
     @Expose
     private String lastName;
+
     @SerializedName("email")
     @Expose
     private String email;
@@ -45,6 +49,7 @@ public class User {
     @SerializedName("lastModifiedDate")
     @Expose
     private String lastModifiedDate;
+
     @SerializedName("authorities")
     @Expose
     private List<String> authorities = null;

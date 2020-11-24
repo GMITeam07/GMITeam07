@@ -6,54 +6,71 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class Customer {
+
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("firstName")
     @Expose
     private String firstName;
+
     @SerializedName("lastName")
     @Expose
     private String lastName;
+
     @SerializedName("middleInitial")
     @Expose
     private String middleInitial;
+
     @SerializedName("email")
     @Expose
     private String email;
+
     @SerializedName("mobilePhoneNumber")
     @Expose
     private String mobilePhoneNumber;
+
     @SerializedName("phoneNumber")
     @Expose
     private String phoneNumber;
+
     @SerializedName("zipCode")
     @Expose
     private String zipCode;
+
     @SerializedName("address")
     @Expose
     private String address;
+
     @SerializedName("city")
     @Expose
     private String city;
+
     @SerializedName("ssn")
     @Expose
     private String ssn;
+
     @SerializedName("createDate")
     @Expose
     private String createDate;
+
     @SerializedName("zelleEnrolled")
     @Expose
     private Boolean zelleEnrolled;
+
     @SerializedName("country")
     @Expose
     private Object country;
+
     @SerializedName("state")
     @Expose
     private String state;
+
     @SerializedName("user")
     @Expose
     private UserForCustomerClass user;
+
     @SerializedName("accounts")
     @Expose
     private List<Account> accounts = null;
@@ -235,7 +252,9 @@ public class Customer {
 
     @Override
     public String toString() {
+
         StringBuilder stringBuilder=new StringBuilder("");
+
         stringBuilder.append("{\n").
                 append("id: "+ id+"\n").
                 append("firstName: "+ firstName+"\n").
@@ -256,6 +275,7 @@ public class Customer {
                 append("accounts: "+ accounts+"\n").
                 append("\n}").toString();
         return stringBuilder.toString();
+
     }
 
 }

@@ -3,13 +3,13 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import pages.LoginPage;
 import pages.PasswordSegmentPage;
 import utilities.Driver;
 
-public class PasswordSegmentSteps {
+public class UserInfoPasswordPageSteps {
     PasswordSegmentPage passwordSegment = new PasswordSegmentPage();
     LoginPage loginPage = new LoginPage();
 
