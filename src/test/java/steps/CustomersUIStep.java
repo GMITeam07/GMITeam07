@@ -5,22 +5,22 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import pages.CustomersAksuPage;
+import pages.CustomersUIPage;
 import utilities.Driver;
 
 import java.util.List;
 
-public class CustomerAksuStep {
-    CustomersAksuPage customersAksuPage = new CustomersAksuPage();
+public class CustomersUIStep {
+    CustomersUIPage customersUIPage = new CustomersUIPage();
 
     @When("User clicks my operations drop down")
     public void userClicksMyOperationsDropDown() {
-        customersAksuPage.myOperationsDrpDwn.click();
+        customersUIPage.myOperationsDrpDwn.click();
     }
 
     @And("User clicks manage accounts")
     public void userClicksManageAccounts() {
-        customersAksuPage.manageAccounts.click();
+        customersUIPage.manageAccounts.click();
     }
 
     @Then("User should see all account types and balance populated")
@@ -39,7 +39,7 @@ public class CustomerAksuStep {
 
     @And("User clicks view button")
     public void userClicksViewButton() {
-        customersAksuPage.viewButton.click();
+        customersUIPage.viewButton.click();
     }
 
     @Then("user should view transactions")
