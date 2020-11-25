@@ -139,7 +139,6 @@ public class CountryApiSteps {
     }
 
 
-
     @Then("user verifies all countries {int} by {int} {string}")
     public List<Country> userVerifiesAllCountriesBy(int arg0, int arg1, String allCountry) throws SQLException {
 
