@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -110,36 +111,19 @@ public class LoginSteps {
         user_enters_a_valid_password(password);
         user_clicks_on_sign_in_button();
         user_verifies_successful_login();
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
     }
 
-    public static String getLoginname(String username){
-        String user_username = username;
 
-        switch (username) {
-            case "validuser_username":
-                user_username = ConfigReader.getProperty("validuser_username");
-                break;
-            case "validadmin_username":
-                user_username = ConfigReader.getProperty("validadmin_username");
-                break;
-            case "validmanager_username":
-                user_username = ConfigReader.getProperty("validmanager_username");
-                break;
-            case "validemployee_username":
-                user_username = ConfigReader.getProperty("validemployee_username");
-                break;
-            case "validcustomer_username":
-                user_username = ConfigReader.getProperty("validcustomer_username");
-                break;
-            case "validjoker_username":
-                user_username = ConfigReader.getProperty("validjoker_username");
-                break;
-        }
 
-        return user_username;
-
+    @And("user clicks on the cancel button")
+    public void userClicksOnTheCancelButton() {
+        loginPage.cancelButton.click();
     }
+
 
     @Given("user is on the User Setings Page with valid username {string} and password {string}")
     public void userIsOnTheUserSetingsPageWithValidUsernameAndPassword(String username, String password) {
@@ -183,7 +167,6 @@ public class LoginSteps {
 
 
 }
-
 
 
 
