@@ -33,8 +33,8 @@ public class CountryApiStepsNlgn {
 //        response.prettyPrint();
             json = response.jsonPath();
         }
-        @Given("get all customers' information as De-Serialization")
-        public void get_all_customers_information_as_De_Serialization() {
+        @Given("get all countries' information as De-Serialization")
+        public void get_all_countries_information_as_De_Serialization() {
 //    1. yontem ==> JsonPath
 //    2. yontem ==> Pojo
             //    1. yontem ==> JsonPath
