@@ -49,6 +49,23 @@ public class DBUtilsNew {
         return resultSet;
     }
 
+    public static boolean executeInsertionQuery(String query){
+        createConnection();
+        boolean result;
+        try {
+            statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            resultSet = statement.executeQuery(query);
+            result=true;
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("\""+query+"\" query did not successfully execute!");
+            result=false;
+        }
+        return result;
+    }
+
     /*
     * brings the column names of a query Resultset
     */
@@ -83,9 +100,11 @@ public class DBUtilsNew {
 
         public static List<Map<String,String>> getQueryAsAListOfMaps(String query) throws SQLException {
             resultSet=executeQuery(query);
+
             ResultSetMetaData rsdm=resultSet.getMetaData();
+
             int sizeOfColumns=rsdm.getColumnCount();
-            int sizeOfRows=resultSet.getFetchSize();
+
             List<String> nameOfColumns= DBUtilsNew.getColumnNames(resultSet);
 
             resultSet.beforeFirst();
@@ -93,6 +112,7 @@ public class DBUtilsNew {
 
             while (resultSet.next()){
                 Map<String,String> mapOfEachRow=new HashMap<>();
+
                 for (int j=0;j<sizeOfColumns;j++)
                 {
                     mapOfEachRow.put(nameOfColumns.get(j),resultSet.getString(nameOfColumns.get(j)));
@@ -128,6 +148,7 @@ public class DBUtilsNew {
         Connection connection= DBUtilsNew.createConnection();
         ResultSet resultSet = executeQuery(query);
         connection.close();
+
         List<State> states= getResultSetAsAListOfMaps(resultSet).
                 stream().map(t->{
             State state=new State();
@@ -162,6 +183,8 @@ public class DBUtilsNew {
     }
 
     //-----------------------------------------------------------------------------------
+
+
 
 
 }
