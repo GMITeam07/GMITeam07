@@ -15,11 +15,7 @@ import org.junit.runner.RunWith;
         glue = "steps",
         tags = "@EditSingleUser",
 
-<<<<<<< HEAD
-        tags = "",
-=======
         dryRun = true
->>>>>>> main
 
 )
 

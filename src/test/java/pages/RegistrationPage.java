@@ -1,5 +1,4 @@
 package pages;
-<<<<<<< HEAD
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,19 +34,6 @@ public class RegistrationPage {
 
     @FindBy(xpath="//button[@id='register-submit']")
     public WebElement registerBtn;
-
-
-
-=======
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import utilities.Driver;
-
-public class RegistrationPage {
-    public RegistrationPage (){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
 
     @FindBy(xpath = "//div//ul//li//a[@href='#']")
     public WebElement accountIcon;
@@ -86,5 +72,5 @@ public class RegistrationPage {
     public WebElement registerPasswordConfirmation;
     @FindBy(xpath = "//form//button[@id='register-submit']")
     public WebElement registerButton;
->>>>>>> origin/feature/taner
+
 }

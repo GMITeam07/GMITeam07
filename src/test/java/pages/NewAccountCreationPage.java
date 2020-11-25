@@ -1,16 +1,8 @@
 package pages;
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 public class NewAccountCreationPage {
 
     public NewAccountCreationPage() {
@@ -51,10 +43,5 @@ public class NewAccountCreationPage {
     public WebElement saveButton;
     @FindBy(xpath= "//div[@class='Toastify__toast-container Toastify__toast-container--top-left toastify-container']")
     public WebElement accountcreated;
-<<<<<<< HEAD
-}
-=======
-
 
 }
->>>>>>> main

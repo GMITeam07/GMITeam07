@@ -214,10 +214,7 @@ public class ApiUtils {
     /*------------------------------------------------------------------------*/
 
     public static State getStateById(int stateId){
-<<<<<<< HEAD
-=======
 
->>>>>>> main
         Response response=
                 given().
                         auth().
@@ -226,16 +223,9 @@ public class ApiUtils {
                         accept(ContentType.JSON).
                         when().
                         get("https://www.gmibank.com/api/tp-states/"+stateId);
-<<<<<<< HEAD
         State state=response.as(State.class);
         return state;
-=======
 
-        State state=response.as(State.class);
-
-        return state;
-
->>>>>>> main
     }
 
     public static List<State> getStatesAsList(){
@@ -247,21 +237,11 @@ public class ApiUtils {
                         accept(ContentType.JSON).
                         when().
                         get("https://www.gmibank.com/api/tp-states");
-<<<<<<< HEAD
-        List<State> listOfStates=response.jsonPath().getList("",State.class);
-=======
 
         List<State> listOfStates=response.jsonPath().getList("",State.class);
 
->>>>>>> main
         return listOfStates;
     }
 
 
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> main
 }

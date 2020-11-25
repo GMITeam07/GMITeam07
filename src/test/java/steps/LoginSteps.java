@@ -111,10 +111,7 @@ public class LoginSteps {
         user_enters_a_valid_password(password);
         user_clicks_on_sign_in_button();
         user_verifies_successful_login();
-<<<<<<< HEAD
-=======
 
->>>>>>> main
     }
 
 
