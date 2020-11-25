@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import pages.Demo29Page;
 import utilities.Driver;
 
-public class Demo29Steps {
+public class CreateEditUserUS29Steps {
     Demo29Page demo29Page =new Demo29Page();
 
     @Given(".user is on the Create or edit a user Page with valid credentials {string} {string}")
