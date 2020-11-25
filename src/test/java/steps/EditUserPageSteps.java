@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
 import pages.CreateEditUserPage;
 import pojos.User;
 import utilities.ApiUtils;
@@ -37,7 +38,7 @@ public class EditUserPageSteps {
 
     @Then("user retrieves initial user data from the api {string}")
     public void user_retrieves_initial_user_data_from_the_api(String loginname) {
-        initialUIUser= ApiUtils.getUserByLogin(loginname);
+        initialAPIUser= ApiUtils.getUserByLogin(loginname);
         
     }
     @Then("user retrieves initial user data from database {string}")
@@ -46,24 +47,15 @@ public class EditUserPageSteps {
         
     }
 
-    @Then("user enters new user data login {string} {string} {string} {string} {string} {string} {string}")
-    public void user_enters_new_user_data_login(String loginname, String firstname, String lastname, String email, String isactivate, String language, String profiles) {
-
-        if(!loginname.equals("")) {
-            createEditUserPage.loginname.clear();
+    @Then("user enters new user data login {string} {string} {string} {string} {string} {int} {string}")
+    public void user_enters_new_user_data_login(String loginname, String firstname, String lastname, String email, String isactivate, int language, String profiles) {
             createEditUserPage.loginname.sendKeys(loginname);
-        }
-
-
-        if(!firstname.equals("")) {
-            createEditUserPage.firstname.clear();
             createEditUserPage.firstname.sendKeys(firstname);
-        }
-
-        if(!lastname.equals("")) {
-            createEditUserPage.lastname.clear();
             createEditUserPage.lastname.sendKeys(lastname);
-        }
+            createEditUserPage.email.sendKeys(email);
+            Driver.selectCheckBox(createEditUserPage.activated,true);
+            Driver.selectByIndex(createEditUserPage.authorities,language);
+
 
     }
     @When("user clicks save button on user edit page")
@@ -126,6 +118,11 @@ public class EditUserPageSteps {
 
     @Then("user verifies the API UI user data is same {string}")
     public void userVerifiesTheAPIUIUserDataIsSame(String arg0) {
+
+    }
+
+    @Then("user deletes the new user {string} from the database")
+    public void userDeletesTheNewUserFromTheDatabase(String username) {
 
     }
 }

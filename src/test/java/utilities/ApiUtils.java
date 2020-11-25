@@ -223,9 +223,7 @@ public class ApiUtils {
                         accept(ContentType.JSON).
                         when().
                         get("https://www.gmibank.com/api/tp-states/"+stateId);
-
         State state=response.as(State.class);
-
         return state;
 
     }
@@ -244,7 +242,6 @@ public class ApiUtils {
 
         return listOfStates;
     }
-
 
 
 }
