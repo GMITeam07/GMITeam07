@@ -1,120 +1,88 @@
 package steps;
+import pojos.Country;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import org.junit.Assert;
-import pages.*;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import pojos.Country;
+import specs.Specs;
+import utilities.ApiUtils;
 import utilities.ConfigReader;
-import utilities.Driver;
+import io.cucumber.java.en.*;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.type.TypeReference;
+import org.junit.Assert;
+import org.testng.asserts.SoftAssert;
+import utilities.ConfigReader;
+import utilities.DBUtilsNew;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-import static io.restassured.RestAssured.given;
-
+import static io.restassured.RestAssured.*;
 public class CreateNewCountriesApiSteps {
+    Response  response;
+    SoftAssert softAssert = new SoftAssert();
+    private List<Map<String,String>> list1;
 
-    CustomerCreationPage customerCreationPage = new CustomerCreationPage();
-    DataCreationPage dataCreationPage = new DataCreationPage();
-    LoginPage loginPage = new LoginPage();
-    LoginSteps loginSteps = new LoginSteps();
-    ManageCustomerPage manageCustomerPage = new ManageCustomerPage();
+    @When("User send a POST request to create a country {string}")
+    public void userSendAPOSTRequestToCreateACountry(String name) {
 
+        Country countryForPost = new Country(name, null);
 
-
-    Demo29Page demo29Page= new Demo29Page();
-    Response response;
-    JsonPath json;
-    List<Map<String, Object>> allCountryData;
-    List<Map<String, Object>> CountryName;
-
-
-    @Given("user provides the api end point to set the response using by {string}")
-    public void userProvidesTheApiEndPointToSetTheResponseUsingBy(String url) {
-
-        response = given().
-                accept(ContentType.JSON).
-                auth()
-                .preemptive()
-                .basic("team07user", "S123456s?")
-                .accept(ContentType.JSON)
-                .when()
-                .get(url)
-                .then()
-                .contentType(ContentType.JSON)
-                .extract()
-                .response();;
+        response =           given().
+                contentType(ContentType.JSON).
+                auth().
+                preemptive().
+                basic("team07user", "S123456s?").
+                body(countryForPost).
+                when().
+                put("https://www.gmibank.com/api/tp-countries");
         response.prettyPrint();
-        json = response.jsonPath();
-
-    }
-    @Given("user is on the Create Customer Page with valid credentials {string} {string}")
-    public void userIsOnTheCreateCustomerPageWithValidCredentials(String validemployee_username, String validemployee_password) {
-
-//        loginPage.loginDrpDwn.click();
-//        loginPage.signinOptionDrpDwn.click();
-//        loginPage.userName.sendKeys(validemployee_username);
-//        loginPage.password.sendKeys(validemployee_password);
-//        loginPage.signinSubmitButton.click();
-
-
     }
 
 
+    @Given("user verifies the country does not exists in database {string}")
+    public void userVerifiesTheCountryDoesNotExistsInDatabase(String name) throws SQLException {
 
-    @And("user verifies the country {string} does not exist in database")
-    public void userVerifiesTheCountryDoesNotExistInDatabase(String countryDNExist) {
-
-        Assert.assertFalse(countryDNExist.contains("Egypt"));
-    }
-    @And("user clicks on My Operations button")
-    public void userClicksOnMyOperationsButton() {
-
-        manageCustomerPage.myOperations.click();
-    }
-
-
-    @And("user clicks on Create a New Customer button")
-    public void userClicksOnCreateANewCustomerButton() {
-
-        manageCustomerPage.manageCostumer.click();
-
+        list1=DBUtilsNew.getQueryAsAListOfMaps("SELECT * FROM public.tp_country WHERE name='"+name+"'");
+        System.out.println(list1);
+        Assert.assertTrue(list1.size()==0);
 
     }
 
-    @When("user creates a new customer with new country {string} {string} {string} {string} {string} {string} {string} {string} {string} {string} {string}")
-    public void userCreatesANewCustomerWithNewCountry(String ssn, String firstname, String lastname, String middleinitial, String email, String mobile, String zipcode, String address, String city, String country, String state) {
+    @Given("After creation HTTP Status Code should be {string}")
+    public void after_creation_HTTP_Status_Code_should_be(String statusCode) {
 
-
-
-        Driver.getDriver().get("https://www.gmibank.com");
-
-
-//        customerCreationPage.ssn.sendKeys(ssn);
-//        customerCreationPage.firstname.sendKeys(firstname);
-//        customerCreationPage.lastname.sendKeys(lastname);
-//        customerCreationPage.email.sendKeys(email);
-//        customerCreationPage.mobile.sendKeys(mobile);
-//        dataCreationPage.zipCode.sendKeys(zipcode);
-//        customerCreationPage.address.sendKeys(address);
-//        dataCreationPage.city.sendKeys(city);
-//        dataCreationPage.customerCountry.sendKeys(country);
-//        dataCreationPage.customerState.sendKeys(state);
-
-
+        int expectedStatusCode = Integer.parseInt(statusCode);
+        response.then().
+                assertThat().
+                statusCode(expectedStatusCode);
     }
-    @Then("user clicks on save button")
-    public void userClicksOnSaveButton() {
+    @Then("After creation user verifies the created country {string}")
+    public void after_creation_user_verifies_the_created_country(String expectedCountry) throws IOException, SQLException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        Country responseCountry= objectMapper.readValue(response.asString(), Country.class);
+
+        System.out.println(responseCountry);
+        String actualCountry =responseCountry.getName();
+        System.out.println("Actual country: " + actualCountry);
+        System.out.println("Expected country: " + expectedCountry);
+//      Assert.assertEquals(expectedCountry,actualCountry);
+        softAssert.assertEquals(actualCountry,expectedCountry);
+        softAssert.assertAll();
+
+        list1=DBUtilsNew.getQueryAsAListOfMaps("SELECT * FROM public.tp_country WHERE name='"+expectedCountry+"'");
+
+        Assert.assertTrue(list1.get(0).get("name").equalsIgnoreCase(expectedCountry));
     }
 
 
-
-    @Then("user verifies the country had been created in database {string}")
-    public void userVerifiesTheCountryHadBeenCreatedInDatabase(String countryName) {
-    }
 }
+
+
+
+

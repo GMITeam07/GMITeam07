@@ -105,7 +105,7 @@ public class DBUtilsNew {
 
     //-----------------------------------------------------------------------------------
 
-    public static List<Country> getAllCountriesAsAList(String s) throws SQLException {
+    public static List<Country> getAllCountriesAsAList() throws SQLException {
 
         String query="SELECT * FROM public.tp_country";
         Connection connection= DBUtilsNew.createConnection();

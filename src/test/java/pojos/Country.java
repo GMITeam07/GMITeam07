@@ -20,7 +20,16 @@ public class Country {
 
     public Country() {
     }
-
+    public Country(String name) {
+        this.id = id;
+        this.name = name;
+        this.states = states;
+    }
+    public Country( String name, String states) {
+        this.id = id;
+        this.name = name;
+        this.states = states;
+    }
     public Country(int id, String name, String states) {
         this.id = id;
         this.name = name;
