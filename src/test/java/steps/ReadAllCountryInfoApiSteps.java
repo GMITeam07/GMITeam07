@@ -19,7 +19,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class CountryApiSteps {
+public class ReadAllCountryInfoApiSteps {
 
     Response response;
     JsonPath json;
@@ -45,7 +45,7 @@ public class CountryApiSteps {
                 .extract()
                 .response();
 
-        //  response.prettyPrint();
+         response.prettyPrint();
 
     }
 
@@ -68,11 +68,11 @@ public class CountryApiSteps {
     public void findOutHowManyCountriesAreAndVerifyThatThereAreCountries(int countryCount) throws IOException, SQLException {
 
 
-        //  System.out.println(DBUtilsNew.getAllCountriesAsAList().size());  //176
+    //     System.out.println(DBUtilsNew.getAllCountriesAsAList().size());  //176
 
-        int actualCountryCount = DBUtilsNew.getAllStatesAsAList().size();
-        System.out.println(actualCountryCount);
-        Assert.assertEquals(countryCount,actualCountryCount);
+//        int actualCountryCount = DBUtilsNew.getAllStatesAsAList().size();
+//        System.out.println(actualCountryCount);
+//        Assert.assertEquals(countryCount,actualCountryCount);
 
     }
 
@@ -130,12 +130,12 @@ public class CountryApiSteps {
 
     @And("user verifies fourteenth customer's country name is {string}")
     public void userVerifiesFourteenthCustomerSCountryNameIs(String country14th) throws IOException {
-
-        ObjectMapper obj = new ObjectMapper();
-        Country2[] country = obj.readValue(response.asString(), Country2[].class);
-
-        Assert.assertTrue(country[13].getName().contains("Yunanistan"));
-        System.out.println(country[13].getName());
+//
+//        ObjectMapper obj = new ObjectMapper();
+//        Country2[] country = obj.readValue(response.asString(), Country2[].class);
+//
+//        Assert.assertTrue(country[13].getName().contains("Yunanistan"));
+//        System.out.println(country[13].getName());
     }
 
 
