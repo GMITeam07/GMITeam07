@@ -14,14 +14,28 @@ public class CreateEditUserPage {
 
 
 
-    @FindBy(xpath="//input[@id='login']")
+    @FindBy(xpath="//form/div[1]/div[1]/input[@id='login']")
     public WebElement loginname;
 
-    @FindBy(xpath="//input[@id='firstname']")
+    @FindBy(xpath="//form/div[2]/div[1]/input[@id='firstName']")
     public WebElement firstname;
 
-    @FindBy(xpath="//input[@id='lastname']")
+    @FindBy(xpath="//input[@id='lastName']")
     public WebElement lastname;
+
+    @FindBy(xpath="//input[@id='email']")
+    public WebElement email;
+
+    @FindBy(xpath="//input[@id='activated']")
+    public WebElement activated;
+
+    @FindBy(xpath="//select[@id='langkey']")
+    public WebElement language;
+
+    @FindBy(xpath="//select[@id='authorities']")
+    public WebElement authorities;
+
+
 
     @FindBy(xpath="//button[@type='submit']")
     public WebElement saveSubmitBtn;
