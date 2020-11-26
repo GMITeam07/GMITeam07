@@ -31,7 +31,6 @@ public class US12_ManageCustomer {
 
     @Given("user clicks to My Operations drop down menu")
     public void user_clicks_to_my_operations_drop_down_menu() {
-
         manageCustomerPage.myOperations.click();
 
     }
@@ -43,8 +42,6 @@ public class US12_ManageCustomer {
     }
     @Given("user clicks to last page button")
     public void user_clicks_to_last_page_button() {
-
-
         manageCustomerPage.lastPageButton.click();
 
     }
