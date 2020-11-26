@@ -79,7 +79,6 @@ public class SampleStep {
 
         Map map=new HashMap();
 
-
         map.put("ssn","123321234");
         map.put("firstName","John");
         map.put("lastName","Travolta");
@@ -96,7 +95,6 @@ public class SampleStep {
                         ConfigReader.getProperty("validadmin_username"),
                         ConfigReader.getProperty("validadmin_password")).
                 headers(map).
-
                 spec(Specs.specMainUrl()).
                 accept(ContentType.JSON).
                 when().
@@ -109,26 +107,8 @@ public class SampleStep {
     }
 
     @Test
-<<<<<<< HEAD
-    public void apiStates() throws IOException {
-        System.out.println( ApiUtils.getStateById(19226));
-
-  //      System.out.println(ApiUtils.getUserByLogin("team07Admin"));
-        System.out.println(ApiUtils.getUserByLogin("admin"));
-
-
-
-
-
-
-
-
-=======
     public void getToken() throws AWTException {
         System.out.println(ApiUtils.getUserByLogin("firstuser"));
-<<<<<<< HEAD
->>>>>>> main
-=======
     }
 
     @Test
@@ -143,12 +123,18 @@ public class SampleStep {
 //                stream().map(t->t).
 //                forEach(System.out::println);
 
-        String query3="SELECT * FROM public.tp_country WHERE name LIKE '%UNITED%'";
-        DBUtilsNew.getQueryAsAListOfMaps(query3).
+//        String query3="SELECT * FROM public.tp_country";
+//
+//        DBUtilsNew.getQueryAsAListOfMaps(query3).
+//                stream().map(t->t).
+//                forEach(System.out::println);
+
+        DBUtilsNew.getQueryAsAListOfMaps("SELECT id FROM Jhi_user WHERE login = 'team07admin1001'").
                 stream().map(t->t).
                 forEach(System.out::println);
->>>>>>> main
 
+        String queryDeletion="DELETE FROM public.jhi_user WHERE login='"+"team07admin1001"+"';";
+        DBUtilsNew.executeQuery(queryDeletion);
 
 
     }
