@@ -41,8 +41,11 @@ public class UserManagementPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement saveButton;
 
-    @FindBy(xpath = "//div[@role='alert']")
-    public WebElement verifyAdmin;
+    @FindBy(xpath="//*[@id='root']/div/div/div[1]/div/div/div[1]")
+    public WebElement successMessage;
+
+    @FindBy(xpath = "//a[@href='/admin/user-management/example22']")
+    public WebElement viewInfo;
 
 
 

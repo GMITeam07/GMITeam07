@@ -4,16 +4,20 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import pages.LoginPage;
 import pages.UserManagementPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import java.net.SocketTimeoutException;
+
 
 public class UserManagementSteps {
     UserManagementPage userManagementPage = new UserManagementPage();
     LoginPage loginPage = new LoginPage();
+
 
     @When("Admin clicks the Administration button")
     public void adminClicksTheAdministrationButton() {
@@ -74,18 +78,23 @@ public class UserManagementSteps {
      Driver.selectByVisibleText(userManagementPage.profile,role);
 
 
-
-
-
     }
 
 
     @Then("Admin clicks the save button")
     public void admin_clicks_the_save_button() {
         userManagementPage.saveButton.click();
+        userManagementPage.successMessage.isDisplayed();
 
 
     }
+
+
+
+
+
+
+
 
 
 }

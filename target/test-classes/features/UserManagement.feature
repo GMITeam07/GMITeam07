@@ -19,9 +19,13 @@ Feature: sign in feature
     And Admin selects the role "<role>"
     Then Admin clicks the save button
 
+
     Examples:
       | username | FirstName | lastName  | email                    | role          |
       | HarryP   | Harry     | Potter    | Harry_Potter@gmail.com   | ROLE_ADMIN    |
       | WilliamJ | William   | Jay       | WilliamJay@gmail.com     | ROLE_EMPLOYEE |
       | KateW    | Kate      | Windbrook | Kate_Windbrook@gmail.com | ROLE_MANAGER  |
       | JoeD     | Joe       | Day       | Joe_Day@gmail.com        | ROLE_USER     |
+
+
+

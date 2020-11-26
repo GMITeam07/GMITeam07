@@ -4,7 +4,7 @@ Feature: sign in feature
      Given user logs in with valid credentials "validuser_username" "validuser_password"
 
   @GMIPasswordEditing
-  Scenario Outline:TC_0016_The user test the password levelchart on the home page
+  Scenario Outline:TC_0009_0001_The user test the password levelchart on the home page
     status bar changes by password strenght
 
     When user clicks the login dropdown
