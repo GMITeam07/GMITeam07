@@ -15,7 +15,7 @@ Feature: Money Transfer
     And user selects the second account as To dropdown
     And user writes a balance that they want to proceed with
     And user writes a description for money transfer
-    Then user clicks on the Make Transfer button
+#    Then user clicks on the Make Transfer button
 #    Then user checks success validating message
 
 

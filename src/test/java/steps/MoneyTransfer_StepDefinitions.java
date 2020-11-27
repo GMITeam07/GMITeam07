@@ -30,15 +30,15 @@ public class MoneyTransfer_StepDefinitions {
     public void user_selects_the_first_account_as_from_dropdown() throws InterruptedException {
         moneyTransferPage.fromDropdown.click();
         System.out.println(Driver.getSelectDropDownOptions(moneyTransferPage.fromDropdown));
-        Driver.selectByIndex(moneyTransferPage.fromDropdown,0);
         Driver.selectRandomTextFromDropdown(moneyTransferPage.fromDropdown);
+
 
     }
     @When("user selects the second account as To dropdown")
     public void user_selects_the_second_account_as_to_dropdown() {
         moneyTransferPage.toDropdown.click();
         System.out.println(Driver.getSelectDropDownOptions(moneyTransferPage.toDropdown));
-        Driver.selectByIndex(moneyTransferPage.toDropdown,0);
+
         Driver.selectRandomTextFromDropdown(moneyTransferPage.toDropdown);
 
     }
