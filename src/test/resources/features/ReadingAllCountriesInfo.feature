@@ -4,7 +4,7 @@
       Given user provides the api end point to set the response using "https://www.gmibank.com/api/tp-countries"
 
 
-    @CountryDataTestTC_2101
+   @TC_2101
 
       Scenario:TC_2101 read all countries you created and validate them from your data set
       And compare Database and API country numbers
@@ -18,7 +18,7 @@
 
       Examples:
         | countryName |
-        | Malta8      |
+        | Malta9      |
        # | TURKEY         |
        # | GERMANY        |
        # | FRANCE         |
