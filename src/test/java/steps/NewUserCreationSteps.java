@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.RegistrationPage;
+import utilities.ApiUtils;
 import utilities.DBUtilsNew;
 import utilities.Driver;
 
@@ -15,7 +16,6 @@ import java.util.Map;
 
 public class NewUserCreationSteps {
     RegistrationPage registrationPage=new RegistrationPage();
-
 
     @And("user verifies the user {string} does not exists in the database")
     public void userVerifiesTheUserDoesNotExistsInTheDatabase(String username) throws SQLException {

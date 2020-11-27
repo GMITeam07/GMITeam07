@@ -144,10 +144,7 @@ public class SampleStep {
 //        country.setId(12378);
 //        country.setStates("1stState");
 
-
-
-
-        DBUtilsNew.getQueryAsAListOfMaps("SELECT * FROM public.jhi_user WHERE last_name LIKE '%Kelly%'").
+        DBUtilsNew.getQueryAsAListOfMaps("SELECT * FROM public.tp_country WHERE name ='Tanzania'").
                 stream().
 //                filter(t->t.get("last_name").equalsIgnoreCase("Kelly")).
                 map(t->t).
