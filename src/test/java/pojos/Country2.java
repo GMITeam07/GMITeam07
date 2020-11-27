@@ -1,11 +1,15 @@
 package pojos;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 import java.util.stream.Collectors;
-public class Country {
+
+@JsonIgnoreProperties (ignoreUnknown = true)
+public class Country2 {
+
     @SerializedName("id")
     @Expose
     private int id;
@@ -18,19 +22,10 @@ public class Country {
     @Expose
     private String states;
 
-    public Country() {
+    public Country2() {
     }
-    public Country(String name) {
-        this.id = id;
-        this.name = name;
-        this.states = states;
-    }
-    public Country( String name, String states) {
-        this.id = id;
-        this.name = name;
-        this.states = states;
-    }
-    public Country(int id, String name, String states) {
+
+    public Country2(int id, String name, String states) {
         this.id = id;
         this.name = name;
         this.states = states;
