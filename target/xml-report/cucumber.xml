@@ -1,78 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="36.101">
-<testcase classname="Money Transfer" name="user make money transfer successfully" time="24.467">
-<failure message="element not interactable&#10;  (Session info: chrome=86.0.4240.198)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-HP6TVD8', ip: '192.168.0.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\arzuk\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59956}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 1fd56e925c31fc4db80b96b99577256d" type="org.openqa.selenium.ElementNotInteractableException"><![CDATA[Given user is on the GMIBank HomePage.......................................passed
-When user clicks on login Drop down menu....................................passed
-Then user clicks on Sign in option..........................................passed
-And user enters a valid username "jkelly"...................................passed
-When user enters a valid password "John.123"................................passed
-And user clicks on sign in button...........................................passed
-And user verifies successful login..........................................passed
-And user clicks on the My Operations viewbox................................passed
-And user clicks on the Transfer Money viewbox...............................failed
-And user selects the first account as From dropdown.........................skipped
-And user selects the second account as To dropdown..........................skipped
-And user writes a balance that they want to proceed with....................skipped
-And user writes a description for money transfer............................skipped
-Then user clicks on the Make Transfer button................................skipped
-Then user checks success validating message.................................skipped
-
-StackTrace:
-org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=86.0.4240.198)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-HP6TVD8', ip: '192.168.0.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\arzuk\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59956}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 1fd56e925c31fc4db80b96b99577256d
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy19.click(Unknown Source)
-	at steps.MoneyTransfer_StepDefinitions.user_clicks_on_the_transfer_money_viewbox(MoneyTransfer_StepDefinitions.java:24)
-	at ✽.user clicks on the Transfer Money viewbox(file:///C:/Users/arzuk/IdeaProjects/GMITeam07/src/test/resources/features/moneyTransfer.feature:13)
-]]></failure>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="30.606">
+<testcase classname="Test all customers' data" name="validate all customers' data" time="29.107">
+<system-out><![CDATA[Given user provides the api end point to set the response using "customer_api_url".passed
+Given manipulate all customers' data........................................passed
+Then user validates all data................................................passed
+]]></system-out>
 </testcase>
-<testcase classname="Money Transfer" name="user can not leave empty balance and description checkboxes" time="11.111">
-<failure message="Cannot locate option with index: 1&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-HP6TVD8', ip: '192.168.0.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given user is on the GMIBank HomePage.......................................passed
-When user clicks on login Drop down menu....................................passed
-Then user clicks on Sign in option..........................................passed
-And user enters a valid username "jkelly"...................................passed
-When user enters a valid password "John.123"................................passed
-And user clicks on sign in button...........................................passed
-And user verifies successful login..........................................passed
-And user clicks on the My Operations viewbox................................passed
-And user clicks on the Transfer Money viewbox...............................passed
-And user selects the first account as From dropdown.........................failed
-And user selects the second account as To dropdown..........................skipped
-And user leaves empty the balance checkbox..................................skipped
-And user leaves empty the description checkbox..............................skipped
-Then user should see red alerts under the balance and description checkboxes.skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: Cannot locate option with index: 1
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-HP6TVD8', ip: '192.168.0.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.setSelectedByIndex(Select.java:297)
-	at org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:172)
-	at steps.MoneyTransfer_StepDefinitions.user_selects_the_first_account_as_from_dropdown(MoneyTransfer_StepDefinitions.java:33)
-	at ✽.user selects the first account as From dropdown(file:///C:/Users/arzuk/IdeaProjects/GMITeam07/src/test/resources/features/moneyTransfer.feature:34)
-]]></failure>
+<testcase classname="Test all customers' data" name="validate all customers' data 2" time="1.219">
+<system-out><![CDATA[Given user provides the api end point to set the response using "customer_api_url".passed
+Given manipulate all customers' data........................................passed
+Then user validates all data one by one.....................................passed
+]]></system-out>
 </testcase>
 </testsuite>

@@ -133,11 +133,20 @@ public class Driver {
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    public static WebElement waitForVisibility(By locator, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
 
     public static Boolean waitForInVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
+
+//    public static Boolean waitForInVisibility(WebElement element, int timeout) {
+//        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+//        return wait.until(ExpectedConditions.invisibilityOf(element));
+//    }
 
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
@@ -266,13 +275,15 @@ public class Driver {
         return select.getFirstSelectedOption();
     }
 
-    public static void selectRandomTextFromDropdown(WebElement element) {
-        Random random = new Random();
-        Select select=new Select(element);
-        List<WebElement> weblist = select.getOptions();
-        int optionIndex = 1 + random.nextInt(weblist.size() - 1);
-
-        select.selectByIndex(optionIndex);
+    public static boolean selectByVisibleText(WebElement element, String selection) {
+        Select select = new Select(element);
+        try {
+            select.selectByVisibleText(selection);
+            return true;
+        } catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public static boolean selectByIndex(WebElement element, int selection) {
@@ -285,16 +296,7 @@ public class Driver {
             return false;
         }
     }
-    public static boolean selectFromDrpDown(WebElement element,String selection) {
-        Select select = new Select(element);
-        try {
-            select.selectByVisibleText(selection);
-            return true;
-        } catch (Exception e){
-            e.printStackTrace();
-            return false;
-        }
-    }
+
 
     public static List<String> getSelectDropDownOptions(WebElement element) {
         Select select = new Select(element);

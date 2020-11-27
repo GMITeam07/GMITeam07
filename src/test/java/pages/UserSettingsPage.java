@@ -10,10 +10,10 @@ public class UserSettingsPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath="//body//div//h2")
+    @FindBy(id="settings-title")
     public WebElement userSettingsText;
 
-    @FindBy(xpath="//body//div//h2/span/strong")
+    @FindBy(xpath="//*[@id='settings-title']//span//strong")
     public WebElement loginNameText;
 
     @FindBy(id="firstName")
@@ -31,23 +31,17 @@ public class UserSettingsPage {
     @FindBy(xpath="//button[@type='submit']")
     public WebElement saveBtn;
 
-    @FindBy(xpath="//form//div[.='Your first name is required.']")
-    public WebElement firstnameRequiredText;
+    @FindBy(xpath="//form/div[1][@class='text-danger form-group']/div[@class='invalid-feedback']")
+    public WebElement firstnameErrorMessageText;
 
-    @FindBy(xpath="//form//div[.='Your last name is required.']")
-    public WebElement lastnameRequiredText;
+    @FindBy(xpath="//form[@id='settings-form]/div[2][@class='text-danger form-group']/div[@class='invalid-feedback']")
+    public WebElement lastnameErrorMessage;
 
-    @FindBy(xpath="//form//div[.='Your email is required.']")
-    public WebElement emailRequiredText;
+    @FindBy(xpath="//form[@id='settings-form]/div[3][@class='text-danger form-group']/div[@class='invalid-feedback']")
+    public WebElement emailErrorMessages;
 
-    @FindBy(partialLinkText = "at least 5 characters")
-    public WebElement emailAtLeast5CharactersText;
-
-    @FindBy(partialLinkText = "This field is invalid")
-    public WebElement emailThisFieldIsInvalidText;
-
-    @FindBy(xpath = "//div//div//span/strong")
-    public WebElement settingsSavedMessageAlert;
+    @FindBy(xpath = "//*[@id='root']/div/div/div[1]/div/div/div[1]/span/strong")
+    public WebElement settingsSavedsuccessfullyMessageAlert;
 
     @FindBy(xpath = "//div/button[@aria-label='close']")
     public WebElement settingsSavedMessageAlertCloseBtn;
