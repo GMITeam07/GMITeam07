@@ -73,5 +73,9 @@ public class DataCreationPage {
     public WebElement viewButton;
     @FindBy (xpath ="//*[@id='app-view-container']/div[1]/div/div/div/div/div/table/tbody/tr[1]/td[1]/a")
     public WebElement idButton;
+    @FindBy (className = "tp-customer-state")
+    public WebElement customerState;
+    @FindBy (className = "tp-customer-country")
+    public WebElement customerCountry;
 
 }

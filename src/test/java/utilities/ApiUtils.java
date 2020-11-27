@@ -1,17 +1,17 @@
 package utilities;
 
+
 import com.google.gson.JsonObject;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.*;
 import specs.Specs;
-
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
-
 import static io.restassured.RestAssured.given;
-
 public class ApiUtils {
     public static Response getRequest(String userType,String endpoint){
         Response response=given().
@@ -26,7 +26,6 @@ public class ApiUtils {
 
         return response;
     }
-
     public static Response getRequest(String username,
                                       String password,
                                       String endpoint){
@@ -39,9 +38,6 @@ public class ApiUtils {
                 when().get(endpoint);
         return response;
     }
-
-
-
     /* ----------------------------------------------*/
     public static Country getCountryById(int countryId){
         Country country=new Country();
@@ -57,7 +53,6 @@ public class ApiUtils {
         country=response.as(Country.class);
         return country;
     }
-
     public static List<Country> getCountriesAsList() {
         //This works properly final....
         Response response = given().
@@ -79,7 +74,6 @@ public class ApiUtils {
                 collect(Collectors.toList());
         return countryList;
     }
-
     public static Country getCountryByCountryName(String countryName){
         return getCountriesAsList().stream().
                 filter(t->t.getName().equalsIgnoreCase(countryName)).
@@ -124,12 +118,10 @@ public class ApiUtils {
         User user=response.as(User.class);
         return user;
     }
-
     public static List<User> getUsersAsList(String userType){
         Response response=getRequest(userType, "/api/users");
-
         List<User> list=response.getBody().jsonPath().getList("",User.class);
-                List<User> userList=list.stream().
+        List<User> userList=list.stream().
                 map(t->
                 {
                     User user=t;
@@ -138,39 +130,29 @@ public class ApiUtils {
                 collect(Collectors.toList());
         return userList;
     }
-
-
     public static User getUserByUserId(int userId){
         return getUsersAsList("admin").stream().
                 filter(t->t.getId()==userId).
                 findAny().
                 get();
-
-
     }
-
-
     /*-------------------------------------------------------------------------------*/
     public static Response getTpAccountRegistrations(){
         Response response=ApiUtils.getRequest("admin","/api/tp-accounts");
         return response;
     }
-
     public static Account getAccountByAccountId(String username, String password, int accountId){
         Response response=getRequest(username, password, "/api/tp-accounts/"+accountId);
         Account account=response.as(Account.class);
         return account;
     }
-
     public static Account getAccountByAccountId(String userType,int accountId){
         Response response=getRequest(userType, "/api/tp-accounts/"+accountId);
         Account account=response.as(Account.class);
         return account;
     }
-
     public static List<Account> getAccountsAsList(String userType) throws IOException {
         Response response=getRequest(userType, "/api/tp-accounts");
-
         List<Account> list=response.getBody().jsonPath().getList("",Account.class);
         List<Account> accountList=list.stream().
                 map(t->
@@ -182,7 +164,6 @@ public class ApiUtils {
         return accountList;
     }
     /*--------------------------------------------------------------------------------*/
-
     public static Customer getCustomerById(int customerId){
         Response response=given().
                 auth().
@@ -192,15 +173,13 @@ public class ApiUtils {
                         ConfigReader.getProperty("validadmin_password")).
                 spec(Specs.specMainUrl()).
                 accept(ContentType.JSON).
-                when().get("/api/tp-customers/"+customerId);
+                when().get("/api/customers/"+customerId);
         response.prettyPrint();
         Customer customer=response.as(Customer.class);
         return customer;
     }
-
     public static List<Customer> getCustomersAsList(String userType){
         Response response=getRequest(userType, "/api/tp-customers");
-
         List<Customer> list=response.getBody().jsonPath().getList("",Customer.class);
         List<Customer> customerList=list.stream().
                 map(t->
@@ -223,7 +202,9 @@ public class ApiUtils {
                         accept(ContentType.JSON).
                         when().
                         get("https://www.gmibank.com/api/tp-states/"+stateId);
+
         State state=response.as(State.class);
+
         return state;
 
     }
@@ -238,10 +219,13 @@ public class ApiUtils {
                         when().
                         get("https://www.gmibank.com/api/tp-states");
 
+
         List<State> listOfStates=response.jsonPath().getList("",State.class);
 
         return listOfStates;
     }
+
+
 
 
 }
