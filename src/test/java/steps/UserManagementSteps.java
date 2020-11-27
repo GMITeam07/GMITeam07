@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import pages.LoginPage;
@@ -90,11 +91,31 @@ public class UserManagementSteps {
     }
 
 
+    @And("Admin can see view user info")
+    public void adminCanSeeViewUserInfo() throws InterruptedException {
+        Thread.sleep(5000);
+        Driver.getDriver().navigate().refresh();
+
+        userManagementPage.buttonWiew.click();
+        Driver.verifyElementDisplayed(userManagementPage.viewUserInfo);
+    }
+
+    @And("Admin can edit user info")
+    public void adminCanEditUserInfo() {
+        Driver.getDriver().navigate().back();
+        userManagementPage.buttonEdit.click();
+        userManagementPage.ediLogin.clear();
+        userManagementPage.ediLogin.sendKeys("example2");
+        userManagementPage.saveButton.click();
+    }
+
+    @And("Admin can delete any user info")
+    public void adminCanDeleteAnyUserInfo() throws InterruptedException {
+        Thread.sleep(5000);
+        Driver.getDriver().navigate().refresh();
+        userManagementPage.lastPageButton.click();
+        userManagementPage.buttonDelete.click();
 
 
-
-
-
-
-
+    }
 }

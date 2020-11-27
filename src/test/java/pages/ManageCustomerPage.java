@@ -50,7 +50,6 @@ public class ManageCustomerPage {
     @FindBy(xpath = "//a[@class='btn btn-danger btn-sm']")
     public  WebElement buttonDelete;
     @FindBy(xpath = "//span[text()='Edit']")
-
     public  WebElement ButtonViewEdit;
     @FindBy(id = "tp-customer-city")
     public  WebElement cityUpdate;

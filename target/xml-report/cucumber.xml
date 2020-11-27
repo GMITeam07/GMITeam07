@@ -1,57 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="12.049">
-<testcase classname="sign in feature" name="Admin can edit all user info  (admin, manager, employee and user)" time="11.3">
-<failure message="Unrecognized field &quot;type&quot; (class pojos.User), not marked as ignorable (13 known properties: &quot;lastName&quot;, &quot;login&quot;, &quot;lastModifiedDate&quot;, &quot;activated&quot;, &quot;imageUrl&quot;, &quot;createdDate&quot;, &quot;id&quot;, &quot;email&quot;, &quot;createdBy&quot;, &quot;authorities&quot;, &quot;langKey&quot;, &quot;lastModifiedBy&quot;, &quot;firstName&quot;])&#10; at [Source: (String)&quot;{&quot;type&quot;:&quot;https://www.jhipster.tech/problem/problem-with-message&quot;,&quot;title&quot;:&quot;Not Found&quot;,&quot;status&quot;:404,&quot;detail&quot;:&quot;404 NOT_FOUND&quot;,&quot;path&quot;:&quot;/gmi-bank-backend-0.0.1-SNAPSHOT/api/users/firstuser&quot;,&quot;message&quot;:&quot;error.http.404&quot;}&quot;; line: 1, column: 10] (through reference chain: pojos.User[&quot;type&quot;])" type="com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException"><![CDATA[Given user logs in with valid credentials "validadmin_username" "validadmin_password".passed
-Given user is on the User Management Page with valid credentials............passed
-Then user enters edit page of the user "firstuser"..........................failed
-Then user records initial UI user data on Create or Edit User Page "firstuser".skipped
-Then user retrieves initial user data from the api "firstuser"..............skipped
-Then user verifies the API UI user data is same "firstuser".................skipped
-Then user enters new user data login "" "jackson" "smith" "jacksonsmith1234@tmail.com" "true" "English" "ROLE_USER".skipped
-When user clicks save button on user edit page..............................skipped
-Then user verifies the success message......................................skipped
-Then user verifies over API that user data changed with new datas "" "jackson" "smith" "jacksonsmith1234@tmail.com" "true" "English" "ROLE_USER".skipped
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="25.84">
+<testcase classname="sign in feature" name="US_017_TC001_Admin can manage the all user" time="25.05">
+<failure message="element click intercepted: Element &lt;a class=&quot;btn btn-danger btn-sm&quot; href=&quot;/admin/user-management/team02halleder/delete&quot;&gt;...&lt;/a&gt; is not clickable at point (1207, 27). Other element would receive the click: &lt;span&gt;...&lt;/span&gt;&#10;  (Session info: chrome=87.0.4280.67)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Yusufs-MacBook-Pro.local', ip: '2607:9880:4020:52:0:0:0:ae2d%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.2', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/z9/trjw1bn9117...}, goog:chromeOptions: {debuggerAddress: localhost:49604}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 9b767e8a0c8f3f998fed7f26c49f558e" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[Given user logs in with valid credentials "validadmin_username" "validadmin_password".passed
+When Admin clicks the Administration button.................................passed
+And Admin select the usermangement dropdown.................................passed
+When Admin clicks the Crete a new button....................................passed
+And Admin enters a login "HarryP"...........................................passed
+And Admin enters a FirstName "Harry"........................................passed
+And Admin enters a LastName "Potter"........................................passed
+And Admin enters a Email "Harry_Potter@gmail.com"...........................passed
+And Admin click the activeted button........................................passed
+And Admin selects the language..............................................passed
+And Admin selects the role "ROLE_ADMIN".....................................passed
+Then Admin clicks the save button...........................................passed
+And Admin can see view user info............................................passed
+And Admin can edit user info................................................passed
+And Admin can delete any user info..........................................failed
 
 StackTrace:
-com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "type" (class pojos.User), not marked as ignorable (13 known properties: "lastName", "login", "lastModifiedDate", "activated", "imageUrl", "createdDate", "id", "email", "createdBy", "authorities", "langKey", "lastModifiedBy", "firstName"])
- at [Source: (String)"{"type":"https://www.jhipster.tech/problem/problem-with-message","title":"Not Found","status":404,"detail":"404 NOT_FOUND","path":"/gmi-bank-backend-0.0.1-SNAPSHOT/api/users/firstuser","message":"error.http.404"}"; line: 1, column: 10] (through reference chain: pojos.User["type"])
-	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
-	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:823)
-	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1153)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1589)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1567)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:294)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
-	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4013)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3042)
-	at com.fasterxml.jackson.databind.ObjectMapper$readValue$0.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
-	at io.restassured.internal.path.json.mapping.JsonPathJackson2ObjectDeserializer.deserialize(JsonPathJackson2ObjectDeserializer.groovy:46)
-	at io.restassured.path.json.mapping.JsonPathObjectDeserializer$deserialize.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
-	at io.restassured.internal.mapping.Jackson2Mapper.deserialize(Jackson2Mapper.groovy:58)
-	at io.restassured.mapper.ObjectMapper$deserialize.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
-	at io.restassured.internal.mapping.ObjectMapping.parseWithJackson2(ObjectMapping.groovy:238)
-	at io.restassured.internal.mapping.ObjectMapping$parseWithJackson2$0.callStatic(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
-	at io.restassured.internal.mapping.ObjectMapping.deserialize(ObjectMapping.groovy:59)
-	at io.restassured.internal.mapping.ObjectMapping$deserialize.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.as(RestAssuredResponseOptionsGroovyImpl.groovy:226)
-	at io.restassured.internal.RestAssuredResponseOptionsImpl.as(RestAssuredResponseOptionsImpl.java:169)
-	at utilities.ApiUtils.getUserByLogin(ApiUtils.java:124)
-	at steps.EditUserPageSteps.user_enters_edit_page_of_the_user(EditUserPageSteps.java:33)
-	at ✽.user enters edit page of the user "firstuser"(file:///Users/serpildundar/GMITeam07New/src/test/resources/features/createedituser.feature:11)
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a class="btn btn-danger btn-sm" href="/admin/user-management/team02halleder/delete">...</a> is not clickable at point (1207, 27). Other element would receive the click: <span>...</span>
+  (Session info: chrome=87.0.4280.67)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Yusufs-MacBook-Pro.local', ip: '2607:9880:4020:52:0:0:0:ae2d%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.2', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/z9/trjw1bn9117...}, goog:chromeOptions: {debuggerAddress: localhost:49604}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 9b767e8a0c8f3f998fed7f26c49f558e
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy19.click(Unknown Source)
+	at steps.UserManagementSteps.adminCanDeleteAnyUserInfo(UserManagementSteps.java:117)
+	at ✽.Admin can delete any user info(file:///Users/serpildundar/GMITeam07New/src/test/resources/features/UserManagement.feature:23)
 ]]></failure>
 </testcase>
 </testsuite>

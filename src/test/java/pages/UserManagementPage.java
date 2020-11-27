@@ -1,11 +1,13 @@
 package pages;
 
+import jdk.nashorn.api.scripting.ScriptObjectMirror;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class UserManagementPage {
+
     public UserManagementPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -46,6 +48,30 @@ public class UserManagementPage {
 
     @FindBy(xpath = "//a[@href='/admin/user-management/example22']")
     public WebElement viewInfo;
+
+    @FindBy(xpath = "//li[@class='page-item disabled']")
+    public WebElement lastPage;
+
+    @FindBy(xpath = "//span[text()='View'][1]")
+    public  WebElement buttonWiew;
+
+    @FindBy(xpath = "//dl[@class='jh-entity-details']")
+    public WebElement viewUserInfo;
+
+    @FindBy(xpath = "//a[@class='btn btn-primary btn-sm'][1]")
+    public  WebElement buttonEdit;
+
+    @FindBy(xpath = "//input[@name='login']")
+    public WebElement ediLogin;
+
+    @FindBy(xpath = "//a[@class='btn btn-danger btn-sm'][1]")
+    public  WebElement buttonDelete;
+
+    @FindBy(linkText = "»»")
+    public WebElement lastPageButton;
+
+    @FindBy(xpath = "//a[@href='/admin/user-management/harryp/delete']")
+    public WebElement deleteHarry;
 
 
 
