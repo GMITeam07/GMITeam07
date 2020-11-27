@@ -3,6 +3,7 @@
     "line": 2,
     "elements": [
       {
+<<<<<<< HEAD
         "line": 4,
         "name": "",
         "description": "",
@@ -555,6 +556,13 @@
           {
             "result": {
               "duration": 2000000,
+=======
+        "start_timestamp": "2020-11-27T20:42:20.465Z",
+        "before": [
+          {
+            "result": {
+              "duration": 231000000,
+>>>>>>> main
               "status": "passed"
             },
             "match": {
@@ -562,6 +570,7 @@
             }
           }
         ],
+<<<<<<< HEAD
         "line": 29,
         "name": "US_017_TC001_Admin can manage the all user",
         "description": "",
@@ -570,6 +579,16 @@
           {
             "result": {
               "duration": 767000000,
+=======
+        "line": 4,
+        "name": "user logs into GMI Home Page",
+        "description": "",
+        "id": "login-page;user-logs-into-gmi-home-page",
+        "after": [
+          {
+            "result": {
+              "duration": 2129000000,
+>>>>>>> main
               "status": "passed"
             },
             "match": {
@@ -578,6 +597,7 @@
           }
         ],
         "type": "scenario",
+<<<<<<< HEAD
         "keyword": "Scenario Outline",
         "steps": [
           {
@@ -871,11 +891,37 @@
             "name": "Admin clicks the Crete a new button",
             "match": {
               "location": "steps.UserManagementSteps.admin_clicks_the_crete_a_new_button()"
+=======
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 16940000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is on the GMIBank HomePage",
+            "match": {
+              "location": "steps.LoginSteps.user_is_on_the_gmi_bank_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 120000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user clicks on login Drop down menu",
+            "match": {
+              "location": "steps.LoginSteps.user_clicks_on_login_drop_down_menu()"
+>>>>>>> main
             },
             "keyword": "When "
           },
           {
             "result": {
+<<<<<<< HEAD
               "duration": 145000000,
               "status": "passed"
             },
@@ -925,11 +971,39 @@
                 }
               ],
               "location": "steps.UserManagementSteps.admin_enters_a_last_name(java.lang.String)"
+=======
+              "duration": 130000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user clicks on Sign in option",
+            "match": {
+              "location": "steps.LoginSteps.user_clicks_on_sign_in_option()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 143000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user enters a valid username \"username\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"username\"",
+                  "offset": 29
+                }
+              ],
+              "location": "steps.LoginSteps.user_enters_a_valid_username(java.lang.String)"
+>>>>>>> main
             },
             "keyword": "And "
           },
           {
             "result": {
+<<<<<<< HEAD
               "duration": 170000000,
               "status": "passed"
             },
@@ -957,12 +1031,30 @@
               "location": "steps.UserManagementSteps.admin_click_the_activeted_button()"
             },
             "keyword": "And "
+=======
+              "duration": 148000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user enters a valid password \"password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"password\"",
+                  "offset": 29
+                }
+              ],
+              "location": "steps.LoginSteps.user_enters_a_valid_password(java.lang.String)"
+            },
+            "keyword": "When "
+>>>>>>> main
           },
           {
             "result": {
               "duration": 110000000,
               "status": "passed"
             },
+<<<<<<< HEAD
             "line": 18,
             "name": "Admin selects the language",
             "match": {
@@ -985,11 +1077,18 @@
                 }
               ],
               "location": "steps.UserManagementSteps.adminSelectsTheRole(java.lang.String)"
+=======
+            "line": 10,
+            "name": "user clicks on sign in button",
+            "match": {
+              "location": "steps.LoginSteps.user_clicks_on_sign_in_button()"
+>>>>>>> main
             },
             "keyword": "And "
           },
           {
             "result": {
+<<<<<<< HEAD
               "duration": 697000000,
               "status": "passed"
             },
@@ -1023,18 +1122,34 @@
               "location": "steps.UserManagementSteps.adminCanEditUserInfo()"
             },
             "keyword": "And "
+=======
+              "duration": 107000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user verifies successful login",
+            "match": {
+              "location": "steps.LoginSteps.user_verifies_successful_login()"
+            },
+            "keyword": "Then "
+>>>>>>> main
           }
         ],
         "tags": [
           {
+<<<<<<< HEAD
             "name": "@LoginUser"
           },
           {
             "name": "@UserManagement"
+=======
+            "name": "@loginpage"
+>>>>>>> main
           }
         ]
       }
     ],
+<<<<<<< HEAD
     "name": "sign in feature",
     "description": "",
     "id": "sign-in-feature",
@@ -1043,6 +1158,16 @@
     "tags": [
       {
         "name": "@LoginUser",
+=======
+    "name": "Login Page",
+    "description": "",
+    "id": "login-page",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/login_page_features/loginPage.feature",
+    "tags": [
+      {
+        "name": "@loginpage",
+>>>>>>> main
         "type": "Tag",
         "location": {
           "line": 1,
