@@ -1,13 +1,10 @@
 package steps;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.mapper.ObjectMapper;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import pages.CreateEditUserPage;
-import pages.UserManagementPage;
 import pojos.User;
 import utilities.ApiUtils;
 import utilities.Driver;
@@ -15,23 +12,18 @@ import utilities.Driver;
 public class EditUserPageSteps {
     private User initialUIUser=new User();
     private User initialAPIUser=new User();
-
+    private User initialDBUser=new User();
 
     private User editedUIUser=new User();
     private User editedAPIUser=new User();
-
+    private User editedDBUser=new User();
 
     CreateEditUserPage createEditUserPage=new CreateEditUserPage();
-    UserManagementPage userManagementPage = new UserManagementPage();
-    @Given("user is on the User Management Page with valid credentials")
-    public void userIsOnTheUserManagementPageWithValidCredentials() {
-        userManagementPage.administration.click();
-        Driver.clickWithJS(userManagementPage.UsermanagemantDropdown);
-    }
 
     @Then("user enters edit page of the user {string}")
     public void user_enters_edit_page_of_the_user(String loginname) {
-
+        
+        
     }
 
 
@@ -49,7 +41,11 @@ public class EditUserPageSteps {
         initialAPIUser= ApiUtils.getUserByLogin(loginname);
         
     }
+    @Then("user retrieves initial user data from database {string}")
+    public void user_retrieves_initial_user_data_from_database(String loginname) {
 
+        
+    }
 
     @Then("user enters new user data login {string} {string} {string} {string} {string} {int} {string}")
     public void user_enters_new_user_data_login(String loginname, String firstname, String lastname, String email, String isactivate, int language, String profiles) {
@@ -129,6 +125,4 @@ public class EditUserPageSteps {
     public void userDeletesTheNewUserFromTheDatabase(String username) {
 
     }
-
-
 }

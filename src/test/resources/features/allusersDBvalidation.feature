@@ -11,6 +11,3 @@ by database and validated
     Examples:
       | username        | ssn         | firstname | lastname | address             | mobile       | email                 | password  |
       | team07admin1001 | 001-23-5101 | Johny     | Walker   | Whicky Street No 80 | 111-222-1122 | johnywalker@zmail.com | J123456j? |
-    Examples:
-      | username        | ssn         | firstname | lastname | address             | mobile       | email                 | password  |
-      | team07admin1001 | 001-23-5101 | Johny     | Walker   | Whicky Street No 80 | 111-222-1122 | johnywalker@zmail.com | J123456j? |

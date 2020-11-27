@@ -11,9 +11,6 @@ public class CreateEditUserPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
-
-
     @FindBy(xpath="//form/div[1]/div[1]/input[@id='login']")
     public WebElement loginname;
 
