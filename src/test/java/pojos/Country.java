@@ -3,6 +3,10 @@ package pojos;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Country {
     @SerializedName("id")
     @Expose
@@ -18,7 +22,16 @@ public class Country {
 
     public Country() {
     }
-
+    public Country(String name) {
+        this.id = id;
+        this.name = name;
+        this.states = states;
+    }
+    public Country( String name, String states) {
+        this.id = id;
+        this.name = name;
+        this.states = states;
+    }
     public Country(int id, String name, String states) {
         this.id = id;
         this.name = name;

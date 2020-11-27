@@ -11,8 +11,6 @@ Feature: An Employee can manage Customer
     Then a customer should show up at total nine head on account information of the customer
     Then user records customers info on the displayed UI page on the Manage Customer Page
 
-
-
   @US12TC02
   Scenario:There should be a View option where customers can be navigated to all customer info and see edit button there
     And user clicks to View button.
