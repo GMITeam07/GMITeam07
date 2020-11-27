@@ -11,10 +11,12 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <kotlin.version>1.4.20-M2</kotlin.version>
     </properties>
 
 
     <dependencies>
+
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -27,14 +29,6 @@
             <artifactId>webdrivermanager</artifactId>
             <version>4.2.2</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>6.8.1</version>
-        </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
         <dependency>
@@ -52,6 +46,11 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.8</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
@@ -102,14 +101,19 @@
             <version>7.1.0</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>6.8.2</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.2.18</version>
+            <scope>test</scope>
         </dependency>
-
-
     </dependencies>
     <build>
         <plugins>
@@ -130,7 +134,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M1</version>
                 <configuration>
-                    <parallel>classes</parallel>
+                    <parallel>methods</parallel>
                     <forkMode>perthread</forkMode>
                     <threadCount>4</threadCount>
                     <reuseForks>false</reuseForks>
@@ -181,5 +185,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
