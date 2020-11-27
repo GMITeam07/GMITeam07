@@ -133,10 +133,6 @@ public class Driver {
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static WebElement waitForVisibility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
 
     public static Boolean waitForInVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
@@ -270,6 +266,25 @@ public class Driver {
         return select.getFirstSelectedOption();
     }
 
+    public static void selectRandomTextFromDropdown(WebElement element) {
+        Random random = new Random();
+        Select select=new Select(element);
+        List<WebElement> weblist = select.getOptions();
+        int optionIndex = 1 + random.nextInt(weblist.size() - 1);
+
+        select.selectByIndex(optionIndex);
+    }
+
+    public static boolean selectByIndex(WebElement element, int selection) {
+        Select select = new Select(element);
+        try {
+            select.selectByIndex(selection);
+            return true;
+        } catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
     public static boolean selectFromDrpDown(WebElement element,String selection) {
         Select select = new Select(element);
         try {

@@ -14,18 +14,18 @@ import static io.restassured.RestAssured.given;
 
 public class SampleStep {
     @Test
-    public void getAUserOverApi(){
+    public void getAUserOverApi() {
         System.out.println(
                 ApiUtils.getUsersAsList("admin"));
     }
 
     @Test
-    public void getAccountOverApi(){
-        Account account1=ApiUtils.getAccountByAccountId(
+    public void getAccountOverApi() {
+        Account account1 = ApiUtils.getAccountByAccountId(
                 "admin",
                 2303);
 
-        Account account2=ApiUtils.getAccountByAccountId(
+        Account account2 = ApiUtils.getAccountByAccountId(
                 "team07admin",
                 "S123456s?",
                 2304);
@@ -41,21 +41,46 @@ public class SampleStep {
 
     @Test
     public void getCountriesAsList() throws IOException {
-        List<Country> list= ApiUtils.getCountriesAsList();
+        List<Country> list = ApiUtils.getCountriesAsList();
         System.out.println(list.get(5).getName());
         list.stream().
-                map(t->t).
+                map(t -> t).
                 forEach(System.out::println);
     }
+
     @Test
     public void getCustomersByList() throws IOException {
-        List<Customer> allCustomers= ApiUtils.getCustomersAsList("admin");
+        List<Customer> allCustomers = ApiUtils.getCustomersAsList("admin");
         System.out.println(allCustomers.get(0).toString());
         allCustomers.stream().
-                map(t->t).
+                map(t -> t).
                 forEach(System.out::println);
-
 
     }
 
-}
+        @Test
+        public void apiStates() throws IOException {
+
+            Response response = given().
+                    auth().
+                    preemptive().
+                    basic("team07admin", "S123456s?").
+                    accept(ContentType.JSON).when().
+                    get("https://gmibank.com/api/tp-states");
+
+            response.prettyPrint();
+          //  System.out.println(response.getHeaders());
+            //System.out.println("Status code"+ response.getStatusCode());
+
+            //JsonPath jsonPath = response.jsonPath();
+
+            //State state = new State();
+           // state.as(class.State);
+
+        }
+    }
+
+
+
+
+

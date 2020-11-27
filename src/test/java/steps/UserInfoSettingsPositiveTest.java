@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.UserSettingsPage;
@@ -128,7 +129,7 @@ public class UserInfoSettingsPositiveTest {
 
     @Then("user verifies success message is displayed {string}")
     public void user_verifies_success_message_is_displayed(String successmessage) {
-        Driver.waitForVisibility(By.partialLinkText(successmessage),2);
+        Driver.waitForVisibility((WebElement) By.partialLinkText(successmessage),2);
     }
 
     @Then("user verifies the user language \"English\"is same as api")
