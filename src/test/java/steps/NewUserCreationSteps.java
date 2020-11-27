@@ -31,16 +31,16 @@ public class NewUserCreationSteps {
                                     String email, String password) throws InterruptedException {
 
         Thread.sleep(5000);
-        registrationPage.ssntextBox.click();
-        registrationPage.ssntextBox.sendKeys(ssn);
-        registrationPage.firstnametextBox.sendKeys(firstname);
-        registrationPage.lastnamentextBox.sendKeys(lastname);
-        registrationPage.addresstextBox.sendKeys(address);
-        registrationPage.mobiletextBox.sendKeys(mobile);
-        registrationPage.usernametextBox.sendKeys(username);
-        registrationPage.emailtextBox.sendKeys(email);
-        registrationPage.passwordtextBox.sendKeys(password);
-        registrationPage.passwordConfirmation.sendKeys(password);
+        registrationPage.sSN.click();
+        registrationPage.sSN.sendKeys(ssn);
+        registrationPage.regFirstName.sendKeys(firstname);
+        registrationPage.regLastName.sendKeys(lastname);
+        registrationPage.regAddress.sendKeys(address);
+        registrationPage.regMobilePhone.sendKeys(mobile);
+        registrationPage.regUsername.sendKeys(username);
+        registrationPage.regEmail.sendKeys(email);
+        registrationPage.registerNewPassword.sendKeys(password);
+        registrationPage.registerPasswordConfirmation.sendKeys(password);
 //        registrationPage.registerBtn.click();
 
 

@@ -1,49 +1,43 @@
 package pojos;
 
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
 
 public class Account {
     @SerializedName("id")
     @Expose
     private int id;
-
     @SerializedName("description")
     @Expose
     private String description;
-
     @SerializedName("balance")
     @Expose
     private double balance;
-
     @SerializedName("accountType")
     @Expose
     private String accountType;
-
     @SerializedName("accountStatusType")
     @Expose
     private String accountStatusType;
-
     @SerializedName("createDate")
     @Expose
     private String createDate;
-
     @SerializedName("closedDate")
     @Expose
     private String closedDate;
-
     @SerializedName("employee")
     @Expose
-    private String employee = null;
-
+    private String employee;
     @SerializedName("accountLogs")
     @Expose
-    private String accountLogs = null;
-
+    private String accountLogs;
     public Account() {
     }
 
     public Account(int id, String description, int balance, String accountType,
+
                    String accountStatusType, String createDate, String closedDate,
                    String employee, String accountLogs) {
         this.id = id;
@@ -56,6 +50,7 @@ public class Account {
         this.employee = employee;
         this.accountLogs = accountLogs;
     }
+
 
     public int getId() {
         return id;

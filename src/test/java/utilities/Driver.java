@@ -233,6 +233,7 @@ public class Driver {
         }
     }
 
+
     /**
      * Waits for element to be not stale
      *
@@ -275,6 +276,20 @@ public class Driver {
         int optionIndex = 1 + random.nextInt(weblist.size() - 1);
         select.selectByIndex(optionIndex);
         return select.getFirstSelectedOption();
+    }
+    public static Boolean selectRandomTextFromDropdown(WebElement element) {
+        try {
+            Select select = new Select(element);
+            Random random = new Random();
+            List<WebElement> weblist = select.getOptions();
+            int optionIndex = 1 + random.nextInt(weblist.size() - 1);
+            select.selectByIndex(optionIndex);
+            return true;
+        }catch (Exception e ){
+            e.printStackTrace();
+            return false;
+        }
+
     }
 
     public static boolean selectByVisibleText(WebElement element, String selection) {
