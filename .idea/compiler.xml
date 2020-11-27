@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="GMIBank" />
         <module name="GMITeam07" />
+        <module name="GMITeam07New" />
       </profile>
     </annotationProcessing>
   </component>
