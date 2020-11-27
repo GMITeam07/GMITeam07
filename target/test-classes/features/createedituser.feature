@@ -1,13 +1,11 @@
+
 @EditSingleUser
-Feature: sign in feature
 
-  Background:
-    Given user logs in with valid credentials "validadmin_username" "validadmin_password"
+Feature:Admin can edit all user info  (admin, manager, employee and user)
 
-  @Usermanagement2
   Scenario Outline:Admin can edit all user info  (admin, manager, employee and user)
 
-    Given user is on the User Management Page with valid credentials
+    Given user is on the User Management Page with valid credentials "<username>" "<password>"
     Then user enters edit page of the user "<initiallogin>"
     Then user records initial UI user data on Create or Edit User Page "<initiallogin>"
     Then user retrieves initial user data from the api "<initiallogin>"
@@ -19,5 +17,5 @@ Feature: sign in feature
 #    Then user initializes the user data by API
 
     Examples:
-      | initiallogin | newloginname | newfirstname | newlastname | newemail                   | newisactivated | newlanguage | newprofiles |
-      |     |              | jackson      | smith       | jacksonsmith1234@tmail.com | true           | English     | ROLE_USER   |
+      | username            | password  | initiallogin | newloginname | newfirstname | newlastname | newemail                   | newisactivated | newlanguage | newprofiles |
+      | validadmin_username | S123456s? | firstuser    |              | jackson      | smith       | jacksonsmith1234@tmail.com | true           | English     | ROLE_USER   |
