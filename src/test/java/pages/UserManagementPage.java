@@ -70,8 +70,8 @@ public class UserManagementPage {
     @FindBy(linkText = "»»")
     public WebElement lastPageButton;
 
-    @FindBy(xpath = "//a[@href='/admin/user-management/harryp/delete']")
-    public WebElement deleteHarry;
+    @FindBy(xpath = "//button[@class='btn btn-danger']")
+    public WebElement deleteAlert;
 
 
 

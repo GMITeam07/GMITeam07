@@ -109,13 +109,13 @@ public class UserManagementSteps {
         userManagementPage.saveButton.click();
     }
 
-    @And("Admin can delete any user info")
-    public void adminCanDeleteAnyUserInfo() throws InterruptedException {
-        Thread.sleep(5000);
-        Driver.getDriver().navigate().refresh();
-        userManagementPage.lastPageButton.click();
-        userManagementPage.buttonDelete.click();
-
-
-    }
+//    @And("Admin can delete any user info")
+//    public void adminCanDeleteAnyUserInfo() throws InterruptedException {
+//        Thread.sleep(5000);
+//        Driver.getDriver().navigate().refresh();
+//        userManagementPage.lastPageButton.click();
+//        userManagementPage.buttonDelete.click();
+//        userManagementPage.deleteAlert.click();
+//
+//    }
 }

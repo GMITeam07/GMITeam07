@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="25.84">
-<testcase classname="sign in feature" name="US_017_TC001_Admin can manage the all user" time="25.05">
-<failure message="element click intercepted: Element &lt;a class=&quot;btn btn-danger btn-sm&quot; href=&quot;/admin/user-management/team02halleder/delete&quot;&gt;...&lt;/a&gt; is not clickable at point (1207, 27). Other element would receive the click: &lt;span&gt;...&lt;/span&gt;&#10;  (Session info: chrome=87.0.4280.67)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Yusufs-MacBook-Pro.local', ip: '2607:9880:4020:52:0:0:0:ae2d%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.2', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/z9/trjw1bn9117...}, goog:chromeOptions: {debuggerAddress: localhost:49604}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 9b767e8a0c8f3f998fed7f26c49f558e" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[Given user logs in with valid credentials "validadmin_username" "validadmin_password".passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="64.418">
+<testcase classname="sign in feature" name="US_017_TC001_Admin can manage the all user" time="16.871">
+<system-out><![CDATA[Given user logs in with valid credentials "validadmin_username" "validadmin_password".passed
 When Admin clicks the Administration button.................................passed
 And Admin select the usermangement dropdown.................................passed
 When Admin clicks the Crete a new button....................................passed
@@ -15,36 +15,57 @@ And Admin selects the role "ROLE_ADMIN".....................................pass
 Then Admin clicks the save button...........................................passed
 And Admin can see view user info............................................passed
 And Admin can edit user info................................................passed
-And Admin can delete any user info..........................................failed
-
-StackTrace:
-org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a class="btn btn-danger btn-sm" href="/admin/user-management/team02halleder/delete">...</a> is not clickable at point (1207, 27). Other element would receive the click: <span>...</span>
-  (Session info: chrome=87.0.4280.67)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Yusufs-MacBook-Pro.local', ip: '2607:9880:4020:52:0:0:0:ae2d%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.2', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/z9/trjw1bn9117...}, goog:chromeOptions: {debuggerAddress: localhost:49604}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 9b767e8a0c8f3f998fed7f26c49f558e
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy19.click(Unknown Source)
-	at steps.UserManagementSteps.adminCanDeleteAnyUserInfo(UserManagementSteps.java:117)
-	at ✽.Admin can delete any user info(file:///Users/serpildundar/GMITeam07New/src/test/resources/features/UserManagement.feature:23)
-]]></failure>
+]]></system-out>
+</testcase>
+<testcase classname="sign in feature" name="US_017_TC001_Admin can manage the all user 2" time="15.717">
+<system-out><![CDATA[Given user logs in with valid credentials "validadmin_username" "validadmin_password".passed
+When Admin clicks the Administration button.................................passed
+And Admin select the usermangement dropdown.................................passed
+When Admin clicks the Crete a new button....................................passed
+And Admin enters a login "WilliamJ".........................................passed
+And Admin enters a FirstName "William"......................................passed
+And Admin enters a LastName "Jay"...........................................passed
+And Admin enters a Email "WilliamJay@gmail.com".............................passed
+And Admin click the activeted button........................................passed
+And Admin selects the language..............................................passed
+And Admin selects the role "ROLE_EMPLOYEE"..................................passed
+Then Admin clicks the save button...........................................passed
+And Admin can see view user info............................................passed
+And Admin can edit user info................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="sign in feature" name="US_017_TC001_Admin can manage the all user 3" time="15.384">
+<system-out><![CDATA[Given user logs in with valid credentials "validadmin_username" "validadmin_password".passed
+When Admin clicks the Administration button.................................passed
+And Admin select the usermangement dropdown.................................passed
+When Admin clicks the Crete a new button....................................passed
+And Admin enters a login "KateW"............................................passed
+And Admin enters a FirstName "Kate".........................................passed
+And Admin enters a LastName "Windbrook".....................................passed
+And Admin enters a Email "Kate_Windbrook@gmail.com".........................passed
+And Admin click the activeted button........................................passed
+And Admin selects the language..............................................passed
+And Admin selects the role "ROLE_MANAGER"...................................passed
+Then Admin clicks the save button...........................................passed
+And Admin can see view user info............................................passed
+And Admin can edit user info................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="sign in feature" name="US_017_TC001_Admin can manage the all user 4" time="15.326">
+<system-out><![CDATA[Given user logs in with valid credentials "validadmin_username" "validadmin_password".passed
+When Admin clicks the Administration button.................................passed
+And Admin select the usermangement dropdown.................................passed
+When Admin clicks the Crete a new button....................................passed
+And Admin enters a login "JoeD".............................................passed
+And Admin enters a FirstName "Joe"..........................................passed
+And Admin enters a LastName "Day"...........................................passed
+And Admin enters a Email "Joe_Day@gmail.com"................................passed
+And Admin click the activeted button........................................passed
+And Admin selects the language..............................................passed
+And Admin selects the role "ROLE_USER"......................................passed
+Then Admin clicks the save button...........................................passed
+And Admin can see view user info............................................passed
+And Admin can edit user info................................................passed
+]]></system-out>
 </testcase>
 </testsuite>

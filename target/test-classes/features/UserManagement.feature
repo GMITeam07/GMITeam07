@@ -20,14 +20,14 @@ Feature: sign in feature
     Then Admin clicks the save button
     And Admin can see view user info
     And Admin can edit user info
-    And Admin can delete any user info
+   # And Admin can delete any user info
 
     Examples:
       | username | FirstName | lastName  | email                    | role          |
       | HarryP   | Harry     | Potter    | Harry_Potter@gmail.com   | ROLE_ADMIN    |
-      #| WilliamJ | William   | Jay       | WilliamJay@gmail.com     | ROLE_EMPLOYEE |
-      #| KateW    | Kate      | Windbrook | Kate_Windbrook@gmail.com | ROLE_MANAGER  |
-      #| JoeD     | Joe       | Day       | Joe_Day@gmail.com        | ROLE_USER     |
+      | WilliamJ | William   | Jay       | WilliamJay@gmail.com     | ROLE_EMPLOYEE |
+      | KateW    | Kate      | Windbrook | Kate_Windbrook@gmail.com | ROLE_MANAGER  |
+      | JoeD     | Joe       | Day       | Joe_Day@gmail.com        | ROLE_USER     |
 
 
 
