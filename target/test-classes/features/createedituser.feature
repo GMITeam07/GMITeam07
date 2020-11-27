@@ -12,7 +12,7 @@ Feature: sign in feature
     Then user records initial UI user data on Create or Edit User Page "<initiallogin>"
     Then user retrieves initial user data from the api "<initiallogin>"
     Then user verifies the API UI user data is same "<initiallogin>"
-    Then user enters new user data login "<newloginname>" "<newfirstname>" "<newlastname>" "<newemail>" "<newisactivated>" <newlanguage> "<newprofiles>"
+    Then user enters new user data login "<newloginname>" "<newfirstname>" "<newlastname>" "<newemail>" "<newisactivated>" "<newlanguage>" "<newprofiles>"
     When user clicks save button on user edit page
     Then user verifies the success message
     Then user verifies over API that user data changed with new datas "<newloginname>" "<newfirstname>" "<newlastname>" "<newemail>" "<newisactivated>" "<newlanguage>" "<newprofiles>"
@@ -21,4 +21,3 @@ Feature: sign in feature
     Examples:
       | initiallogin | newloginname | newfirstname | newlastname | newemail                   | newisactivated | newlanguage | newprofiles |
       |     |              | jackson      | smith       | jacksonsmith1234@tmail.com | true           | English     | ROLE_USER   |
-

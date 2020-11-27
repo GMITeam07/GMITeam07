@@ -5,7 +5,7 @@ Feature: sign in feature
     Given user logs in with valid credentials "validuser_username" "validuser_password"
 
   @NegativePassword
-  Scenario Outline:TC_0017_The user should not be able to change the password on the home page.
+  Scenario Outline: The user should not be able to change the password on the home page.
 
     And user clicks the login dropdown
     And user selects the password option
