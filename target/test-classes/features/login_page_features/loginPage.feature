@@ -10,14 +10,11 @@ Feature: Login Page
     And user clicks on sign in button
     Then user verifies successful login
 
-<<<<<<< HEAD:src/test/resources/features/login_page_features/loginPage.feature
-    Examples:
-      | username            |password|
-      |validadmin_username|validadmin_password|
-=======
+
+
     #Examples:
       #| username            |password|
       #|validadmin_username|validadmin_password|
 
 
->>>>>>> main:src/test/resources/features/loginPage.feature
+
