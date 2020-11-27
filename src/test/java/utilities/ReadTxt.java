@@ -12,7 +12,7 @@ public class ReadTxt {
 
     public static List<Customer> returnCustomer(String filePath){
         List<Customer>all = new ArrayList<>();
-        try(BufferedReader br = new BufferedReader(new FileReader(ConfigReader.getProperty(filePath)))) {
+        try(BufferedReader br = new BufferedReader(new FileReader("Customers.txt"))) {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
             while (line != null) {
@@ -23,7 +23,8 @@ public class ReadTxt {
                 String [] each = line.split(",");
                 customer.setFirstName(each[0]);
                 customer.setLastName(each[1]);
-                customer.setSsn(each[2]);
+                customer.setEmail(each[2]);
+                customer.setSsn(each[3]);
                 all.add(customer);
             }
             String everything = sb.toString();
@@ -34,7 +35,7 @@ public class ReadTxt {
     }
     public static List<Customer> returnCustomerSNN(String filePath){
         List<Customer>all = new ArrayList<>();
-        try(BufferedReader br = new BufferedReader(new FileReader("Customers.txt"))) {
+        try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
             System.out.println(line);
@@ -157,5 +158,51 @@ public class ReadTxt {
         }
         return all;
     }
+
+    public static List<String> returnApplicantsData(String filePath, String type){
+        List<String>all = new ArrayList<>();
+        int selectType = 0;
+
+        switch (type) {
+            case "id":
+                selectType = 0;
+                break;
+            case "ssn":
+                selectType = 1;
+                break;
+            case "firstname":
+                selectType = 2;
+                break;
+            case "lastname":
+                selectType = 3;
+                break;
+            case "address":
+                selectType = 4;
+                break;
+            case "phonenumber":
+                selectType = 5;
+                break;
+            case "userid":
+                selectType = 6;
+                break;
+            case "email":
+                selectType = 7;
+                break;
+        }
+        try(BufferedReader br = new BufferedReader(new FileReader("User.txt"))) {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            while (line != null) {
+                    String temp = "";
+                    temp =line.split(",")[selectType].trim();
+                    sb.append(System.lineSeparator());
+                    line = br.readLine();
+                    all.add(temp);
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            return all;
+        }
 
 }

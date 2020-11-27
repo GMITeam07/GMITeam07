@@ -64,7 +64,8 @@ public class WriteToTxt {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
             for (int i = 0; i <json.size() ; i++) {
-                writer.append(json.get(i).get("firstName") + " , " + json.get(i).get("LastName") + " , " + json.get(i).get("email") + "\n");
+                writer.append(json.get(i).get("id") + " , " + json.get(i).get("ssn") + " , " + json.get(i).get("firstName") + " , " + json.get(i).get("lastName") + " , "+
+                        json.get(i).get("address") + " , " + json.get(i).get("mobilePhoneNumber") + " , " + json.get(i).get("userId") + " , " + json.get(i).get("email") +  "\n");
             }
             writer.close();
         } catch (Exception e) {

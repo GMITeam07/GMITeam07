@@ -1,17 +1,18 @@
 package steps;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import pojos.Customer;
-import pojos.User;
 import utilities.ConfigReader;
-import utilities.ReadTxt;
+import utilities.DBUtilsNew;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -22,18 +23,12 @@ public class CustomersApiStep {
     Customer[] customersArray;
     JsonPath jsonPath;
     List<Map<String,Object>> customersMap;
-    private User initialUIUser=new User();
-    private User initialAPIUser=new User();
-    private User initialDBUser=new User();
-
-    private User editedUIUser=new User();
-    private User editedAPIUser=new User();
-    private User editedDBUser=new User();
-
+    ObjectMapper obj;
+    String query;
 
 
     @Given("user provides the api end point to set the response using {string}")
-    public void userProvidesTheApiEndPointToSetTheResponseUsing(String arg0) {
+    public void userProvidesTheApiEndPointToSetTheResponseUsing(String customer_api_url) {
 //        response = given().headers(
 //                "Authorization",
 //                "Bearer " + ConfigReader.getProperty("validemployee_token"),
@@ -42,7 +37,7 @@ public class CustomersApiStep {
 //                "Accept",
 //                ContentType.JSON)
 //                .when()
-//                .get(ConfigReader.getProperty("customer_api_url"))
+//                .get(ConfigReader.getProperty("url"))
 //                .then()
 //                .contentType(ContentType.JSON)
 //                .extract()
@@ -53,55 +48,55 @@ public class CustomersApiStep {
                 accept(ContentType.JSON).
                 auth().oauth2(ConfigReader.getProperty("validemployee_token")).
                 when().
-                get(ConfigReader.getProperty("customer_api_url"));
+                get(ConfigReader.getProperty(customer_api_url));
 
-//          response.prettyPrint();
+ //         response.prettyPrint();
 
     }
 
     @Given("manipulate all customers' data")
-    public void manipulateAllCustomersData() throws  Exception {
-        ObjectMapper obj = new ObjectMapper();
+    public void manipulateAllCustomersData() throws IOException, SQLException {
+        obj = new ObjectMapper();
                                     // 1. Yol
              customersArray = obj.readValue(response.asString(),Customer[].class);
-             for (int i = 0; i < customersArray.length; i++)
-//             System.out.println(customersArray[i]);
+
                                     // 2. Yol
             jsonPath = response.jsonPath();
-            customersMap = jsonPath.getList("$"); // tum data'yi aldim ve map'e koyudum.
-//            System.out.println(customersMap);
-        String countr3id = jsonPath.getString("country[3].id");
-//        System.out.println(countr3id);
+            customersMap = jsonPath.getList("$");
 
-
-
-
-
+                                    // 3.Yol
+            query = "SELECT * FROM "+ ConfigReader.getProperty("customerTableName");
+            DBUtilsNew.getQueryAsAListOfMaps(query);
     }
 
-    @And("user sets the data in correspondent files")
-    public void userSetsTheDataInCorrespondentFiles() {
- //       WriteToTxt.saveDataInFileWithSSN("Customers.txt", customers);
-    }
 
     @Then("user validates all data")
-    public void userValidatesAllData() {
+    public void userValidatesAllData() throws SQLException {
 
+        for (int i = 0; i < customersArray.length; i++){
+            Assert.assertEquals(customersArray[i].getLastName(),customersMap.get(i).get("lastName"));
+            Assert.assertEquals(DBUtilsNew.getQueryAsAListOfMaps(query).get(i).get("first_name"),customersMap.get(i).get("firstName"));
+            Assert.assertEquals(customersArray[i].getSsn(),customersMap.get(i).get("ssn"));
+            Assert.assertEquals(customersArray[i].getCity(),customersMap.get(i).get("city"));
+            Assert.assertEquals(customersArray[i].getMobilePhoneNumber(), DBUtilsNew.getQueryAsAListOfMaps(query).get(i).get("mobile_phone_number"));
+            Assert.assertEquals(DBUtilsNew.getQueryAsAListOfMaps(query).get(i).get("zip_code"),customersArray[i].getZipCode());
+            Assert.assertEquals(customersArray[i].getId(),customersMap.get(i).get("id"));
+            Assert.assertEquals(DBUtilsNew.getQueryAsAListOfMaps(query).get(i).get("middle_initial"),customersMap.get(i).get("middleInitial"));
+
+        }
 
     }
 
     @Then("user validates all data one by one")
-    public void userValidatesAllDataBy(int arg0, int arg1) {
-
-        List <Customer> list = ReadTxt.returnCustomerSNN("Customer.txt");
-        String expected = "111-10-1000";
-
-        int expectedNumberOfSsn = 0;
-        for (int i = 0; i< list.size(); i++){
-            if (list.get(i).getSsn().equals(expected)){
-                System.out.println(list.get(i).getSsn());
-                System.out.println("Foun " + ++expectedNumberOfSsn);
-            }
-        }
+    public void userValidatesAllDataBy() throws SQLException, IOException {
+        Assert.assertEquals(customersArray[1].getLastName(),customersMap.get(1).get("lastName"));
+        Assert.assertEquals(DBUtilsNew.getQueryAsAListOfMaps(query).get(3).get("first_name"),customersMap.get(3).get("firstName"));
+        Assert.assertEquals(customersArray[11].getSsn(),customersMap.get(11).get("ssn"));
+        Assert.assertEquals(DBUtilsNew.getQueryAsAListOfMaps(query).get(19).get("email"),customersMap.get(19).get("email"));
+        Assert.assertEquals(DBUtilsNew.getQueryAsAListOfMaps(query).get(0).get("address"),customersMap.get(0).get("address"));
+        Assert.assertEquals(DBUtilsNew.getQueryAsAListOfMaps(query).get(13).get("phone_number"),customersMap.get(13).get("phoneNumber"));
+        Assert.assertEquals(customersArray[8].getCity(),customersMap.get(8).get("city"));
+        Assert.assertEquals(DBUtilsNew.getQueryAsAListOfMaps(query).get(4).get("state"),customersMap.get(4).get("state"));
+        Assert.assertEquals(customersArray[6].getId(),customersMap.get(6).get("id"));
     }
 }

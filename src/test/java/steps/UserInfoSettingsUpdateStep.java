@@ -30,39 +30,23 @@ public class UserInfoSettingsUpdateStep {
         userInfoSettingsUpdatePage.saveButton.click();
     }
 
-    //***************************************************************************************************
-    /////////////////////////////////////////////////////////////////////////////////////////////////
-
-
     @And("User enters first name {string}")
     public void userEntersFirstName(String firstname) {
         Driver.getDriver().findElement(By.id("firstName")).clear();
-        userInfoSettingsUpdatePage.firstNameTextBox.sendKeys(ConfigReader.getProperty("first_name"));
+        userInfoSettingsUpdatePage.firstNameTextBox.sendKeys(firstname);
     }
 
     @And("User enters last name {string}")
     public void userEntersLastName(String lastname) {
         Driver.getDriver().findElement(By.id("lastName")).clear();
-        userInfoSettingsUpdatePage.lastNameTextBox.sendKeys(ConfigReader.getProperty("last_name"));
+        userInfoSettingsUpdatePage.lastNameTextBox.sendKeys(lastname);
     }
 
     @And("User enters invalid email{string}")
     public void userEntersInvalidEmail(String invalidEmail) {
-        String email="invalidEmail";
 
-        switch (invalidEmail) {
-            case "invalid_email1":
-                email= ConfigReader.getProperty("invalid_email1");
-                break;
-            case "invalid_email2":
-                email= ConfigReader.getProperty("invalid_email2");
-                break;
-            case "invalid_email3":
-                email= ConfigReader.getProperty("invalid_email3");
-                break;
-        }
         Driver.getDriver().findElement(By.id("email")).clear();
-        userInfoSettingsUpdatePage.emailTextBox.sendKeys(email);
+        userInfoSettingsUpdatePage.emailTextBox.sendKeys(invalidEmail);
     }
 
     @Then("User should see This field is invalid massage")

@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.CustomersUIPage;
@@ -36,15 +37,22 @@ public class CustomersUIStep {
         }
 
        }
-
-    @And("User clicks view button")
-    public void userClicksViewButton() {
-        customersUIPage.viewButton.click();
+    @And("User clicks My Accounts  and View Transaction")
+    public void userClicksMyAccountsAndViewTransaction() {
+        customersUIPage.myAccountsButton.click();
+        customersUIPage.viewTransactionButton.click();
     }
+
 
     @Then("user should view transactions")
     public void userShouldViewTransactions() {
+        List<WebElement> allTransactions = Driver.getDriver().findElements(By.xpath("(//tbody)[2]/tr"));
 
+        String balanceAfterTransaction = "1350";
+        for (WebElement transaction : allTransactions) {
+            System.out.println(transaction.getText());
 
+        }
+        Assert.assertTrue("new balance after transfer not found ",allTransactions.get(0).getText().contains(balanceAfterTransaction));
     }
 }

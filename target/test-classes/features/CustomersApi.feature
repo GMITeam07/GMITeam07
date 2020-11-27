@@ -6,11 +6,9 @@
       @customerDataTest
       Scenario: validate all customers' data
         Given manipulate all customers' data
-        And user sets the data in correspondent files
         Then user validates all data
 
       @customerDataTest1By1
     Scenario: validate all customers' data
-      Given manipulate all customers' data
-      And user sets the data in correspondent files
+        Given manipulate all customers' data
       Then user validates all data one by one

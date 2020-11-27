@@ -4,7 +4,7 @@ Feature: User Info Update
   Background: User logins GMIBank Home Page
     Then user logs in with valid credentials "validuser_username" "validuser_password"
 
-    @invalidEmail
+  @invalidEmail
   Scenario Outline: System should not allow to make updates with invalid credentials
 
     And user clicks on User Account Menu
@@ -18,14 +18,13 @@ Feature: User Info Update
     Then user logs out
 
     Examples:
-      | firstname | lastname  |invalid email|
-      | first_name | lasat_name |invalid_email1|
-      | first_name | lasat_name |invalid_email2|
-      | first_name | lasat_name |invalid_email3|
+      | firstname | lastname | invalid email    |
+      | ali       | aksu     | ali@aksu         |
+      | ali       | aksu     | aliaksu.com      |
+      | ali       | aksu     | ali.aksu@ali@com |
 
 
-
-    @blankNameUpdate
+  @blankNameUpdate
   Scenario Outline: System should not allow to make updates with invalid credentials, And user blanks first name field
 
     And user clicks on User Account Menu
@@ -40,11 +39,11 @@ Feature: User Info Update
 
 
     Examples:
-      |lastname  |valid email|
-      |lasat_name |valid_email|
+      | lastname | valid email |
+      | aksu     | valid_email |
 
 
-    @blankLastnameUpdate
+  @blankLastnameUpdate
   Scenario Outline: System should not allow to make updates with invalid credentials, And User blanks last name field
 
     And user clicks on User Account Menu
@@ -59,10 +58,10 @@ Feature: User Info Update
 
 
     Examples:
-      | firstname |valid email|
-      | first_name |valid_email|
+      | firstname  | valid email |
+      | first_name | valid_email |
 
-      @selectLanguage
+  @selectLanguage
   Scenario: There should not be an option of any other language other than English or Turkish
     And user clicks on User Account Menu
     When user selects the User Info option
