@@ -1,6 +1,7 @@
 package steps;
 
 import io.restassured.http.ContentType;
+import io.restassured.mapper.ObjectMapper;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.*;
@@ -10,9 +11,11 @@ import utilities.*;
 import java.awt.*;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
 
@@ -128,14 +131,27 @@ public class SampleStep {
 //        DBUtilsNew.getQueryAsAListOfMaps(query3).
 //                stream().map(t->t).
 //                forEach(System.out::println);
+//
+//        DBUtilsNew.getQueryAsAListOfMaps("SELECT id FROM Jhi_user WHERE login = 'team07admin1001'").
+//                stream().map(t->t).
+//                forEach(System.out::println);
+//
+//        String queryDeletion="DELETE FROM public.jhi_user WHERE login='"+"team07admin1001"+"';";
+//        DBUtilsNew.executeQuery(queryDeletion);
 
-        DBUtilsNew.getQueryAsAListOfMaps("SELECT id FROM Jhi_user WHERE login = 'team07admin1001'").
-                stream().map(t->t).
+//        Country country=new Country();
+//        country.setName("Ghana Republic");
+//        country.setId(12378);
+//        country.setStates("1stState");
+
+
+
+
+        DBUtilsNew.getQueryAsAListOfMaps("SELECT * FROM public.jhi_user WHERE last_name LIKE '%Kelly%'").
+                stream().
+//                filter(t->t.get("last_name").equalsIgnoreCase("Kelly")).
+                map(t->t).
                 forEach(System.out::println);
-
-        String queryDeletion="DELETE FROM public.jhi_user WHERE login='"+"team07admin1001"+"';";
-        DBUtilsNew.executeQuery(queryDeletion);
-
 
     }
 
