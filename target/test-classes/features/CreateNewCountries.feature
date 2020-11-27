@@ -9,7 +9,7 @@ Feature: US_25_ System should allow to create new countries using api end point
 
 Examples:
   | name     |
-  | Tanzania6 |
+  | Tanzania11 |
   #| Kambocya |
   #| Tanzania8 |
   #| Tanzania9 |

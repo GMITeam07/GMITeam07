@@ -18,7 +18,7 @@
 
       Examples:
         | countryName |
-        | Malta8      |
+        | Malta9      |
        # | TURKEY         |
        # | GERMANY        |
        # | FRANCE         |

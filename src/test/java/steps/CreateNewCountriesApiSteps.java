@@ -1,7 +1,8 @@
 package steps;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import pojos.Country;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import pojos.Country;
 import specs.Specs;
 import utilities.ApiUtils;
@@ -9,8 +10,6 @@ import utilities.ConfigReader;
 import io.cucumber.java.en.*;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.TypeReference;
 import org.junit.Assert;
 import org.testng.asserts.SoftAssert;
 import utilities.ConfigReader;
@@ -62,10 +61,12 @@ public class CreateNewCountriesApiSteps {
                 statusCode(expectedStatusCode);
     }
     @Then("After creation user verifies the created country {string}")
-    public void after_creation_user_verifies_the_created_country(String expectedCountry) throws IOException, SQLException {
+    public void after_creation_user_verifies_the_created_country(String expectedCountry) throws Exception, SQLException {
 
         ObjectMapper objectMapper = new ObjectMapper();
+
         Country responseCountry= objectMapper.readValue(response.asString(), Country.class);
+
 
         System.out.println(responseCountry);
         String actualCountry =responseCountry.getName();
