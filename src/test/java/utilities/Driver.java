@@ -143,6 +143,11 @@ public class Driver {
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 
+//    public static Boolean waitForInVisibility(WebElement element, int timeout) {
+//        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+//        return wait.until(ExpectedConditions.invisibilityOf(element));
+//    }
+
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -270,7 +275,7 @@ public class Driver {
         return select.getFirstSelectedOption();
     }
 
-    public static boolean selectFromDrpDown(WebElement element,String selection) {
+    public static boolean selectByVisibleText(WebElement element, String selection) {
         Select select = new Select(element);
         try {
             select.selectByVisibleText(selection);
@@ -280,6 +285,18 @@ public class Driver {
             return false;
         }
     }
+
+    public static boolean selectByIndex(WebElement element, int selection) {
+        Select select = new Select(element);
+        try {
+            select.selectByIndex(selection);
+            return true;
+        } catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 
     public static List<String> getSelectDropDownOptions(WebElement element) {
         Select select = new Select(element);

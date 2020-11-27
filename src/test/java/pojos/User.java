@@ -4,22 +4,26 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Objects;
 
 public class User {
 
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("login")
     @Expose
     private String login;
+
     @SerializedName("firstName")
     @Expose
     private String firstName;
+
     @SerializedName("lastName")
     @Expose
     private String lastName;
+
     @SerializedName("email")
     @Expose
     private String email;
@@ -44,6 +48,7 @@ public class User {
     @SerializedName("lastModifiedDate")
     @Expose
     private String lastModifiedDate;
+
     @SerializedName("authorities")
     @Expose
     private List<String> authorities = null;
@@ -201,4 +206,9 @@ public class User {
         return stringBuilder.toString();
     }
 
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getLogin(), getFirstName(), getLastName(), getEmail(), getImageUrl(), getActivated(), getLangKey(), getCreatedBy(), getCreatedDate(), getLastModifiedBy(), getLastModifiedDate(), getAuthorities());
+    }
 }
