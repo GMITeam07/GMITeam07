@@ -98,8 +98,8 @@ public class ManageCustomer {
             Assert.assertTrue(true);
         }
 
-        @Given("ADMIN  should write and new the Phone Nummer")
-        public void adminShouldWriteAndNewThePhoneNummer() {
+        @Given("ADMIN  should write and new the Phone Number")
+        public void adminShouldWriteAndNewThePhoneNumber() {
             manageCustomer.editButtonBox.click();
             Driver.wait(1);
             actions.sendKeys(Keys.PAGE_DOWN).perform();

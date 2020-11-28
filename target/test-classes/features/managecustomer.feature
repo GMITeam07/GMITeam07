@@ -27,7 +27,7 @@ Feature: US_18 tests
 
   @TC_04
   Scenario:  The Edit portal can allow user to create or update the user info
-    Given     ADMIN  should write and new the Phone Nummer
+    Given     ADMIN  should write and new the Phone Number
     And       ADMIN click Save Button
     Then      ADMIN  verifies translations not found[gmiBankBackendApp.tPCustomer.updated
     Then      user logs out
