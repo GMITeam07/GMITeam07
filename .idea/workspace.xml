@@ -39,17 +39,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="664a7730-0cd4-4fe6-ab8a-96a9712c38cb" name="Default Changelist" comment="LoginPage Negative test updated">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/US_18_ManageCustomerPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/steps/ManageCustomer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/managecustomer.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/login_page_features/loginPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/login_page_features/loginPage.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cucumber.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cucumber.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/excelfiles/UserSettingsPageTestData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/excelfiles/UserSettingsPageTestData.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/loginPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/loginPage.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,20 +90,7 @@
       <recent name="C:\Users\steel\IdeaProjects\GMITeam07\src\test\resources\features\loginpage" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: user logs into GMI Home Page">
-    <configuration name="Feature: US12_manageCustomer" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/US12_manageCustomer.feature" />
-      <option name="GLUE" value="steps" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="GMITeam07" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: US12_manageCustomer" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Cucumber Java.Feature: managecustomer">
     <configuration name="Feature: managecustomer" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/managecustomer.feature" />
@@ -166,13 +146,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scenario: user tests create user page with database validation" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/createuserpagefordemo.feature" />
+      <option name="GLUE" value="steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GMITeam07" />
+      <option name="NAME_FILTER" value="^user tests create user page with database validation$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^user tests create user page with database validation$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: user tests create user page with database validation" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: user logs into GMI Home Page" />
         <item itemvalue="Cucumber Java.Feature: managecustomer" />
+        <item itemvalue="Cucumber Java.Scenario: user tests create user page with database validation" />
+        <item itemvalue="Cucumber Java.Scenario: user logs into GMI Home Page" />
         <item itemvalue="Cucumber Java.Scenario: tc1801 user should show the account information of the customer First Name" />
         <item itemvalue="Cucumber Java.Scenario: All customers should show up on manage customers module populating the account information of the customer" />
-        <item itemvalue="Cucumber Java.Feature: US12_manageCustomer" />
       </list>
     </recent_temporary>
   </component>
@@ -246,6 +240,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="LoginPage Negative test updated" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="162" y="0" key="#Project_Structure" timestamp="1606534293213">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="162" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1606534293213" />
     <state x="465" y="257" width="435" height="219" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605224449063">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -262,34 +260,34 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="461" y="230" key="Github.CreatePullRequestDialog/0.0.1366.728@0.0.1366.728" timestamp="1605160372889" />
-    <state width="1321" height="207" key="GridCell.Tab.0.bottom" timestamp="1606533284529">
+    <state width="1321" height="277" key="GridCell.Tab.0.bottom" timestamp="1606534446567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1321" height="207" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606533284529" />
-    <state width="1321" height="207" key="GridCell.Tab.0.center" timestamp="1606533284528">
+    <state width="1321" height="277" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606534446567" />
+    <state width="1321" height="277" key="GridCell.Tab.0.center" timestamp="1606534446567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1321" height="207" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606533284528" />
-    <state width="1321" height="207" key="GridCell.Tab.0.left" timestamp="1606533284528">
+    <state width="1321" height="277" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606534446567" />
+    <state width="1321" height="277" key="GridCell.Tab.0.left" timestamp="1606534446567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1321" height="207" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606533284528" />
-    <state width="1321" height="207" key="GridCell.Tab.0.right" timestamp="1606533284529">
+    <state width="1321" height="277" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606534446567" />
+    <state width="1321" height="277" key="GridCell.Tab.0.right" timestamp="1606534446567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1321" height="207" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606533284529" />
+    <state width="1321" height="277" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606534446567" />
     <state x="256" y="145" key="IDE.errors.dialog" timestamp="1605301181528">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="256" y="145" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1605301181528" />
-    <state x="159" y="17" width="1110" height="621" key="MergeDialog" timestamp="1606189022465">
+    <state x="159" y="17" width="1110" height="621" key="MergeDialog" timestamp="1606534045948">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="159" y="17" width="1110" height="621" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1606189022465" />
-    <state x="142" y="212" width="1053" height="266" key="MultipleFileMergeDialog" timestamp="1606411642217">
+    <state x="159" y="17" width="1110" height="621" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1606534045948" />
+    <state x="142" y="212" width="1053" height="266" key="MultipleFileMergeDialog" timestamp="1606534045967">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="142" y="212" width="1053" height="266" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1606411642217" />
+    <state x="142" y="212" width="1053" height="266" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1606534045967" />
     <state x="183" y="0" key="SettingsEditor" timestamp="1606493256040">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -310,10 +308,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="478" y="151" key="git4idea.merge.GitMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1606533618192" />
-    <state x="394" y="151" key="git4idea.merge.GitPullDialog" timestamp="1606410723681">
+    <state x="394" y="151" key="git4idea.merge.GitPullDialog" timestamp="1606533896693">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="394" y="151" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1606410723681" />
+    <state x="394" y="151" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1606533896693" />
     <state x="530" y="413" key="org.jetbrains.plugins.cucumber.inspections.ui.CreateStepDefinitionFileDialog" timestamp="1605214880996">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
