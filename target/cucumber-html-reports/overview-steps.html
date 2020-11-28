@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>cucumber-jvm-example</td>
+        <td>1</td>
+      <td>28 Nov 2020, 00:19</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">steps.ApplicantsApiStep.manipulate_all_applicants_data()</td>
+              <td>2</td>
+              <td class="duration" data-value="168500000">0.168</td>
+              <td class="duration" data-value="168500000">0.331</td>
+              <td class="duration" data-value="337000000">0.337</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ApplicantsApiStep.userProvidesTheApiEndpointToSetTheResponseUsing(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="2828000000">2.828</td>
+              <td class="duration" data-value="2828000000">5.468</td>
+              <td class="duration" data-value="5656000000">5.656</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ApplicantsApiStep.user_validates_all_applicants_data()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ApplicantsApiStep.user_validates_all_applicants_data_one_by_one()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CreateNewCountriesApiSteps.after_creation_HTTP_Status_Code_should_be(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="25750000">0.025</td>
+              <td class="duration" data-value="25750000">0.100</td>
+              <td class="duration" data-value="103000000">0.103</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CreateNewCountriesApiSteps.after_creation_user_verifies_the_created_country(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="205000000">0.205</td>
+              <td class="duration" data-value="205000000">0.264</td>
+              <td class="duration" data-value="820000000">0.820</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CreateNewCountriesApiSteps.userSendAPOSTRequestToCreateACountry(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="605500000">0.605</td>
+              <td class="duration" data-value="605500000">1.585</td>
+              <td class="duration" data-value="2422000000">2.422</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CreateNewCountriesApiSteps.userVerifiesTheCountryDoesNotExistsInDatabase(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="330750000">0.330</td>
+              <td class="duration" data-value="330750000">0.836</td>
+              <td class="duration" data-value="1323000000">1.323</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CustomersApiStep.manipulateAllCustomersData()</td>
+              <td>2</td>
+              <td class="duration" data-value="24000000">0.024</td>
+              <td class="duration" data-value="24000000">0.039</td>
+              <td class="duration" data-value="48000000">0.048</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CustomersApiStep.userProvidesTheApiEndPointToSetTheResponseUsingApiUrl(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="182500000">0.182</td>
+              <td class="duration" data-value="182500000">0.201</td>
+              <td class="duration" data-value="365000000">0.365</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CustomersApiStep.userValidatesAllData()</td>
+              <td>1</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CustomersApiStep.userValidatesAllDataBy()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CustomersUIStep.userClicksManageAccounts()</td>
+              <td>1</td>
+              <td class="duration" data-value="163000000">0.163</td>
+              <td class="duration" data-value="163000000">0.163</td>
+              <td class="duration" data-value="163000000">0.163</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CustomersUIStep.userClicksMyAccountsAndViewTransaction()</td>
+              <td>1</td>
+              <td class="duration" data-value="333000000">0.333</td>
+              <td class="duration" data-value="333000000">0.333</td>
+              <td class="duration" data-value="333000000">0.333</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CustomersUIStep.userClicksMyOperationsDropDown()</td>
+              <td>2</td>
+              <td class="duration" data-value="301000000">0.301</td>
+              <td class="duration" data-value="301000000">0.336</td>
+              <td class="duration" data-value="602000000">0.602</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CustomersUIStep.userShouldSeeAllAccountTypesAndBalancePopulated()</td>
+              <td>1</td>
+              <td class="duration" data-value="34634000000">34.634</td>
+              <td class="duration" data-value="34634000000">34.634</td>
+              <td class="duration" data-value="34634000000">34.634</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CustomersUIStep.userShouldViewTransactions()</td>
+              <td>1</td>
+              <td class="duration" data-value="221000000">0.221</td>
+              <td class="duration" data-value="221000000">0.221</td>
+              <td class="duration" data-value="221000000">0.221</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.EditUserPageSteps.userVerifiesOverAPIThatUserDataChangedWithNewDatas(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.EditUserPageSteps.userVerifiesTheAPIUIUserDataIsSame(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.EditUserPageSteps.user_clicks_save_button_on_user_edit_page()</td>
+              <td>6</td>
+              <td class="duration" data-value="107000000">0.107</td>
+              <td class="duration" data-value="107000000">0.185</td>
+              <td class="duration" data-value="642000000">0.642</td>
+              <td class="failed">66.67%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.EditUserPageSteps.user_enters_edit_page_of_the_user(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.EditUserPageSteps.user_enters_new_user_data_login(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="941800000">0.941</td>
+              <td class="duration" data-value="941800000">1.344</td>
+              <td class="duration" data-value="4709000000">4.709</td>
+              <td class="failed">80.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.EditUserPageSteps.user_records_initial_ui_user_data_on_create_or_edit_user_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.EditUserPageSteps.user_retrieves_initial_user_data_from_the_api(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.EditUserPageSteps.user_verifies_the_success_message()</td>
+              <td>6</td>
+              <td class="duration" data-value="773500000">0.773</td>
+              <td class="duration" data-value="773500000">1.213</td>
+              <td class="duration" data-value="4641000000">4.641</td>
+              <td class="failed">66.67%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.Hooks.setUp()</td>
+              <td>166</td>
+              <td class="duration" data-value="2915662">0.002</td>
+              <td class="duration" data-value="2915662">0.211</td>
+              <td class="duration" data-value="484000000">0.484</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.Hooks.tearDown(io.cucumber.java.Scenario)</td>
+              <td>166</td>
+              <td class="duration" data-value="2141325301">2.141</td>
+              <td class="duration" data-value="2141325301">9.665</td>
+              <td class="duration" data-value="355460000000">5:55.460</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginNegativeSteps.userShouldGetFailedToSignInMessage()</td>
+              <td>3</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginNegativeSteps.userVerifiesFailedToSigninMessageIsDisplayed()</td>
+              <td>3</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginNegativeSteps.user_clicks_did_you_forget_your_password_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="671000000">0.671</td>
+              <td class="duration" data-value="671000000">0.671</td>
+              <td class="duration" data-value="671000000">0.671</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginNegativeSteps.user_clicks_register_a_new_account_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="725000000">0.725</td>
+              <td class="duration" data-value="725000000">0.725</td>
+              <td class="duration" data-value="725000000">0.725</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginNegativeSteps.user_enters_a_password(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="6333333">0.006</td>
+              <td class="duration" data-value="6333333">0.019</td>
+              <td class="duration" data-value="19000000">0.019</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginNegativeSteps.user_enters_a_username(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="56666666">0.056</td>
+              <td class="duration" data-value="56666666">0.124</td>
+              <td class="duration" data-value="170000000">0.170</td>
+              <td class="failed">33.33%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.userClicksOnTheCancelButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="218000000">0.218</td>
+              <td class="duration" data-value="218000000">0.218</td>
+              <td class="duration" data-value="218000000">0.218</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.userIsOnTheCreateOrEditAUserPageWithValidCredentials(java.lang.String,java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="9846166666">9.846</td>
+              <td class="duration" data-value="9846166666">10.238</td>
+              <td class="duration" data-value="59077000000">59.077</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.userIsOnTheUserSetingsPageWithValidUsernameAndPassword(java.lang.String,java.lang.String)</td>
+              <td>70</td>
+              <td class="duration" data-value="7258071428">7.258</td>
+              <td class="duration" data-value="7258071428">11.129</td>
+              <td class="duration" data-value="508065000000">8:28.065</td>
+              <td class="failed">85.71%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.userLogsInWithValidCredentials(java.lang.String,java.lang.String)</td>
+              <td>48</td>
+              <td class="duration" data-value="9322833333">9.322</td>
+              <td class="duration" data-value="9322833333">12.779</td>
+              <td class="duration" data-value="447496000000">7:27.496</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.user_clicks_on_login_drop_down_menu()</td>
+              <td>9</td>
+              <td class="duration" data-value="164222222">0.164</td>
+              <td class="duration" data-value="164222222">0.293</td>
+              <td class="duration" data-value="1478000000">1.478</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.user_clicks_on_sign_in_button()</td>
+              <td>6</td>
+              <td class="duration" data-value="77500000">0.077</td>
+              <td class="duration" data-value="77500000">0.183</td>
+              <td class="duration" data-value="465000000">0.465</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.user_clicks_on_sign_in_option()</td>
+              <td>9</td>
+              <td class="duration" data-value="201666666">0.201</td>
+              <td class="duration" data-value="201666666">0.458</td>
+              <td class="duration" data-value="1815000000">1.815</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.user_enters_a_valid_password(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="304666666">0.304</td>
+              <td class="duration" data-value="304666666">0.354</td>
+              <td class="duration" data-value="914000000">0.914</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.user_enters_a_valid_username(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="206666666">0.206</td>
+              <td class="duration" data-value="206666666">0.296</td>
+              <td class="duration" data-value="620000000">0.620</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.user_is_on_the_gmi_bank_home_page()</td>
+              <td>40</td>
+              <td class="duration" data-value="8205175000">8.205</td>
+              <td class="duration" data-value="8205175000">9.914</td>
+              <td class="duration" data-value="328207000000">5:28.207</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.user_is_on_the_new_user_registration_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="7929000000">7.929</td>
+              <td class="duration" data-value="7929000000">7.929</td>
+              <td class="duration" data-value="7929000000">7.929</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.user_verifies_successful_login()</td>
+              <td>3</td>
+              <td class="duration" data-value="106333333">0.106</td>
+              <td class="duration" data-value="106333333">0.112</td>
+              <td class="duration" data-value="319000000">0.319</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ManageCustomer.adminCanSelectFirstNameLastNameMiddleInitialEmailMobilePhoneNummerPhoneNummerAddressDateUpdated()</td>
+              <td>1</td>
+              <td class="duration" data-value="198000000">0.198</td>
+              <td class="duration" data-value="198000000">0.198</td>
+              <td class="duration" data-value="198000000">0.198</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ManageCustomer.adminClickSaveButton()</td>
+              <td>2</td>
+              <td class="duration" data-value="1332500000">1.332</td>
+              <td class="duration" data-value="1332500000">1.358</td>
+              <td class="duration" data-value="2665000000">2.665</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ManageCustomer.adminShouldShowEditButtonAndVerifyValid()</td>
+              <td>1</td>
+              <td class="duration" data-value="1068000000">1.068</td>
+              <td class="duration" data-value="1068000000">1.068</td>
+              <td class="duration" data-value="1068000000">1.068</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ManageCustomer.adminShouldWriteAndNewTheAddress()</td>
+              <td>1</td>
+              <td class="duration" data-value="203000000">0.203</td>
+              <td class="duration" data-value="203000000">0.203</td>
+              <td class="duration" data-value="203000000">0.203</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ManageCustomer.adminShouldWriteAndNewTheEmailAddress()</td>
+              <td>1</td>
+              <td class="duration" data-value="2050000000">2.050</td>
+              <td class="duration" data-value="2050000000">2.050</td>
+              <td class="duration" data-value="2050000000">2.050</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ManageCustomer.adminShouldWriteAndNewThePhoneNumber()</td>
+              <td>1</td>
+              <td class="duration" data-value="1720000000">1.720</td>
+              <td class="duration" data-value="1720000000">1.720</td>
+              <td class="duration" data-value="1720000000">1.720</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ManageCustomer.adminVerifiesTranslationNotFoundGmiBankBackendAppTPCustomerUpdated()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ManageCustomer.adminVerifiesTranslationsNotFoundGmiBankBackendAppTPCustomerUpdated()</td>
+              <td>1</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.MoneyTransfer_StepDefinitions.user_clicks_on_the_my_operations_viewbox()</td>
+              <td>2</td>
+              <td class="duration" data-value="409500000">0.409</td>
+              <td class="duration" data-value="409500000">0.490</td>
+              <td class="duration" data-value="819000000">0.819</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.MoneyTransfer_StepDefinitions.user_clicks_on_the_transfer_money_viewbox()</td>
+              <td>2</td>
+              <td class="duration" data-value="194000000">0.194</td>
+              <td class="duration" data-value="194000000">0.202</td>
+              <td class="duration" data-value="388000000">0.388</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.MoneyTransfer_StepDefinitions.user_leaves_empty_the_balance_checkbox()</td>
+              <td>1</td>
+              <td class="duration" data-value="185000000">0.185</td>
+              <td class="duration" data-value="185000000">0.185</td>
+              <td class="duration" data-value="185000000">0.185</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.MoneyTransfer_StepDefinitions.user_leaves_empty_the_description_checkbox()</td>
+              <td>1</td>
+              <td class="duration" data-value="214000000">0.214</td>
+              <td class="duration" data-value="214000000">0.214</td>
+              <td class="duration" data-value="214000000">0.214</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.MoneyTransfer_StepDefinitions.user_selects_the_first_account_as_from_dropdown()</td>
+              <td>2</td>
+              <td class="duration" data-value="1050000000">1.050</td>
+              <td class="duration" data-value="1050000000">1.186</td>
+              <td class="duration" data-value="2100000000">2.100</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.MoneyTransfer_StepDefinitions.user_selects_the_second_account_as_to_dropdown()</td>
+              <td>2</td>
+              <td class="duration" data-value="1054500000">1.054</td>
+              <td class="duration" data-value="1054500000">1.395</td>
+              <td class="duration" data-value="2109000000">2.109</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.MoneyTransfer_StepDefinitions.user_should_see_red_alerts_under_the_balance_and_description_checkboxes()</td>
+              <td>1</td>
+              <td class="duration" data-value="149000000">0.149</td>
+              <td class="duration" data-value="149000000">0.149</td>
+              <td class="duration" data-value="149000000">0.149</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.MoneyTransfer_StepDefinitions.user_writes_a_balance_that_they_want_to_proceed_with()</td>
+              <td>1</td>
+              <td class="duration" data-value="238000000">0.238</td>
+              <td class="duration" data-value="238000000">0.238</td>
+              <td class="duration" data-value="238000000">0.238</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.MoneyTransfer_StepDefinitions.user_writes_a_description_for_money_transfer()</td>
+              <td>1</td>
+              <td class="duration" data-value="350000000">0.350</td>
+              <td class="duration" data-value="350000000">0.350</td>
+              <td class="duration" data-value="350000000">0.350</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewAccountCreationFileSteps.userEntersABalance(java.lang.String)</td>
+              <td>20</td>
+              <td class="duration" data-value="263100000">0.263</td>
+              <td class="duration" data-value="263100000">0.552</td>
+              <td class="duration" data-value="5262000000">5.262</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewAccountCreationFileSteps.userSelectsAClosedDate(java.lang.String)</td>
+              <td>20</td>
+              <td class="duration" data-value="387450000">0.387</td>
+              <td class="duration" data-value="387450000">0.581</td>
+              <td class="duration" data-value="7749000000">7.749</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewAccountCreationFileSteps.userSelectsCreateDate(java.lang.String)</td>
+              <td>20</td>
+              <td class="duration" data-value="405250000">0.405</td>
+              <td class="duration" data-value="405250000">0.676</td>
+              <td class="duration" data-value="8105000000">8.105</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewAccountCreationFileSteps.userSelectsEmployee(java.lang.String)</td>
+              <td>20</td>
+              <td class="duration" data-value="219050000">0.219</td>
+              <td class="duration" data-value="219050000">0.409</td>
+              <td class="duration" data-value="4381000000">4.381</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewAccountCreationFileSteps.user_clicks_on_Create_a_New_Account_button()</td>
+              <td>20</td>
+              <td class="duration" data-value="3844800000">3.844</td>
+              <td class="duration" data-value="3844800000">5.506</td>
+              <td class="duration" data-value="76896000000">1:16.896</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewAccountCreationFileSteps.user_clicks_on_My_Operations()</td>
+              <td>20</td>
+              <td class="duration" data-value="313100000">0.313</td>
+              <td class="duration" data-value="313100000">0.751</td>
+              <td class="duration" data-value="6262000000">6.262</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewAccountCreationFileSteps.user_clicks_on_Save_Button()</td>
+              <td>20</td>
+              <td class="duration" data-value="282450000">0.282</td>
+              <td class="duration" data-value="282450000">0.470</td>
+              <td class="duration" data-value="5649000000">5.649</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewAccountCreationFileSteps.user_enters_a_Description(java.lang.String)</td>
+              <td>20</td>
+              <td class="duration" data-value="339850000">0.339</td>
+              <td class="duration" data-value="339850000">0.616</td>
+              <td class="duration" data-value="6797000000">6.797</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewAccountCreationFileSteps.user_selects_Account_Status_Type(java.lang.String)</td>
+              <td>20</td>
+              <td class="duration" data-value="195550000">0.195</td>
+              <td class="duration" data-value="195550000">0.380</td>
+              <td class="duration" data-value="3911000000">3.911</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewAccountCreationFileSteps.user_selects_Account_Type(java.lang.String)</td>
+              <td>20</td>
+              <td class="duration" data-value="279750000">0.279</td>
+              <td class="duration" data-value="279750000">0.536</td>
+              <td class="duration" data-value="5595000000">5.595</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewAccountCreationFileSteps.user_selects_on_Manage_Accounts()</td>
+              <td>20</td>
+              <td class="duration" data-value="151650000">0.151</td>
+              <td class="duration" data-value="151650000">0.287</td>
+              <td class="duration" data-value="3033000000">3.033</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewUserCreationSteps.userCreatesANewUser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewUserCreationSteps.userDeletesTheNewUserFromTheDatabaseAndVerifiesDeletion(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="425600000">0.425</td>
+              <td class="duration" data-value="425600000">0.565</td>
+              <td class="duration" data-value="2128000000">2.128</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewUserCreationSteps.userDeletesTheUser(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewUserCreationSteps.userVerifiesTheUserDoesNotExistsInTheDatabase(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="169000000">0.169</td>
+              <td class="duration" data-value="169000000">0.169</td>
+              <td class="duration" data-value="169000000">0.169</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewUserCreationSteps.userVerifiesTheUserHadBeenCreatedInTheDatabase(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="108000000">0.108</td>
+              <td class="duration" data-value="108000000">0.170</td>
+              <td class="duration" data-value="648000000">0.648</td>
+              <td class="failed">66.67%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.NewUserCreationSteps.userVerifiesThereIsNoSuchUserInDatabase(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="253200000">0.253</td>
+              <td class="duration" data-value="253200000">0.468</td>
+              <td class="duration" data-value="1266000000">1.266</td>
+              <td class="failed">80.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ReadAllCountriesApiSteps.compareDatabaseAndAPICountryNumbers()</td>
+              <td>1</td>
+              <td class="duration" data-value="2100000000">2.100</td>
+              <td class="duration" data-value="2100000000">2.100</td>
+              <td class="duration" data-value="2100000000">2.100</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ReadAllCountriesApiSteps.userVerifiesAllCountriesBy(java.lang.String)</td>
+              <td>7</td>
+              <td class="duration" data-value="1096571428">1.096</td>
+              <td class="duration" data-value="1096571428">1.467</td>
+              <td class="duration" data-value="7676000000">7.676</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ReadAllCountriesApiSteps.user_provides_the_api_end_point_to_set_the_response_using(java.lang.String)</td>
+              <td>8</td>
+              <td class="duration" data-value="277000000">0.277</td>
+              <td class="duration" data-value="277000000">0.395</td>
+              <td class="duration" data-value="2216000000">2.216</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.ReadAllCountriesApiSteps.user_validates_all_data_for_countries()</td>
+              <td>1</td>
+              <td class="duration" data-value="320000000">0.320</td>
+              <td class="duration" data-value="320000000">0.320</td>
+              <td class="duration" data-value="320000000">0.320</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_clicks_on_the_Account_Menu_icon()</td>
+              <td>31</td>
+              <td class="duration" data-value="189580645">0.189</td>
+              <td class="duration" data-value="189580645">0.365</td>
+              <td class="duration" data-value="5877000000">5.877</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_clicks_on_the_Register_viewbox()</td>
+              <td>31</td>
+              <td class="duration" data-value="303225806">0.303</td>
+              <td class="duration" data-value="303225806">0.699</td>
+              <td class="duration" data-value="9400000000">9.400</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_enter_digits_phone_number(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_enter_no_Lasttname(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="139000000">0.139</td>
+              <td class="duration" data-value="139000000">0.139</td>
+              <td class="duration" data-value="139000000">0.139</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_enter_ten_digits_phone_number(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_enters_SSN_number(java.lang.String)</td>
+              <td>15</td>
+              <td class="duration" data-value="241666666">0.241</td>
+              <td class="duration" data-value="241666666">0.454</td>
+              <td class="duration" data-value="3625000000">3.625</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_enters_address(java.lang.String)</td>
+              <td>15</td>
+              <td class="duration" data-value="330000000">0.330</td>
+              <td class="duration" data-value="330000000">0.764</td>
+              <td class="duration" data-value="4950000000">4.950</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_enters_email(java.lang.String)</td>
+              <td>23</td>
+              <td class="duration" data-value="251304347">0.251</td>
+              <td class="duration" data-value="251304347">0.427</td>
+              <td class="duration" data-value="5780000000">5.780</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_enters_firstName(java.lang.String)</td>
+              <td>15</td>
+              <td class="duration" data-value="210466666">0.210</td>
+              <td class="duration" data-value="210466666">0.539</td>
+              <td class="duration" data-value="3157000000">3.157</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_enters_lastName(java.lang.String)</td>
+              <td>15</td>
+              <td class="duration" data-value="207466666">0.207</td>
+              <td class="duration" data-value="207466666">0.413</td>
+              <td class="duration" data-value="3112000000">3.112</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_enters_mobile_phone_number(java.lang.String)</td>
+              <td>15</td>
+              <td class="duration" data-value="223933333">0.223</td>
+              <td class="duration" data-value="223933333">0.297</td>
+              <td class="duration" data-value="3359000000">3.359</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_enters_special_SSN_number(java.lang.String)</td>
+              <td>7</td>
+              <td class="duration" data-value="294428571">0.294</td>
+              <td class="duration" data-value="294428571">0.466</td>
+              <td class="duration" data-value="2061000000">2.061</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_enters_username(java.lang.String)</td>
+              <td>23</td>
+              <td class="duration" data-value="218391304">0.218</td>
+              <td class="duration" data-value="218391304">0.455</td>
+              <td class="duration" data-value="5023000000">5.023</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_verifies_there_is_no_red_boxes_on_the_Email_checkbox_in_the_Registration_page()</td>
+              <td>6</td>
+              <td class="duration" data-value="20123000000">20.123</td>
+              <td class="duration" data-value="20123000000">20.193</td>
+              <td class="duration" data-value="120738000000">2:0.738</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_verifies_there_is_no_red_boxes_on_the_Mobile_Phone_Number_checkbox_in_the_Registration_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_verifies_there_is_no_red_boxes_on_the_SSN_checkbox_in_the_Registration_page()</td>
+              <td>7</td>
+              <td class="duration" data-value="17945142857">17.945</td>
+              <td class="duration" data-value="17945142857">20.174</td>
+              <td class="duration" data-value="125616000000">2:5.616</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_verifies_there_is_no_red_boxes_on_the_firstname_checkbox_in_the_Registration_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_verifies_there_is_no_red_boxes_on_the_lastname_checkbox_in_the_Registration_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="20137000000">20.137</td>
+              <td class="duration" data-value="20137000000">20.137</td>
+              <td class="duration" data-value="20137000000">20.137</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationPage_StepDefinitions.user_verifies_there_is_no_red_boxes_on_the_registration_page()</td>
+              <td>15</td>
+              <td class="duration" data-value="49323733333">49.323</td>
+              <td class="duration" data-value="49323733333">1:0.331</td>
+              <td class="duration" data-value="739856000000">12:19.856</td>
+              <td class="failed">53.33%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.a_customer_should_show_up_at_total_nine_head_on_account_information_of_the_customer()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.userClicksToManageCostumers()</td>
+              <td>10</td>
+              <td class="duration" data-value="170000000">0.170</td>
+              <td class="duration" data-value="170000000">0.277</td>
+              <td class="duration" data-value="1700000000">1.700</td>
+              <td class="failed">90.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.userRecordsCustomersInfoOnTheDisplayedUIPageOnTheManageCustomerPage()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_can_delete_a_customer()</td>
+              <td>1</td>
+              <td class="duration" data-value="20462000000">20.462</td>
+              <td class="duration" data-value="20462000000">20.462</td>
+              <td class="duration" data-value="20462000000">20.462</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_clicks_to_delete_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="1316000000">1.316</td>
+              <td class="duration" data-value="1316000000">1.316</td>
+              <td class="duration" data-value="1316000000">1.316</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_clicks_to_edit_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="571000000">0.571</td>
+              <td class="duration" data-value="571000000">0.571</td>
+              <td class="duration" data-value="571000000">0.571</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_clicks_to_last_page_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_clicks_to_my_operations_drop_down_menu()</td>
+              <td>10</td>
+              <td class="duration" data-value="1264200000">1.264</td>
+              <td class="duration" data-value="1264200000">10.051</td>
+              <td class="duration" data-value="12642000000">12.642</td>
+              <td class="failed">90.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_clicks_to_save_button_in_the_edit_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="398000000">0.398</td>
+              <td class="duration" data-value="398000000">0.398</td>
+              <td class="duration" data-value="398000000">0.398</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_clicks_to_view_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="1343000000">1.343</td>
+              <td class="duration" data-value="1343000000">1.343</td>
+              <td class="duration" data-value="1343000000">1.343</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_goes_back_to_manage_costumers_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="10485000000">10.485</td>
+              <td class="duration" data-value="10485000000">10.485</td>
+              <td class="duration" data-value="10485000000">10.485</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_sees_a_message_if_the_user_is_sure_about_deletion()</td>
+              <td>1</td>
+              <td class="duration" data-value="799000000">0.799</td>
+              <td class="duration" data-value="799000000">0.799</td>
+              <td class="duration" data-value="799000000">0.799</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_should_see_an_edit_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="81000000">0.081</td>
+              <td class="duration" data-value="81000000">0.081</td>
+              <td class="duration" data-value="81000000">0.081</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_should_see_edit_button_where_all_customer()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_updates_city_textbox(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="637000000">0.637</td>
+              <td class="duration" data-value="637000000">0.637</td>
+              <td class="duration" data-value="637000000">0.637</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_updates_the_user_info_in_the_edit_portal()</td>
+              <td>1</td>
+              <td class="duration" data-value="1137000000">1.137</td>
+              <td class="duration" data-value="1137000000">1.137</td>
+              <td class="duration" data-value="1137000000">1.137</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US12_ManageCustomer.user_verifies_that_a_customer_is_registered_with_id_number()</td>
+              <td>1</td>
+              <td class="duration" data-value="600000000">0.600</td>
+              <td class="duration" data-value="600000000">0.600</td>
+              <td class="duration" data-value="600000000">0.600</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US_26_Step_Definitions.user_finds_out_the_size_of_the_country_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US_26_Step_Definitions.user_sends_a_get_request_to_api_endpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="185000000">0.185</td>
+              <td class="duration" data-value="185000000">0.185</td>
+              <td class="duration" data-value="185000000">0.185</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US_26_Step_Definitions.user_sends_a_put_request_to_api_endpoint_as(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US_27_Step_Definitions.after_delete_request_http_status_code_should_be(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US_27_Step_Definitions.after_delete_request_response_after_delete_should_contain_nothing()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US_27_Step_Definitions.after_delete_request_response_format_should_be(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US_27_Step_Definitions.before_delete_request_http_status_code_should_be(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="28000000">0.028</td>
+              <td class="duration" data-value="28000000">0.028</td>
+              <td class="duration" data-value="28000000">0.028</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US_27_Step_Definitions.before_delete_request_id_should_be(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US_27_Step_Definitions.before_delete_request_name_should_be(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US_27_Step_Definitions.before_delete_request_response_format_should_be(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US_27_Step_Definitions.user_sends_a_delete_request_to_rest_api_endpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="152000000">0.152</td>
+              <td class="duration" data-value="152000000">0.152</td>
+              <td class="duration" data-value="152000000">0.152</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.US_27_Step_Definitions.user_sends_a_get_request_to_rest_api_endpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="158000000">0.158</td>
+              <td class="duration" data-value="158000000">0.158</td>
+              <td class="duration" data-value="158000000">0.158</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoPasswordPageSteps.clickSaveButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="113000000">0.113</td>
+              <td class="duration" data-value="113000000">0.113</td>
+              <td class="duration" data-value="113000000">0.113</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoPasswordPageSteps.userClickTheSighInDropdown()</td>
+              <td>5</td>
+              <td class="duration" data-value="253800000">0.253</td>
+              <td class="duration" data-value="253800000">0.288</td>
+              <td class="duration" data-value="1269000000">1.269</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoPasswordPageSteps.userSeesTheLevelChartChangeAccordingly()</td>
+              <td>4</td>
+              <td class="duration" data-value="236750000">0.236</td>
+              <td class="duration" data-value="236750000">0.270</td>
+              <td class="duration" data-value="947000000">0.947</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoPasswordPageSteps.userSelectThePasswordDropdown()</td>
+              <td>5</td>
+              <td class="duration" data-value="104200000">0.104</td>
+              <td class="duration" data-value="104200000">0.158</td>
+              <td class="duration" data-value="521000000">0.521</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoPasswordPageSteps.userVerifiesThatIsNotDisplyed(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2089000000">2.089</td>
+              <td class="duration" data-value="2089000000">2.089</td>
+              <td class="duration" data-value="2089000000">2.089</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoPasswordPageSteps.user_enter_current_password(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="303800000">0.303</td>
+              <td class="duration" data-value="303800000">0.391</td>
+              <td class="duration" data-value="1519000000">1.519</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoPasswordPageSteps.user_enter_new_password(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="188800000">0.188</td>
+              <td class="duration" data-value="188800000">0.233</td>
+              <td class="duration" data-value="944000000">0.944</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoPasswordPageSteps.user_enter_new_password_again_for_confirmation(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="147000000">0.147</td>
+              <td class="duration" data-value="147000000">0.147</td>
+              <td class="duration" data-value="147000000">0.147</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userClicksOnEmailTextBoxOnUserSettingsPage()</td>
+              <td>1</td>
+              <td class="duration" data-value="309000000">0.309</td>
+              <td class="duration" data-value="309000000">0.309</td>
+              <td class="duration" data-value="309000000">0.309</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userClicksOnFirstnameTextbox()</td>
+              <td>5</td>
+              <td class="duration" data-value="93800000">0.093</td>
+              <td class="duration" data-value="93800000">0.120</td>
+              <td class="duration" data-value="469000000">0.469</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userClicksOnSaveButtonOnUserSettingsPage()</td>
+              <td>57</td>
+              <td class="duration" data-value="49245614">0.049</td>
+              <td class="duration" data-value="49245614">0.203</td>
+              <td class="duration" data-value="2807000000">2.807</td>
+              <td class="failed">43.86%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userEntersANewShortEmail(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="150500000">0.150</td>
+              <td class="duration" data-value="150500000">0.215</td>
+              <td class="duration" data-value="903000000">0.903</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userEntersAValidRowFirstnameLastname(int,java.lang.String,java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="166666">0.000</td>
+              <td class="duration" data-value="166666">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userEntersNewUserData(java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="934500000">0.934</td>
+              <td class="duration" data-value="934500000">1.562</td>
+              <td class="duration" data-value="5607000000">5.607</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userEntersTheExcelPathSheetName(java.lang.String,java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="6000000">0.006</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userLogsOut()</td>
+              <td>55</td>
+              <td class="duration" data-value="146981818">0.146</td>
+              <td class="duration" data-value="146981818">0.874</td>
+              <td class="duration" data-value="8084000000">8.084</td>
+              <td class="failed">52.73%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userRecordsCurrentDisplayingUserData(java.lang.String)</td>
+              <td>7</td>
+              <td class="duration" data-value="243000000">0.243</td>
+              <td class="duration" data-value="243000000">0.371</td>
+              <td class="duration" data-value="1701000000">1.701</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userRecordsInitialUIUserDataOnUserSettingsPage(java.lang.String)</td>
+              <td>29</td>
+              <td class="duration" data-value="274000000">0.274</td>
+              <td class="duration" data-value="274000000">0.475</td>
+              <td class="duration" data-value="7946000000">7.946</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userReinitializeTheUserDataByUI()</td>
+              <td>11</td>
+              <td class="duration" data-value="1887181818">1.887</td>
+              <td class="duration" data-value="1887181818">12.086</td>
+              <td class="duration" data-value="20759000000">20.759</td>
+              <td class="failed">54.55%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userRetrievesCurrentDisplayingApiUserData(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="231000000">0.231</td>
+              <td class="duration" data-value="231000000">0.273</td>
+              <td class="duration" data-value="2541000000">2.541</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userRetrievesInitialApiUserData(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="237090909">0.237</td>
+              <td class="duration" data-value="237090909">0.306</td>
+              <td class="duration" data-value="2608000000">2.608</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userSelectsTheInitialLanguageOnLanguageDropDown()</td>
+              <td>6</td>
+              <td class="duration" data-value="23833333">0.023</td>
+              <td class="duration" data-value="23833333">0.143</td>
+              <td class="duration" data-value="143000000">0.143</td>
+              <td class="failed">16.67%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userSelectsTheOnLanguageDropDown(java.lang.String)</td>
+              <td>12</td>
+              <td class="duration" data-value="20250000">0.020</td>
+              <td class="duration" data-value="20250000">0.155</td>
+              <td class="duration" data-value="243000000">0.243</td>
+              <td class="failed">16.67%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userVerifiesAnErrorMessageIsUnderEmailTextboxDisplayedContains(java.lang.String)</td>
+              <td>19</td>
+              <td class="duration" data-value="1523894736">1.523</td>
+              <td class="duration" data-value="1523894736">2.310</td>
+              <td class="duration" data-value="28954000000">28.954</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userVerifiesAnErrorMessageUnderFirstnameTextboxIsDisplayedContains(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="56000000">0.056</td>
+              <td class="duration" data-value="56000000">0.063</td>
+              <td class="duration" data-value="280000000">0.280</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userVerifiesAnErrorMessageUnderLastnameTextboxIsDisplayedContains(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="2213600000">2.213</td>
+              <td class="duration" data-value="2213600000">2.232</td>
+              <td class="duration" data-value="11068000000">11.068</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userVerifiesCurrentDisplayingApiUserDataIsSameAsCurrentDisplayingUIData()</td>
+              <td>6</td>
+              <td class="duration" data-value="166666">0.000</td>
+              <td class="duration" data-value="166666">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="failed">16.67%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userVerifiesCurrentDisplayingApiUserDataIsSameAsInitialApiUserData()</td>
+              <td>11</td>
+              <td class="duration" data-value="181818">0.000</td>
+              <td class="duration" data-value="181818">0.001</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="failed">54.55%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userVerifiesCurrentDisplayingUIUserDataIsSameAsNewUIUserDataTobeRegistered()</td>
+              <td>6</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userVerifiesFirstselectedLanguageDropdownOptionIs(java.lang.String)</td>
+              <td>12</td>
+              <td class="duration" data-value="21833333">0.021</td>
+              <td class="duration" data-value="21833333">0.140</td>
+              <td class="duration" data-value="262000000">0.262</td>
+              <td class="failed">16.67%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userVerifiesSuccessfulSavedMessageIsDisplayed(java.lang.String)</td>
+              <td>30</td>
+              <td class="duration" data-value="227000000">0.227</td>
+              <td class="duration" data-value="227000000">0.809</td>
+              <td class="duration" data-value="6810000000">6.810</td>
+              <td class="failed">33.33%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.userVerifiesSuccessfulSavedMessageIsNotDisplayed(java.lang.String)</td>
+              <td>27</td>
+              <td class="duration" data-value="3721814814">3.721</td>
+              <td class="duration" data-value="3721814814">10.075</td>
+              <td class="duration" data-value="100489000000">1:40.489</td>
+              <td class="failed">37.04%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.user_clears_the_email_textbox()</td>
+              <td>18</td>
+              <td class="duration" data-value="126000000">0.126</td>
+              <td class="duration" data-value="126000000">0.308</td>
+              <td class="duration" data-value="2268000000">2.268</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.user_clears_the_firstname_textbox()</td>
+              <td>12</td>
+              <td class="duration" data-value="63333333">0.063</td>
+              <td class="duration" data-value="63333333">0.162</td>
+              <td class="duration" data-value="760000000">0.760</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.user_clears_the_lastname_textbox()</td>
+              <td>6</td>
+              <td class="duration" data-value="86333333">0.086</td>
+              <td class="duration" data-value="86333333">0.125</td>
+              <td class="duration" data-value="518000000">0.518</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.user_clicks_on_user_account_menu()</td>
+              <td>6</td>
+              <td class="duration" data-value="362333333">0.362</td>
+              <td class="duration" data-value="362333333">0.437</td>
+              <td class="duration" data-value="2174000000">2.174</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.user_enters_a_new_invalid_email(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="150333333">0.150</td>
+              <td class="duration" data-value="150333333">0.216</td>
+              <td class="duration" data-value="902000000">0.902</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.user_verifies_email_textbox_is_available()</td>
+              <td>6</td>
+              <td class="duration" data-value="54666666">0.054</td>
+              <td class="duration" data-value="54666666">0.076</td>
+              <td class="duration" data-value="328000000">0.328</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.user_verifies_firstname_textbox_is_available()</td>
+              <td>6</td>
+              <td class="duration" data-value="78833333">0.078</td>
+              <td class="duration" data-value="78833333">0.112</td>
+              <td class="duration" data-value="473000000">0.473</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.user_verifies_language_drop_down_menu_has_and_options(java.lang.String,java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="403166666">0.403</td>
+              <td class="duration" data-value="403166666">0.545</td>
+              <td class="duration" data-value="2419000000">2.419</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsPageSteps.user_verifies_lastname_textbox_is_available()</td>
+              <td>6</td>
+              <td class="duration" data-value="48166666">0.048</td>
+              <td class="duration" data-value="48166666">0.059</td>
+              <td class="duration" data-value="289000000">0.289</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsUpdateStep.userClicksLanguageDropDown()</td>
+              <td>1</td>
+              <td class="duration" data-value="125000000">0.125</td>
+              <td class="duration" data-value="125000000">0.125</td>
+              <td class="duration" data-value="125000000">0.125</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsUpdateStep.userEntersFirstName(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="331500000">0.331</td>
+              <td class="duration" data-value="331500000">0.493</td>
+              <td class="duration" data-value="1326000000">1.326</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsUpdateStep.userEntersInvalidEmail(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="377333333">0.377</td>
+              <td class="duration" data-value="377333333">0.393</td>
+              <td class="duration" data-value="1132000000">1.132</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsUpdateStep.userEntersLastName(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="251000000">0.251</td>
+              <td class="duration" data-value="251000000">0.288</td>
+              <td class="duration" data-value="1004000000">1.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsUpdateStep.userEntersValidEmail(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="283000000">0.283</td>
+              <td class="duration" data-value="283000000">0.292</td>
+              <td class="duration" data-value="566000000">0.566</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsUpdateStep.userShouldBeSeeJustEnglishAndTurkishLanguageOptions()</td>
+              <td>1</td>
+              <td class="duration" data-value="372000000">0.372</td>
+              <td class="duration" data-value="372000000">0.372</td>
+              <td class="duration" data-value="372000000">0.372</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsUpdateStep.userShouldSeeThisFieldIsInvalidMassage()</td>
+              <td>3</td>
+              <td class="duration" data-value="83000000">0.083</td>
+              <td class="duration" data-value="83000000">0.095</td>
+              <td class="duration" data-value="249000000">0.249</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsUpdateStep.userShouldSeeYourFirstNameIsRequiredMassage()</td>
+              <td>1</td>
+              <td class="duration" data-value="100000000">0.100</td>
+              <td class="duration" data-value="100000000">0.100</td>
+              <td class="duration" data-value="100000000">0.100</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsUpdateStep.userShouldSeeYourLastNameIsRequiredMassage()</td>
+              <td>1</td>
+              <td class="duration" data-value="80000000">0.080</td>
+              <td class="duration" data-value="80000000">0.080</td>
+              <td class="duration" data-value="80000000">0.080</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsUpdateStep.user_clicks_on_save_button()</td>
+              <td>5</td>
+              <td class="duration" data-value="118000000">0.118</td>
+              <td class="duration" data-value="118000000">0.160</td>
+              <td class="duration" data-value="590000000">0.590</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsUpdateStep.user_selects_the_user_info_option()</td>
+              <td>6</td>
+              <td class="duration" data-value="169833333">0.169</td>
+              <td class="duration" data-value="169833333">0.334</td>
+              <td class="duration" data-value="1019000000">1.019</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserInfoSettingsUpdateStep.user_verifies_the_page_displays_text_text_is_displayed(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="220333333">0.220</td>
+              <td class="duration" data-value="220333333">0.316</td>
+              <td class="duration" data-value="1322000000">1.322</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.adminCanEditUserInfo()</td>
+              <td>4</td>
+              <td class="duration" data-value="1175000000">1.175</td>
+              <td class="duration" data-value="1175000000">1.357</td>
+              <td class="duration" data-value="4700000000">4.700</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.adminCanSeeViewUserInfo()</td>
+              <td>4</td>
+              <td class="duration" data-value="5995250000">5.995</td>
+              <td class="duration" data-value="5995250000">6.231</td>
+              <td class="duration" data-value="23981000000">23.981</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.adminClicksTheAdministrationButton()</td>
+              <td>4</td>
+              <td class="duration" data-value="259000000">0.259</td>
+              <td class="duration" data-value="259000000">0.386</td>
+              <td class="duration" data-value="1036000000">1.036</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.adminSelectTheUsermangementDropdown()</td>
+              <td>4</td>
+              <td class="duration" data-value="112500000">0.112</td>
+              <td class="duration" data-value="112500000">0.128</td>
+              <td class="duration" data-value="450000000">0.450</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.adminSelectsTheRole(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="204000000">0.204</td>
+              <td class="duration" data-value="204000000">0.248</td>
+              <td class="duration" data-value="816000000">0.816</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.admin_click_the_activeted_button()</td>
+              <td>4</td>
+              <td class="duration" data-value="110500000">0.110</td>
+              <td class="duration" data-value="110500000">0.123</td>
+              <td class="duration" data-value="442000000">0.442</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.admin_clicks_the_crete_a_new_button()</td>
+              <td>4</td>
+              <td class="duration" data-value="528000000">0.528</td>
+              <td class="duration" data-value="528000000">0.713</td>
+              <td class="duration" data-value="2112000000">2.112</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.admin_clicks_the_save_button()</td>
+              <td>4</td>
+              <td class="duration" data-value="806750000">0.806</td>
+              <td class="duration" data-value="806750000">0.910</td>
+              <td class="duration" data-value="3227000000">3.227</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.admin_enters_a_email(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="316250000">0.316</td>
+              <td class="duration" data-value="316250000">0.359</td>
+              <td class="duration" data-value="1265000000">1.265</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.admin_enters_a_first_name(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="256750000">0.256</td>
+              <td class="duration" data-value="256750000">0.483</td>
+              <td class="duration" data-value="1027000000">1.027</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.admin_enters_a_last_name(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="188500000">0.188</td>
+              <td class="duration" data-value="188500000">0.205</td>
+              <td class="duration" data-value="754000000">0.754</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.admin_enters_a_login(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="254500000">0.254</td>
+              <td class="duration" data-value="254500000">0.321</td>
+              <td class="duration" data-value="1018000000">1.018</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.UserManagementSteps.admin_selects_the_language()</td>
+              <td>4</td>
+              <td class="duration" data-value="265750000">0.265</td>
+              <td class="duration" data-value="265750000">0.299</td>
+              <td class="duration" data-value="1063000000">1.063</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>197</td>
+            <td>1688</td>
+            <td class="duration">1.961</td>
+            <td class="duration">12:19.856</td>
+            <td class="duration">55:10.751</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

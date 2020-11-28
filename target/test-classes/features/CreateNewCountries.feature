@@ -8,8 +8,8 @@ Feature: US_25_ System should allow to create new countries using api end point
     Then After creation user verifies the created country "<name>"
 
 Examples:
-  | name     |
-  | Tanzania11 |
-  #| Tanzania8 |
-  #| Tanzania9 |
-  #| Tanzania10 |
+  | name        |
+  | Tanzania111 |
+  | Tanzania88  |
+  | Tanzania98  |
+  | Tanzania101 |

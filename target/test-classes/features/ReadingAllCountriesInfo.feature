@@ -19,12 +19,12 @@
       Examples:
         | countryName |
         | Malta9      |
-       # | TURKEY         |
-       # | GERMANY        |
-       # | FRANCE         |
-       # | UNITED KINGDOM |
-       # | CANADA         |
-       # | AGOLA          |
+        | TURKEY         |
+        | GERMANY        |
+        | FRANCE         |
+        | UNITED KINGDOM |
+        | CANADA         |
+        | ANGOLA          |
 
 
 
