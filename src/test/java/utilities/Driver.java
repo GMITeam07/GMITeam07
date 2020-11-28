@@ -3,12 +3,14 @@ package utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.maven.shared.utils.io.FileUtils;
 import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.SourceType;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.*;
 
@@ -231,6 +233,7 @@ public class Driver {
         }
     }
 
+
     /**
      * Waits for element to be not stale
      *
@@ -273,6 +276,20 @@ public class Driver {
         int optionIndex = 1 + random.nextInt(weblist.size() - 1);
         select.selectByIndex(optionIndex);
         return select.getFirstSelectedOption();
+    }
+    public static Boolean selectRandomTextFromDropdown(WebElement element) {
+        try {
+            Select select = new Select(element);
+            Random random = new Random();
+            List<WebElement> weblist = select.getOptions();
+            int optionIndex = 1 + random.nextInt(weblist.size() - 1);
+            select.selectByIndex(optionIndex);
+            return true;
+        }catch (Exception e ){
+            e.printStackTrace();
+            return false;
+        }
+
     }
 
     public static boolean selectByVisibleText(WebElement element, String selection) {
@@ -410,6 +427,10 @@ public class Driver {
         // save the screenshot to the path given
         FileUtils.copyFile(source, finalDestination);
         return target;
+    }
+    @Test
+    public void apiStates(){
+        System.out.println(ApiUtils.getStateById(19227));
     }
 
 }
