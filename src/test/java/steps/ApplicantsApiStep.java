@@ -24,7 +24,7 @@ public class ApplicantsApiStep {
 
     @Given("user provides the api endpoint to set the response using {string}")
     public void userProvidesTheApiEndpointToSetTheResponseUsing(String applicants_api_url) {
-        //        response = given().headers(
+//                response = given().headers(
 //                "Authorization",
 //                "Bearer " + ConfigReader.getProperty("validemployee_token"),
 //                "Content-Type",
@@ -45,7 +45,7 @@ public class ApplicantsApiStep {
                 when().
                 get(ConfigReader.getProperty(applicants_api_url));
 
- //                response.prettyPrint();
+                response.prettyPrint();
 
     }
 

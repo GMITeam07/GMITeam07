@@ -24,29 +24,29 @@ public class ReadAllCountriesApiSteps {
     List<Map<String, Object>> allCountryData;
     private List<Map<String,String>> list1;
 
-//    @Given("user provides the api end point to set the response using {string}")
-//    public void user_provides_the_api_end_point_to_set_the_response_using(String endpoint) {
-//
-//        response = given().headers(
-//                "Authorization",
-//                "Bearer" + ConfigReader.getProperty("bearerToken"),
-//                "Content-Type",
-//                 ContentType.JSON,
-//                "Accept",
-//                 ContentType.JSON).auth()
-//                .preemptive()
-//                .basic("team07admin", "S123456s?")
-//                .accept(ContentType.JSON)
-//                .when()
-//                .get(endpoint)
-//                .then()
-//                .contentType(ContentType.JSON)
-//                .extract()
-//                .response();
-//
-//         //response.prettyPrint();
-//
-//    }
+    @Given("user provides the api end point to set the response using {string}")
+    public void user_provides_the_api_end_point_to_set_the_response_using(String endpoint) {
+
+        response = given().headers(
+                "Authorization",
+                "Bearer" + ConfigReader.getProperty("bearerToken"),
+                "Content-Type",
+                 ContentType.JSON,
+                "Accept",
+                 ContentType.JSON).auth()
+                .preemptive()
+                .basic("team07admin", "S123456s?")
+                .accept(ContentType.JSON)
+                .when()
+                .get(endpoint)
+                .then()
+                .contentType(ContentType.JSON)
+                .extract()
+                .response();
+
+         //response.prettyPrint();
+
+    }
 
 
     @And("compare Database and API country numbers")
