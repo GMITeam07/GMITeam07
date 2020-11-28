@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -27,22 +30,48 @@
         <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/feature/samed" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="664a7730-0cd4-4fe6-ab8a-96a9712c38cb" name="Default Changelist" comment="LoginPage Negative test updated">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/US_18_ManageCustomerPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/steps/ManageCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/login_page_features/loginPage.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/managecustomer.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/features/login_page_features/loginPage.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/features/managecustomer.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/pages/US_18_ManageCustomerPage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/steps/ManageCustomer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runners/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runners/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runners/RunnerRmz.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runners/RunnerTaner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/CreateNewCountries.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/CreateNewCountries.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ReadingAllCountriesInfo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ReadingAllCountriesInfo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/createuserpagefordemo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/createuserpagefordemo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/userinfo/RegistrationNewData.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/userinfo/RegistrationNewData.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/userinfo/UserInfoSettingsPageStepsPositive.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/userinfo/UserInfoSettingsPageStepsPositive.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/CreateNewCountries.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/CreateNewCountries.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/CustomersApi.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/CustomersApi.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/ReadingAllCountriesInfo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/ReadingAllCountriesInfo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/createuserpagefordemo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/createuserpagefordemo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/userinfo/RegistrationNewData.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/userinfo/RegistrationNewData.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/ManageCustomerPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pages/ManageCustomerPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/UserManagementPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pages/UserManagementPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/runners/RunnerRmz.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/runners/RunnerTaner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/steps/ApplicantsApiStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/steps/ApplicantsApiStep.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/steps/CustomersApiStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/steps/CustomersApiStep.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/steps/Hooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/steps/Hooks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/steps/ReadAllCountriesApiSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/steps/ReadAllCountriesApiSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/steps/UserInfoSettingsPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/steps/UserInfoSettingsPageSteps.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +99,9 @@
     <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="GMITeam07" />
   </component>
   <component name="ProjectId" id="1k9cyUuOwZQeK9iyZlaWWBc6g9Y" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -90,7 +122,7 @@
       <recent name="C:\Users\steel\IdeaProjects\GMITeam07\src\test\resources\features\loginpage" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: managecustomer">
+  <component name="RunManager" selected="JUnit.Runner">
     <configuration name="Feature: managecustomer" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/managecustomer.feature" />
@@ -99,34 +131,6 @@
       <module name="GMITeam07" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
       <option name="SUGGESTED_NAME" value="Feature: managecustomer" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: All customers should show up on manage customers module populating the account information of the customer" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/US12_manageCustomer.feature" />
-      <option name="GLUE" value="steps" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="GMITeam07" />
-      <option name="NAME_FILTER" value="^All customers should show up on manage customers module populating the account information of the customer$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^All customers should show up on manage customers module populating the account information of the customer$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: All customers should show up on manage customers module populating the account information of the customer" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: tc1801 user should show the account information of the customer First Name" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/managecustomer.feature" />
-      <option name="GLUE" value="steps" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="GMITeam07" />
-      <option name="NAME_FILTER" value="^tc1801 user should show the account information of the customer First Name$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^tc1801 user should show the account information of the customer First Name$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: tc1801 user should show the account information of the customer First Name" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,6 +150,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scenario: user tests create user page with database validation (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/createuserpagefordemo.feature" />
+      <option name="GLUE" value="steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GMIBank" />
+      <option name="NAME_FILTER" value="^user tests create user page with database validation$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^user tests create user page with database validation$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: user tests create user page with database validation" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Scenario: user tests create user page with database validation" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/createuserpagefordemo.feature" />
@@ -160,13 +184,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Runner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GMIBank" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="runners.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="runners" />
+      <option name="MAIN_CLASS_NAME" value="runners.Runner" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Runner" />
+        <item itemvalue="Cucumber Java.Scenario: user tests create user page with database validation (1)" />
         <item itemvalue="Cucumber Java.Feature: managecustomer" />
         <item itemvalue="Cucumber Java.Scenario: user tests create user page with database validation" />
         <item itemvalue="Cucumber Java.Scenario: user logs into GMI Home Page" />
-        <item itemvalue="Cucumber Java.Scenario: tc1801 user should show the account information of the customer First Name" />
-        <item itemvalue="Cucumber Java.Scenario: All customers should show up on manage customers module populating the account information of the customer" />
       </list>
     </recent_temporary>
   </component>
@@ -248,6 +287,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="465" y="257" width="435" height="219" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1605224449063" />
+    <state x="2072" y="410" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606535765196">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2072" y="410" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1606535765196" />
     <state x="336" y="0" key="CommitChangelistDialog2" timestamp="1605500361192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -260,22 +303,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="461" y="230" key="Github.CreatePullRequestDialog/0.0.1366.728@0.0.1366.728" timestamp="1605160372889" />
-    <state width="1321" height="277" key="GridCell.Tab.0.bottom" timestamp="1606534446567">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1877" height="362" key="GridCell.Tab.0.bottom" timestamp="1606538805933">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="362" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1606537153452" />
     <state width="1321" height="277" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606534446567" />
-    <state width="1321" height="277" key="GridCell.Tab.0.center" timestamp="1606534446567">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1877" height="362" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606538805933" />
+    <state width="1877" height="362" key="GridCell.Tab.0.center" timestamp="1606538805933">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="362" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1606537153452" />
     <state width="1321" height="277" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606534446567" />
-    <state width="1321" height="277" key="GridCell.Tab.0.left" timestamp="1606534446567">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1877" height="362" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606538805933" />
+    <state width="1877" height="362" key="GridCell.Tab.0.left" timestamp="1606538805932">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="362" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1606537153452" />
     <state width="1321" height="277" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606534446567" />
-    <state width="1321" height="277" key="GridCell.Tab.0.right" timestamp="1606534446567">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1877" height="362" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606538805932" />
+    <state width="1877" height="362" key="GridCell.Tab.0.right" timestamp="1606538805933">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="362" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1606537153452" />
     <state width="1321" height="277" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606534446567" />
+    <state width="1877" height="362" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606538805933" />
     <state x="256" y="145" key="IDE.errors.dialog" timestamp="1605301181528">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -316,9 +367,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="413" key="org.jetbrains.plugins.cucumber.inspections.ui.CreateStepDefinitionFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1605214880996" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605501273567">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1852" y="70" width="945" height="969" key="search.everywhere.popup" timestamp="1606535806284">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
+    <state x="1852" y="70" width="945" height="969" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1606535806284" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605501273567" />
   </component>
 </project>

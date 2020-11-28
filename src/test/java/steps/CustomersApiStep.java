@@ -27,8 +27,8 @@ public class CustomersApiStep {
     String query;
 
 
-    @Given("user provides the api end point to set the response using {string}")
-    public void userProvidesTheApiEndPointToSetTheResponseUsing(String customer_api_url) {
+    @Given("user provides the api end point to set the response using {string} ApiUrl")
+    public void userProvidesTheApiEndPointToSetTheResponseUsingApiUrl(String api_url) {
 //        response = given().headers(
 //                "Authorization",
 //                "Bearer " + ConfigReader.getProperty("validemployee_token"),
@@ -48,7 +48,7 @@ public class CustomersApiStep {
                 accept(ContentType.JSON).
                 auth().oauth2(ConfigReader.getProperty("validemployee_token")).
                 when().
-                get(ConfigReader.getProperty(customer_api_url));
+                get(ConfigReader.getProperty(api_url));
 
  //         response.prettyPrint();
 

@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Tags Overview</title>
+
+
+  <script>
+$(document).ready(function() {
+
+    var chartData = {
+        labels:  [ "@BurdanCalistirmayin",  "@CustomersPopulated",  "@EditSingleUser",  "@GMIPasswordEditing",  "@LoginUser",  "@NegativeCreateNewAccount",  "@NegativePassword",  "@NegativePasswordSegment",  "@NegativeTest",  "@NewAccountCreationNegative",  "@NewAccountCreationPositive",  "@PositiveCreateNewAccount",  "@PositiveTest",  "@Registration",  "@RegistrationNewData",  "@Registration_Email",  "@Registration_Firstname",  "@Registration_LastName",  "@Registration_MobilePhoneNumber",  "@Registration_SSN",  "@Registration_Username",  "@SignIn",  "@TC_01",  "@TC_02",  "@TC_03",  "@TC_04",  "@TC_05",  "@TC_2101",  "@TC_2102",  "@TC_2501",  "@TC_2601",  "@TC_2701",  "@TC_2702",  "@US12",  "@US12TC01",  "@US12TC02",  "@US12TC03",  "@US12TC04",  "@US12TC05",  "@US_21",  "@US_25",  "@US_26",  "@US_27",  "@UserManagement",  "@UserSettings",  "@Usermanagement2",  "@accountTypesAndBalance",  "@allApplicants",  "@allCustomerData",  "@allTransactions",  "@applicantsDataTest",  "@applicantsDataTest1By1",  "@blankLastnameUpdate",  "@blankNameUpdate",  "@customerDataTest",  "@customerDataTest1By1",  "@invalidEmail",  "@loginPageNegativeTest",  "@logincancel",  "@loginpage",  "@managecustomer",  "@money_transfer",  "@money_transfer_negative",  "@negativeTest",  "@positivetest",  "@ramazan",  "@registerNewAccount",  "@resetpassword",  "@selectLanguage",  "@userInfoSettingUpdate",  "@usersettings", ] ,
+        datasets: [
+            {
+                label: "Passed",
+                backgroundColor: "#92DD96",
+                data:  [ 100.00,  100.00,  0.00,  100.00,  100.00,  100.00,  85.71,  85.71,  69.05,  100.00,  100.00,  100.00,  51.29,  97.50,  90.00,  50.00,  0.00,  50.00,  0.00,  43.75,  50.00,  96.30,  100.00,  100.00,  100.00,  100.00,  100.00,  100.00,  100.00,  100.00,  33.33,  20.00,  25.00,  60.00,  0.00,  100.00,  0.00,  100.00,  75.00,  100.00,  100.00,  33.33,  22.22,  100.00,  59.04,  0.00,  100.00,  0.00,  0.00,  100.00,  0.00,  0.00,  100.00,  100.00,  0.00,  0.00,  100.00,  56.25,  100.00,  100.00,  100.00,  96.30,  92.86,  69.05,  46.98,  80.00,  100.00,  100.00,  100.00,  100.00,  61.17, ] 
+            },
+            {
+                label: "Failed",
+                backgroundColor: "#F2928C",
+                data:  [ 0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  14.29,  14.29,  10.00,  0.00,  0.00,  0.00,  2.95,  2.50,  10.00,  50.00,  50.00,  50.00,  50.00,  50.00,  50.00,  3.70,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  33.33,  20.00,  25.00,  13.33,  0.00,  0.00,  50.00,  0.00,  25.00,  0.00,  0.00,  33.33,  22.22,  0.00,  6.03,  0.00,  0.00,  50.00,  50.00,  0.00,  50.00,  50.00,  0.00,  0.00,  50.00,  50.00,  0.00,  9.38,  0.00,  0.00,  0.00,  3.70,  7.14,  10.00,  1.86,  20.00,  0.00,  0.00,  0.00,  0.00,  5.42, ] 
+            },
+            {
+                label: "Skipped",
+                backgroundColor: "#8AF",
+                data:  [ 0.00,  0.00,  88.89,  0.00,  0.00,  0.00,  0.00,  0.00,  20.95,  0.00,  0.00,  0.00,  43.91,  0.00,  0.00,  0.00,  50.00,  0.00,  50.00,  6.25,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  33.33,  60.00,  50.00,  26.67,  100.00,  0.00,  50.00,  0.00,  0.00,  0.00,  0.00,  33.33,  55.56,  0.00,  33.89,  88.89,  0.00,  50.00,  50.00,  0.00,  50.00,  50.00,  0.00,  0.00,  50.00,  50.00,  0.00,  34.38,  0.00,  0.00,  0.00,  0.00,  0.00,  20.95,  48.84,  0.00,  0.00,  0.00,  0.00,  0.00,  32.32, ] 
+            },
+            {
+                label: "Pending",
+                backgroundColor: "#F5F28F",
+                data:  [ 0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00, ] 
+            },
+            {
+                label: "Undefined",
+                backgroundColor: "#F5B975",
+                data:  [ 0.00,  0.00,  11.11,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  1.85,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  1.04,  11.11,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  2.33,  0.00,  0.00,  0.00,  0.00,  0.00,  1.08, ] 
+            }
+        ]
+    };
+
+    var context = document.getElementById("tags-chart");
+    window.myBar = new Chart(context, {
+        type: "bar",
+        data: chartData,
+        options: {
+            tooltips: {
+                mode: "label"
+            },
+            responsive: true,
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    stacked: true
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
+            }
+        }
+    });
+
+});  </script>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation"      class="active" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>cucumber-jvm-example</td>
+        <td>1</td>
+      <td>28 Nov 2020, 00:19</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Tags Statistics</h2>
+      <p>The following graph shows passing and failing statistics for tags</p>
+  </div>
+</div>
+
+
+  <div class="container-fluid" id="charts">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <canvas id="tags-chart" height="50"></canvas>
+      </div>
+    </div>
+  </div>
+
+<br/>
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+<table id="tablesorter" class="stats-table table-hover">
+
+<thead>
+  <tr class="header dont-sort">
+    <th></th>
+    <th colspan="6">Steps</th>
+    <th colspan="3">Scenarios</th>
+    <th colspan="2">Features</th>
+  </tr>
+  <tr>
+    <th>Tag</th>
+    <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="skipped">Skipped</th>
+    <th class="pending">Pending</th>
+    <th class="undefined">Undefined</th>
+    <th class="total">Total</th>
+
+    <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="total">Total</th>
+
+    <th>Duration</th>
+    <th>Status</th>
+  </tr>
+</thead>
+
+
+  <tbody>
+      <tr>
+        <td class="tagname"><a href="report-tag_3896418386.html">@BurdanCalistirmayin</a></td>
+
+        <td      class="passed"    >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="9737000000">9.737</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_700552260.html">@CustomersPopulated</a></td>
+
+        <td      class="passed"    >10</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">10</td>
+
+        <td  class="passed"    >2</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td class="duration" data-value="53996000000">53.996</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1335206460.html">@EditSingleUser</a></td>
+
+        <td >0</td>
+        <td >0</td>
+        <td     class="skipped"   >8</td>
+        <td >0</td>
+        <td   class="undefined" >1</td>
+        <td class="total">9</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="0">0.000</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_4148733977.html">@GMIPasswordEditing</a></td>
+
+        <td      class="passed"    >20</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">20</td>
+
+        <td  class="passed"    >4</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td class="duration" data-value="4200000000">4.200</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2740247155.html">@LoginUser</a></td>
+
+        <td      class="passed"    >52</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">52</td>
+
+        <td  class="passed"    >4</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td class="duration" data-value="41891000000">41.891</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1446347069.html">@NegativeCreateNewAccount</a></td>
+
+        <td      class="passed"    >110</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">110</td>
+
+        <td  class="passed"    >10</td>
+        <td >0</td>
+        <td class="total">10</td>
+
+        <td class="duration" data-value="67767000000">1:7.767</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_199617103.html">@NegativePassword</a></td>
+
+        <td      class="passed"    >6</td>
+        <td      class="failed"    >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">7</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="3349000000">3.349</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_3669627586.html">@NegativePasswordSegment</a></td>
+
+        <td      class="passed"    >6</td>
+        <td      class="failed"    >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">7</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="3349000000">3.349</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1109432006.html">@NegativeTest</a></td>
+
+        <td      class="passed"    >145</td>
+        <td      class="failed"    >21</td>
+        <td     class="skipped"   >44</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">210</td>
+
+        <td  class="passed"    >10</td>
+        <td  class="failed"    >21</td>
+        <td class="total">31</td>
+
+        <td class="duration" data-value="462800000000">7:42.800</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_3502344992.html">@NewAccountCreationNegative</a></td>
+
+        <td      class="passed"    >110</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">110</td>
+
+        <td  class="passed"    >10</td>
+        <td >0</td>
+        <td class="total">10</td>
+
+        <td class="duration" data-value="67767000000">1:7.767</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_3329038564.html">@NewAccountCreationPositive</a></td>
+
+        <td      class="passed"    >110</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">110</td>
+
+        <td  class="passed"    >10</td>
+        <td >0</td>
+        <td class="total">10</td>
+
+        <td class="duration" data-value="65873000000">1:5.873</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_3879012097.html">@PositiveCreateNewAccount</a></td>
+
+        <td      class="passed"    >110</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">110</td>
+
+        <td  class="passed"    >10</td>
+        <td >0</td>
+        <td class="total">10</td>
+
+        <td class="duration" data-value="65873000000">1:5.873</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_940024458.html">@PositiveTest</a></td>
+
+        <td      class="passed"    >139</td>
+        <td      class="failed"    >8</td>
+        <td     class="skipped"   >119</td>
+        <td >0</td>
+        <td   class="undefined" >5</td>
+        <td class="total">271</td>
+
+        <td  class="passed"    >8</td>
+        <td  class="failed"    >13</td>
+        <td class="total">21</td>
+
+        <td class="duration" data-value="250243000000">4:10.243</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_3658538264.html">@Registration</a></td>
+
+        <td      class="passed"    >78</td>
+        <td      class="failed"    >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">80</td>
+
+        <td  class="passed"    >8</td>
+        <td  class="failed"    >2</td>
+        <td class="total">10</td>
+
+        <td class="duration" data-value="545299000000">9:5.299</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_232176144.html">@RegistrationNewData</a></td>
+
+        <td      class="passed"    >45</td>
+        <td      class="failed"    >5</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">50</td>
+
+        <td >0</td>
+        <td  class="failed"    >5</td>
+        <td class="total">5</td>
+
+        <td class="duration" data-value="222189000000">3:42.189</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2681119957.html">@Registration_Email</a></td>
+
+        <td      class="passed"    >3</td>
+        <td      class="failed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">6</td>
+
+        <td >0</td>
+        <td  class="failed"    >3</td>
+        <td class="total">3</td>
+
+        <td class="duration" data-value="61294000000">1:1.294</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2774704500.html">@Registration_Firstname</a></td>
+
+        <td >0</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="0">0.000</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1812179654.html">@Registration_LastName</a></td>
+
+        <td      class="passed"    >1</td>
+        <td      class="failed"    >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="20276000000">20.276</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1949485710.html">@Registration_MobilePhoneNumber</a></td>
+
+        <td >0</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="0">0.000</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2112297415.html">@Registration_SSN</a></td>
+
+        <td      class="passed"    >14</td>
+        <td      class="failed"    >16</td>
+        <td     class="skipped"   >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">32</td>
+
+        <td >0</td>
+        <td  class="failed"    >16</td>
+        <td class="total">16</td>
+
+        <td class="duration" data-value="270065000000">4:30.065</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_3006066011.html">@Registration_Username</a></td>
+
+        <td      class="passed"    >3</td>
+        <td      class="failed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">6</td>
+
+        <td >0</td>
+        <td  class="failed"    >3</td>
+        <td class="total">3</td>
+
+        <td class="duration" data-value="60818000000">1:0.818</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1294542881.html">@SignIn</a></td>
+
+        <td      class="passed"    >26</td>
+        <td      class="failed"    >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">27</td>
+
+        <td  class="passed"    >4</td>
+        <td  class="failed"    >1</td>
+        <td class="total">5</td>
+
+        <td class="duration" data-value="7549000000">7.549</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_4059413904.html">@TC_01</a></td>
+
+        <td      class="passed"    >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="711000000">0.711</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_4059413905.html">@TC_02</a></td>
+
+        <td      class="passed"    >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="1277000000">1.277</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_4059413906.html">@TC_03</a></td>
+
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="4282000000">4.282</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_4059413907.html">@TC_04</a></td>
+
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="3867000000">3.867</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_4059413908.html">@TC_05</a></td>
+
+        <td      class="passed"    >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="440000000">0.440</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1266519055.html">@TC_2101</a></td>
+
+        <td      class="passed"    >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="2420000000">2.420</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1266519056.html">@TC_2102</a></td>
+
+        <td      class="passed"    >7</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">7</td>
+
+        <td  class="passed"    >7</td>
+        <td >0</td>
+        <td class="total">7</td>
+
+        <td class="duration" data-value="7676000000">7.676</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1266522899.html">@TC_2501</a></td>
+
+        <td      class="passed"    >16</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">16</td>
+
+        <td  class="passed"    >4</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td class="duration" data-value="4668000000">4.668</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1266523860.html">@TC_2601</a></td>
+
+        <td      class="passed"    >1</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="189000000">0.189</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1266524821.html">@TC_2701</a></td>
+
+        <td      class="passed"    >1</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">5</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="186000000">0.186</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1266524822.html">@TC_2702</a></td>
+
+        <td      class="passed"    >1</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="153000000">0.153</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2209202558.html">@US12</a></td>
+
+        <td      class="passed"    >9</td>
+        <td      class="failed"    >2</td>
+        <td     class="skipped"   >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">15</td>
+
+        <td  class="passed"    >2</td>
+        <td  class="failed"    >3</td>
+        <td class="total">5</td>
+
+        <td class="duration" data-value="37829000000">37.829</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2349472430.html">@US12TC01</a></td>
+
+        <td >0</td>
+        <td >0</td>
+        <td     class="skipped"   >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="0">0.000</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2349472431.html">@US12TC02</a></td>
+
+        <td      class="passed"    >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="1424000000">1.424</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2349472432.html">@US12TC03</a></td>
+
+        <td >0</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="10485000000">10.485</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2349472433.html">@US12TC04</a></td>
+
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="2743000000">2.743</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2349472434.html">@US12TC05</a></td>
+
+        <td      class="passed"    >3</td>
+        <td      class="failed"    >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="23177000000">23.177</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_4060814143.html">@US_21</a></td>
+
+        <td      class="passed"    >9</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">9</td>
+
+        <td  class="passed"    >8</td>
+        <td >0</td>
+        <td class="total">8</td>
+
+        <td class="duration" data-value="10096000000">10.096</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_4060814147.html">@US_25</a></td>
+
+        <td      class="passed"    >16</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">16</td>
+
+        <td  class="passed"    >4</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td class="duration" data-value="4668000000">4.668</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_4060814148.html">@US_26</a></td>
+
+        <td      class="passed"    >1</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="189000000">0.189</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_4060814149.html">@US_27</a></td>
+
+        <td      class="passed"    >2</td>
+        <td      class="failed"    >2</td>
+        <td     class="skipped"   >5</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">9</td>
+
+        <td >0</td>
+        <td  class="failed"    >2</td>
+        <td class="total">2</td>
+
+        <td class="duration" data-value="339000000">0.339</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2094045901.html">@UserManagement</a></td>
+
+        <td      class="passed"    >52</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">52</td>
+
+        <td  class="passed"    >4</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td class="duration" data-value="41891000000">41.891</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1380582765.html">@UserSettings</a></td>
+
+        <td      class="passed"    >284</td>
+        <td      class="failed"    >29</td>
+        <td     class="skipped"   >163</td>
+        <td >0</td>
+        <td   class="undefined" >5</td>
+        <td class="total">481</td>
+
+        <td  class="passed"    >18</td>
+        <td  class="failed"    >34</td>
+        <td class="total">52</td>
+
+        <td class="duration" data-value="713043000000">11:53.043</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_3118012227.html">@Usermanagement2</a></td>
+
+        <td >0</td>
+        <td >0</td>
+        <td     class="skipped"   >8</td>
+        <td >0</td>
+        <td   class="undefined" >1</td>
+        <td class="total">9</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="0">0.000</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2087586992.html">@accountTypesAndBalance</a></td>
+
+        <td      class="passed"    >5</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">5</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="44077000000">44.077</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_3347950065.html">@allApplicants</a></td>
+
+        <td >0</td>
+        <td      class="failed"    >2</td>
+        <td     class="skipped"   >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td >0</td>
+        <td  class="failed"    >2</td>
+        <td class="total">2</td>
+
+        <td class="duration" data-value="337000000">0.337</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_417374376.html">@allCustomerData</a></td>
+
+        <td >0</td>
+        <td      class="failed"    >2</td>
+        <td     class="skipped"   >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td >0</td>
+        <td  class="failed"    >2</td>
+        <td class="total">2</td>
+
+        <td class="duration" data-value="49000000">0.049</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1471636821.html">@allTransactions</a></td>
+
+        <td      class="passed"    >5</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">5</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="9919000000">9.919</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_3360430188.html">@applicantsDataTest</a></td>
+
+        <td >0</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="331000000">0.331</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_446129845.html">@applicantsDataTest1By1</a></td>
+
+        <td >0</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="6000000">0.006</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1300049021.html">@blankLastnameUpdate</a></td>
+
+        <td      class="passed"    >9</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">9</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="1883000000">1.883</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_3405879143.html">@blankNameUpdate</a></td>
+
+        <td      class="passed"    >9</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">9</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="1894000000">1.894</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_310339993.html">@customerDataTest</a></td>
+
+        <td >0</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="40000000">0.040</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2335463778.html">@customerDataTest1By1</a></td>
+
+        <td >0</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="9000000">0.009</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1052552228.html">@invalidEmail</a></td>
+
+        <td      class="passed"    >27</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">27</td>
+
+        <td  class="passed"    >3</td>
+        <td >0</td>
+        <td class="total">3</td>
+
+        <td class="duration" data-value="6455000000">6.455</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2391270366.html">@loginPageNegativeTest</a></td>
+
+        <td      class="passed"    >18</td>
+        <td      class="failed"    >3</td>
+        <td     class="skipped"   >11</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">32</td>
+
+        <td  class="passed"    >2</td>
+        <td  class="failed"    >3</td>
+        <td class="total">5</td>
+
+        <td class="duration" data-value="41786000000">41.786</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_3574104802.html">@logincancel</a></td>
+
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="8665000000">8.665</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_737066295.html">@loginpage</a></td>
+
+        <td      class="passed"    >7</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">7</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="8657000000">8.657</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_664369282.html">@managecustomer</a></td>
+
+        <td      class="passed"    >14</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">14</td>
+
+        <td  class="passed"    >5</td>
+        <td >0</td>
+        <td class="total">5</td>
+
+        <td class="duration" data-value="10577000000">10.577</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1646080201.html">@money_transfer</a></td>
+
+        <td      class="passed"    >26</td>
+        <td      class="failed"    >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">27</td>
+
+        <td  class="passed"    >1</td>
+        <td  class="failed"    >1</td>
+        <td class="total">2</td>
+
+        <td class="duration" data-value="28278000000">28.278</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1912098825.html">@money_transfer_negative</a></td>
+
+        <td      class="passed"    >13</td>
+        <td      class="failed"    >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">14</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="14649000000">14.649</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_945111718.html">@negativeTest</a></td>
+
+        <td      class="passed"    >145</td>
+        <td      class="failed"    >21</td>
+        <td     class="skipped"   >44</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">210</td>
+
+        <td  class="passed"    >10</td>
+        <td  class="failed"    >21</td>
+        <td class="total">31</td>
+
+        <td class="duration" data-value="462800000000">7:42.800</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_776657482.html">@positivetest</a></td>
+
+        <td      class="passed"    >101</td>
+        <td      class="failed"    >4</td>
+        <td     class="skipped"   >105</td>
+        <td >0</td>
+        <td   class="undefined" >5</td>
+        <td class="total">215</td>
+
+        <td  class="passed"    >6</td>
+        <td  class="failed"    >9</td>
+        <td class="total">15</td>
+
+        <td class="duration" data-value="176347000000">2:56.347</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_2995101443.html">@ramazan</a></td>
+
+        <td      class="passed"    >4</td>
+        <td      class="failed"    >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">5</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="12036000000">12.036</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_407449519.html">@registerNewAccount</a></td>
+
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="8822000000">8.822</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_4062412969.html">@resetpassword</a></td>
+
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="8869000000">8.869</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_3480223923.html">@selectLanguage</a></td>
+
+        <td      class="passed"    >6</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">6</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="1389000000">1.389</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_557922399.html">@userInfoSettingUpdate</a></td>
+
+        <td      class="passed"    >51</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">51</td>
+
+        <td  class="passed"    >6</td>
+        <td >0</td>
+        <td class="total">6</td>
+
+        <td class="duration" data-value="11621000000">11.621</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_1151618349.html">@usersettings</a></td>
+
+        <td      class="passed"    >282</td>
+        <td      class="failed"    >25</td>
+        <td     class="skipped"   >149</td>
+        <td >0</td>
+        <td   class="undefined" >5</td>
+        <td class="total">461</td>
+
+        <td  class="passed"    >22</td>
+        <td  class="failed"    >30</td>
+        <td class="total">52</td>
+
+        <td class="duration" data-value="700520000000">11:40.520</td>
+        <td class="failed">Failed</td>
+      </tr>
+  </tbody>
+
+  <tfoot class="total">
+    <tr>
+      <td></td>
+      <td>2147</td>
+      <td>167</td>
+      <td>683</td>
+      <td>0</td>
+      <td>22</td>
+      <td>3019</td>
+
+      <td>151</td>
+      <td>240</td>
+      <td>391</td>
+
+      <td class="duration">1:18:36.104</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>71.12%</td>
+      <td>5.53%</td>
+      <td>22.62%</td>
+      <td>0.00%</td>
+      <td>0.73%</td>
+      <td></td>
+      <td>38.62%</td>
+      <td>61.38%</td>
+      <td></td>
+      <td></td>
+      <td>39.29%</td>
+    </tr>
+  </tfoot>
+</table>
+
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

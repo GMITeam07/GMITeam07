@@ -1,7 +1,7 @@
 @allCustomerData
   Feature: Test all customers' data
     Background: Api end point is being set in response
-      Given user provides the api end point to set the response using "customer_api_url"
+      Given user provides the api end point to set the response using "customer_api_url" ApiUrl
 
       @customerDataTest
       Scenario: validate all customers' data

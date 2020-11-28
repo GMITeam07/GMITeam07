@@ -10,3 +10,4 @@
 [1127/192253.963:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [1127/223246.510:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [1127/223942.972:ERROR:file_io_win.cc(180)] CreateFile C:\Users\steel\AppData\Local\Temp\scoped_dir16872_388176813\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
+[1127/231320.212:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
